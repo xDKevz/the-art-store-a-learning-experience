@@ -6,11 +6,7 @@
         
     </head>
     <body>
-        <h1>Members</h1>
-        <div>
-            <h3>Link to Github Page</h3>
-            <a href="https://github.com/xDKevz/comp3512-assignment2.git">Github Link</a>
-        </div>
+        <h1>Group Members:</h1>
         <div>
             <h4>John Kevin Ruiz</h4>
         </div>
@@ -22,6 +18,11 @@
         </div>
         <div>
             <h4>Rafael Angelo Pucut</h4>
+        </div>
+        
+        <div>
+            <h3>Link to Github Page</h3>
+            <a href="https://github.com/xDKevz/comp3512-assignment2.git" target="_blank">Github Link</a>
         </div>
     </body>
 </html>

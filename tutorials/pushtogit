@@ -1,6 +1,6 @@
 #### Terminal
 git add *
-git commit -m "changes made"
+git commit -m "CommitterName: Changes Made"
 git push -u origin master
 
 *only currently selected/opened file will be committed to git.
