@@ -6,6 +6,7 @@
         
     </head>
     <body>
+        <img src="images/art_store_logo.png"/>
         <h1>Group Members:</h1>
         <div>
             <h4>John Kevin Ruiz</h4>
