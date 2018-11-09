@@ -4,10 +4,19 @@ body {
     font-family: sans-serif;
 }
 
+/*** LOGOS AND IMAGES ***/
 .logo img {
     max-width: 200px;
 }
-
+.teamMembers img {
+    max-width: 100%;
+}
+.teamMembers h4 {
+    text-align: center;
+}
+.repo img {
+    max-width: 100%;
+}
 
 /*** Horizontal Menu Styles ***/
 
