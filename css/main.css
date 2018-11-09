@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+
+/*** Horizontal Menu Styles ***/
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navigation {
+    width: 100%;
+    background: #edf1f7;
+    border-bottom: solid #b0b3b7;
+    border-top: solid #b0b3b7;
+}
+.menu li {
+    display: inline-block;
+    padding: 20px;
+}
+.menu li:hover {
+    background: #ced3db;
+}
+.menu li a {
+    color: #000000;
+    text-decoration: none;
+}
+.toggle {
+    width: 100%;
+    padding: 10px 20px;
+    background: #b1b9c6;
+    text-align: right;
+    box-sizing: border-box;
+    font-size: 30px;
+    display: none;
+}
+
+/*MEDIA QUERY FOR MOBILE MENU*/
+@media only screen and (max-width:768px) {
+    .toggle {
+        display: block;
+    }
+    .menu {
+        width: 100%;
+        display: none;
+    }
+    .menu li {
+        width: 100%;
+        display: block;
+        /*text-align: center;*/
+    }
+    .active {
+        display: block;
+    }
+}
+
+/*** Home view ***/
+
+.home {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 25% auto;
+}
+
+.gallerylist {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    background-color: gray;
+}
+
+.artist {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    background-color: gray;
+}
+
+.genres {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    background-color: gray;
+}
+
+/* Horizontal Scrolling */

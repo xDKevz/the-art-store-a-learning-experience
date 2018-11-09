@@ -1,0 +1,25 @@
+/* Resizing team photos */
+
+.teamMembers img {
+    max-height: 307px;
+}
+
+.global-header {
+    margin: 0px;
+}
+
+.global-header img {
+    max-height: 75px;
+}
+
+.global-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.global-nav li {
+    float: left;
+    padding: 20px;
+}
