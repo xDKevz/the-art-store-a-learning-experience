@@ -11,12 +11,7 @@ body {
 .teamMembers img {
     max-width: 100%;
 }
-.teamMembers h4 {
-    text-align: center;
-}
-.repo img {
-    max-width: 100%;
-}
+
 
 /*** Horizontal Menu Styles ***/
 
@@ -70,6 +65,12 @@ body {
     }
     .active {
         display: block;
+    }
+    .teamMembers h4 {
+        text-align: center;
+    }
+    .repo img {
+        max-width: 100%;
     }
 }
 
