@@ -1,0 +1,24 @@
+.registration-container{
+    
+    border: 5px solid black;
+    display:flex;
+    /*align-content: center;*/
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 290px;
+
+    padding: 50px 60px;
+
+}
+
+h2{
+    
+    font-weight : 400;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  
+}
+
