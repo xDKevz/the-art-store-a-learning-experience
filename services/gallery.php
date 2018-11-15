@@ -12,11 +12,14 @@ require_once('database.php');
      
      // if supplied with ID
      if (isset($_GET['id']) && $_GET['id'] > 0){
-         $sql = 'select GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite from Galleries where GalleryID=' .
-         $_GET['id'];
-         $result = $pdo->query($sql);
-        
-        while ($row =$result->fetch()){
+         $sql = 'SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite FROM Galleries WHERE GalleryID=:id';
+         
+         $id=$_GET['id'];
+         $statement = $pdo->prepare($sql);
+         $statement->bindValue(':id', $id);
+         $statement->execute();
+         
+        while ($row =$statement->fetch()){
             // stores the data into the array
             $json_array [] =$row;
         }
@@ -26,7 +29,6 @@ require_once('database.php');
         $sql = "SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite from Galleries";
         $result = $pdo->query($sql);
         
-    
         while ($row =$result->fetch()){
             // stores the data into the array  
             $json_array [] =$row;

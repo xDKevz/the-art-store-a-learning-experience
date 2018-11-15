@@ -12,18 +12,21 @@ require_once('database.php');
      
      // if supplied with ID
      if (isset($_GET['id']) && $_GET['id'] > 0){
-         $sql = 'select ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink from Artists where ArtistID=' .
-         $_GET['id'];
-         $result = $pdo->query($sql);
+         $sql = 'SELECT ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink FROM Artists WHERE ArtistID=:id';
+         
+         $id=$_GET['id'];
+         $statement = $pdo->prepare($sql);
+         $statement->bindValue(':id', $id);
+         $statement->execute();
         
-        while ($row =$result->fetch()){
+        while ($row =$statement->fetch()){
             // stores the data into the array
             $json_array [] =$row;
         }
     // if no id is supplied
      }else{
 
-        $sql = "SELECT ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink from Artists";
+        $sql = "SELECT ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink FROM Artists";
         $result = $pdo->query($sql);
         
     

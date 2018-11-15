@@ -12,11 +12,15 @@ require_once('database.php');
      
      // if supplied with ID
      if (isset($_GET['id']) && $_GET['id'] > 0){
-         $sql = 'select GenreID, GenreName, EraID, Description, Link from Genres where GenreID=' .
-         $_GET['id'];
-         $result = $pdo->query($sql);
+         $sql = 'SELECT GenreID, GenreName, EraID, Description, Link from Genres WHERE GenreID=:id';
+         
+         $id = $_GET['id'];
+         $statement = $pdo->prepare($sql);
+         $statement->bindValue(':id', $id);
+         $statement->execute();
+         #$result = $pdo->query($sql);
         
-        while ($row =$result->fetch()){
+        while ($row =$statement->fetch()){
             // stores the data into the array
             $json_array [] =$row;
         }
