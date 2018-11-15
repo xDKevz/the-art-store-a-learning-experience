@@ -8,8 +8,12 @@ body {
 .logo img {
     max-width: 200px;
 }
+.teamMembers div {
+    float: left;
+    width: 25%;
+}
 .teamMembers img {
-    max-width: 100%;
+    max-width: 200px;
 }
 
 
@@ -66,8 +70,8 @@ body {
     .active {
         display: block;
     }
-    .teamMembers h4 {
-        text-align: center;
+    .teamMembers div {
+        width: 100%;
     }
     .repo img {
         max-width: 100%;
