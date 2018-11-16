@@ -11,8 +11,20 @@
     <main class="single-artist-container">
         <div class="artistinfo">
             <h1>ARTIST INFO</h1>
-            <div class="image"></div>
+            <div class="image">
+                <img src="images/artists/full/19.jpg">
+            </div>
             
+            <section class="info">
+                <span id="first-name">Vincent</span><br>
+                <span id="last-name">Van Gogh</span><br>
+                <span id="nationality">Netherlands</span><br>
+                <span id="gender">M</span><br>
+                <span id="yearofbirth">1853</span><br>
+                <span id="yearofdeath">1890</span><br>
+                <span id="details">Artist details</span><br>
+                <span id="link">http://link.com</span><br>
+            </section>
             
         </div>
         

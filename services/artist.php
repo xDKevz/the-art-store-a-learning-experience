@@ -6,23 +6,22 @@
 </head>
 <body>
    <?php
-require_once('database.php');
+    // require_once('database.php');
+    require_once('config.inc.php');
+    require_once('database-function.inc.php');
      // declares an empty array
      $json_array = array();
      
-     
+     $connection = setConnectionInfo();
          // checks if the method is get        
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
          // if supplied with ID
          if (isset($_GET['id']) && $_GET['id'] > 0){
              $sql = 'SELECT ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink FROM Artists WHERE ArtistID=:id';
-             
              $id=$_GET['id'];
-             $statement = $pdo->prepare($sql);
              $statement->bindValue(':id', $id);
+             $statement = runQuery($connection, $sql, null);
              $statement->execute();
-            
-    
         // if no id is supplied
          }else{
     

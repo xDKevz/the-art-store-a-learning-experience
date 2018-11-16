@@ -4,10 +4,44 @@ body {
     font-family: sans-serif;
 }
 
-/*** LOGOS AND IMAGES ***/
-.logo img {
-    max-width: 200px;
+/*** Home view ***/
+
+.home {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 25% auto;
 }
+
+.gallerylist {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    background-color: gray;
+}
+
+.artist {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    background-color: gray;
+}
+
+.genres {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    background-color: gray;
+}
+
+
+/*** LOGOS AND IMAGES ***/
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    max-width: 150px;
+    padding: 10pt;
+}
+
+/*** ABOUT PAGE ***/
 .teamMembers div {
     float: left;
     width: 25%;
@@ -31,6 +65,7 @@ body {
     background: #edf1f7;
     border-bottom: solid #b0b3b7;
     border-top: solid #b0b3b7;
+    text-align: center;
 }
 .menu li {
     display: inline-block;
@@ -76,32 +111,36 @@ body {
     .repo img {
         max-width: 100%;
     }
+    
+    .home {
+        display: block;
+        /*grid-gap: 5px;*/
+        /*grid-template-columns: 100%;*/
+    }
+
+    /*.gallerylist {*/
+    /*    grid-column: 1 / span 1;*/
+    /*    grid-row: 1 / span 1;*/
+    /*    background-color: gray;*/
+    /*}*/
+    
+    /*.artist {*/
+    /*    grid-column: 1 / span 1;*/
+    /*    grid-row: 2 / span 1;*/
+    /*    background-color: gray;*/
+    /*}*/
+    
+    /*.genres {*/
+    /*    grid-column: 1 / span 1;*/
+    /*    grid-row: 3 / span 1;*/
+    /*    background-color: gray;*/
+    /*}*/
+    
+    .gallerylist, .artist, .genres {
+        width: 100%;
+    }
 }
 
-/*** Home view ***/
 
-.home {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 25% auto;
-}
-
-.gallerylist {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 2;
-    background-color: gray;
-}
-
-.artist {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    background-color: gray;
-}
-
-.genres {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-    background-color: gray;
-}
 
 /* Horizontal Scrolling */
