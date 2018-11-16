@@ -1,28 +1,36 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Art Store Home</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css" type="text/css" />
-        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    </head>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--    <head>-->
+<!--        <meta charset="utf-8"/>-->
+<!--        <title>Art Store Home</title>-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--        <link rel="stylesheet" href="css/main.css" type="text/css" />-->
+<!--        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
+<!--    </head>-->
+    <!--// beginning of html -->
+    <?php
+        $title = "Art Store Home"; // title of page
+        include "include/header.php";
+    ?>
     
     <body>
         <header>
-            <div class="logo"><img src="images/art_store_logo.png" alt="art store logo"></div>
-            <div class="navigation">
-                <div class="toggle"><i class="fa fa-bars mBars" aria-hidden="true"></i></div>
-                <ul class="menu">
-                    <li><a href="home.php">HOME</a></li>
-                    <li><a href="arists.php">ARTISTS</a></li>
-                    <li><a href="paintings.php">PAINTINGS</a></li>
-                    <li><a href="galleries.php">GALLERIES</a></li>
-                    <li><a href="genres.php">GENRES</a></li>
-                    <li><a href="about.php">ABOUT US</a></li>
-                </ul>
-            </div>
+            <?php include "include/navigation.php"; ?>
         </header>
+        <!--<header>-->
+        <!--    <div class="logo"><img src="images/art_store_logo.png" alt="art store logo"></div>-->
+        <!--    <div class="navigation">-->
+        <!--        <div class="toggle"><i class="fa fa-bars mBars" aria-hidden="true"></i></div>-->
+        <!--        <ul class="menu">-->
+        <!--            <li><a href="home.php">HOME</a></li>-->
+        <!--            <li><a href="arists.php">ARTISTS</a></li>-->
+        <!--            <li><a href="paintings.php">PAINTINGS</a></li>-->
+        <!--            <li><a href="galleries.php">GALLERIES</a></li>-->
+        <!--            <li><a href="genres.php">GENRES</a></li>-->
+        <!--            <li><a href="about.php">ABOUT US</a></li>-->
+        <!--        </ul>-->
+        <!--    </div>-->
+        <!--</header>-->
         
         <main class="home">
             <div class="gallerylist">
