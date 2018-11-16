@@ -8,6 +8,13 @@
         <header>
             <?php include 'include/navigation.php'; ?>
         </header>
+        
+        <main>
+            <ul>
+                
+            </ul>
+        </main>
+        
     </body>
     
     

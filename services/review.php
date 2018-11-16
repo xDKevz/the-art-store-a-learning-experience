@@ -14,11 +14,11 @@ require_once('database.php');
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         // checks if there is a painting id
         if (isset($_GET['painting']) && $_GET['painting'] > 0) {
-            $sql = 'select RatingID, PaintingID, ReviewDate, Rating, Comment from Reviews where PaintingID=' .
+            $sql = 'SELECT RatingID, PaintingID, ReviewDate, Rating, Comment FROM Reviews WHERE PaintingID=' .
             $_GET['painting'];
             $result = $pdo->query($sql);
             // iterates through the results
-            while ($row =$result->fetch()){
+            while ($row =$result->fetchObject()){
                 // stores the results inside the array
                 $json_array [] =$row;
             }

@@ -20,22 +20,18 @@ require_once('database.php');
          $statement->execute();
          #$result = $pdo->query($sql);
         
-        while ($row =$statement->fetch()){
-            // stores the data into the array
-            $json_array [] =$row;
-        }
+        
     // if no id is supplied
      }else{
 
         $sql = "SELECT GenreID, GenreName, EraID, Description, Link FROM Genres";
-        $result = $pdo->query($sql);
-        
-    
-        while ($row =$result->fetch()){
-            // stores the data into the array  
+        $statement = $pdo->query($sql);
+
+    }
+    while ($row =$statement->fetchObject()){
+            // stores the data into the array
             $json_array [] =$row;
         }
-    }
     // converts the array to json then echos it
     echo json_encode($json_array);
     // clears the pdo
