@@ -58,6 +58,6 @@
                     <img src="images/GitHub_Logo.png" alt="GitHub"/></a>
             </div>
         </main>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="../js/main.js"></script>
     </body>
 </html>

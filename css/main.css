@@ -65,7 +65,7 @@ body {
     .menu li {
         width: 100%;
         display: block;
-        /*text-align: center;*/
+        text-align: center;
     }
     .active {
         display: block;
