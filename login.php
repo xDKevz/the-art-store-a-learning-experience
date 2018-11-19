@@ -1,3 +1,5 @@
+<!-- Not done yet, might add some mroe functionality -->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,16 +17,73 @@
     </div>
     <div class="login-details">
       <h1>Log-in</h1><br>
-      <form method="" action="post">
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="password" name="password" placeholder="Password"><br>
-        <input type="submit" name="login" class="btn-login" value="Login">
-      </form>
+      
+<?php
+
+// starts the session
+session_start();
+// if logged in, the if statement executes
+if (isset($_SESSION["id"]))
+{
+    echo '<br><div class="row" style="padding-bottom: 10px"><div class="col-lg-12" ><div class="text-center">You are Logged in as : ';
+    // displays the logged in email
+	print($_SESSION["email"] . "</div></div>");
+}
+
+else
+{      
+ 
+ // if not logged in, displays the log in page
+ 
+    echo '<form method="post" action="parseLogin.php">
+            <input type="text" name="email" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" name="submit" class="btn-login" value="Login">
+          </form>
        
-      <div class="login-signup">
+        <div class="login-signup">
           <p> No Account? </p>
-          <a class="link" href="#">Sign up</a>
-      </div>
+          <a class="link" href="registration.php">Sign up</a>
+        </div>';
+    
+}
+
+ ?>
+      
+ <p>
+<?php
+    // data from parseRegister.php
+    // checks if the user registered successfully
+    if(isset($_SESSION["registersuccess"]))
+    {
+    	$message=$_SESSION["registersuccess"];
+    	// sample alert for successful registration
+    	echo "<script type='text/javascript'>alert('$message');</script>";
+    	// destroys the session
+    	unset($_SESSION["registersuccess"]);
+    }
+?>
+<p>
+
+
+
+<!--this is used if there are any message errors-->
+<p>
+    
+<?php
+
+    if(isset($_SESSION["message"]))
+    {
+    	print($_SESSION["message"]);
+        // destroys the session to avoid errors showing up non stop.
+    	unset($_SESSION["message"]);
+    }
+?>
+<p>
+     
+ 
+      
+      
     </div>
  </div>
 </body>

@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php // To Test, use https://comp3512-asg2-leepalisoc.c9users.io/services/review.php?painting=15
-require_once('database.php');
+require_once('database-functions.inc.php');
 
     // declares an empty array
     $json_array = array();
@@ -14,9 +14,8 @@ require_once('database.php');
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
         // checks if there is a painting id
         if (isset($_GET['painting']) && $_GET['painting'] > 0) {
-            $sql = 'SELECT RatingID, PaintingID, ReviewDate, Rating, Comment FROM Reviews WHERE PaintingID=' .
-            $_GET['painting'];
-            $result = $pdo->query($sql);
+            $sql = 'SELECT RatingID, PaintingID, ReviewDate, Rating, Comment FROM Reviews WHERE PaintingID=?';
+             $statement = runQuery($sql, $_GET['painting']);
             // iterates through the results
             while ($row =$result->fetchObject()){
                 // stores the results inside the array

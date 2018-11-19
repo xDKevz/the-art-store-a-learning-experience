@@ -6,7 +6,8 @@
 </head>
 <body>
  <?php
-require_once('database.php');
+ //this will allow access to the function call runQuery()
+require_once('database-functions.inc.php');
      // declares an empty array
      $json_array = array();
      
@@ -14,18 +15,16 @@ require_once('database.php');
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
          // if supplied with ID
          if (isset($_GET['id']) && $_GET['id'] > 0){
-             $sql = 'SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite FROM Galleries WHERE GalleryID=:id';
+             $sql = 'SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite FROM Galleries WHERE GalleryID=?';
              
-             $id=$_GET['id'];
-             $statement = $pdo->prepare($sql);
-             $statement->bindValue(':id', $id);
-             $statement->execute();
+             $parameter=array($_GET['id']);
+             $statement = runQuery($sql, $parameter);
              
         // if no id is supplied
          }else{
     
-            $sql = "SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite from Galleries";
-            $statement = $pdo->query($sql);
+            $sql = "SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebsite FROM Galleries";
+            $statement = runQuery($sql, null);
         }
         
         while ($row =$statement->fetchObject()){

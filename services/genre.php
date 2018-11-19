@@ -6,18 +6,17 @@
 </head>
 <body>
 <?php
-require_once('database.php');
+//this will allow access to the function call runQuery()
+require_once('database-functions.inc.php');
      // declares an empty array
      $json_array = array();
      
      // if supplied with ID
      if (isset($_GET['id']) && $_GET['id'] > 0){
-         $sql = 'SELECT GenreID, GenreName, EraID, Description, Link from Genres WHERE GenreID=:id';
+         $sql = 'SELECT GenreID, GenreName, EraID, Description, Link from Genres WHERE GenreID=?';
          
-         $id = $_GET['id'];
-         $statement = $pdo->prepare($sql);
-         $statement->bindValue(':id', $id);
-         $statement->execute();
+         $parameter=array($_GET['id']);
+         $statement = runQuery($sql, $parameter);
          #$result = $pdo->query($sql);
         
         
@@ -25,7 +24,7 @@ require_once('database.php');
      }else{
 
         $sql = "SELECT GenreID, GenreName, EraID, Description, Link FROM Genres";
-        $statement = $pdo->query($sql);
+        $statement = runQuery($sql, null);
 
     }
     while ($row =$statement->fetchObject()){

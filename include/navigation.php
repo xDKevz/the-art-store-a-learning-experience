@@ -8,6 +8,21 @@
                 <li><a href="genre.php"><i class="fa fa-list-ul"></i> GENRES</a></li>
                 <li><a href="about.php"><i class="fa fa-info"></i> ABOUT US</a></li>
                 <li><a href="about.php"><i class="fa fa-heart"></i> FAVOURITES</a></li>
-                <li><a href="login.php"><i class="fa fa-sign-in"></i> LOG-IN</a></li>
+                <?php
+                // starts the session
+                session_start();
+                
+                // if logged in displays "log out" on nav bar
+                if (isset($_SESSION["id"]))
+                {
+                    echo '<li><a href="logout.php"><i class="fa fa-sign-in"></i>LOGOUT</a></li>';
+
+                }
+                else
+                // if not logged in
+                {
+                    echo '<li><a href="login.php"><i class="fa fa-sign-in"></i> LOG-IN</a></li>';
+                }
+                ?>
             </ul>
 </div>
