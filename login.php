@@ -23,7 +23,7 @@
 // starts the session
 session_start();
 // if logged in, the if statement executes
-if (isset($_SESSION["id"]))
+if (isset($_SESSION["email"]))
 {
     echo '<br><div class="row" style="padding-bottom: 10px"><div class="col-lg-12" ><div class="text-center">You are Logged in as : ';
     // displays the logged in email
@@ -41,16 +41,16 @@ else
             <input type="submit" name="submit" class="btn-login" value="Login">
           </form>
        
-        <div class="login-signup">
-          <p> No Account? </p>
-          <a class="link" href="registration.php">Sign up</a>
-        </div>';
+          <div class="login-signup">
+            <p> No Account? </p>
+            <a class="link" href="registration.php">Sign up</a>
+          </div>';
     
 }
 
  ?>
       
- <p>
+
 <?php
     // data from parseRegister.php
     // checks if the user registered successfully
@@ -63,20 +63,21 @@ else
     	unset($_SESSION["registersuccess"]);
     }
 ?>
+
+
+
+<!--this is used if there are any message errors
+
+<p style?? >error message <p>
+-->
 <p>
-
-
-
-<!--this is used if there are any message errors-->
-<p>
-    
 <?php
-
-    if(isset($_SESSION["message"]))
+    //from parseLogin
+    if(isset($_SESSION["errormessage"]))
     {
-    	print($_SESSION["message"]);
+    	print($_SESSION["errormessage"]);
         // destroys the session to avoid errors showing up non stop.
-    	unset($_SESSION["message"]);
+    	unset($_SESSION["errormessage"]);
     }
 ?>
 <p>

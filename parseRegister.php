@@ -52,9 +52,11 @@ if (isset($_POST['submit']))
             }
             else
             {
+                //calls the function above for database connection using pdo
+                $connection=setConnectionInfo();
                 // check if the email being registered is alrady in the database
                 $sql = "SELECT * FROM Customers WHERE Email=?";
-                $statement = runQuery($sql,array($email));
+                $statement = runQuery($connection, $sql,array($email));
                 // returns 0 if the email is not in the database
                 if($statement->rowCount()==0)
                 {
@@ -68,7 +70,7 @@ if (isset($_POST['submit']))
                     $joinDate=date("Y-m-d",time());
                     
                     // inserts customers log in info into the customers table
-                    $sqlInsert = "INSERT INTO Customers (FirstName, LastName, Address, City, Email ) VALUES (?, ?, ?, ?, ?)";
+                    $sqlInsert = "INSERT INTO Customers (FirstName, LastName, City, Country, Email ) VALUES (?, ?, ?, ?, ?)";
                     
                     // inserts customers log in info into the customerLogon table
                     $sqlInsertLogin = "INSERT INTO CustomerLogon (UserName, Pass, Salt, DateJoined) VALUES (?, ?, ?, ?)";
@@ -90,8 +92,8 @@ if (isset($_POST['submit']))
                     $smt2 ->bindValue(3,$salt);
                     $smt2 ->bindValue(4,$joinDate);*/
                     
-                    $smt1 = runQuery($sqlInsert, $parameters1);
-                    $smt2 = runQuery($sqlInsertLogin, $parameters2);
+                    $smt1 = runQuery($connection, $sqlInsert, $parameters1);
+                    $smt2 = runQuery($connection, $sqlInsertLogin, $parameters2);
 
 
 
@@ -109,6 +111,8 @@ if (isset($_POST['submit']))
                         header("Location: registration.php?registration=failed");
                         $_SESSION["invalid"] = "Registration Failed";
                     }
+                    //clears pdo
+                    $connection=null;
                 }
                 else
                 {
@@ -137,6 +141,7 @@ function randSalt($length = 32) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
+    
     for ($i = 0; $i < $length; $i++) {
         //Concatinates generated random character
         $randomString .= $characters[rand(0, $charactersLength - 1)];

@@ -31,6 +31,9 @@
     {
         // displays the error message from parseRegister.php
         $message=$_SESSION['invalid'];
+        
+        /*<p style?? >error message <p>*/
+
         echo "<p>'$message'</p>";
         // unsets/removes the invalid session
         unset($_SESSION["invalid"]);

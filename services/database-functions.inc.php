@@ -24,11 +24,9 @@ function setConnectionInfo( $connString=DBCONNSTRING, $user=DBUSER, $password=DB
   This function runs the specified SQL query using the 
   passed SQL query and the passed array of parameters (null if none)
 */
-function runQuery($sql, $parameters=array()){
+function runQuery($connection, $sql, $parameters=array()){
     
-    //calls the function above for database connection using pdo
-    $connection=setConnectionInfo();
-    // Ensure parameters are in an array
+        // Ensure parameters are in an array
     if (!is_array($parameters)) {
         $parameters = array($parameters);
     }
@@ -50,7 +48,23 @@ function runQuery($sql, $parameters=array()){
         }
     }
     return $statement;
-}  
+}
+
+//returns json array test
+function jsonArray($smt){
+    // declares an empty array
+     $json_array = array();
+    
+     while ($row =$smt->fetchObject()){
+            // stores the data into the array
+            $json_array [] =$row;
+        }
+        // converts the array to json then echos it
+    return $json_array;
+} 
+
+
+
 /*
   This function returns a connection object to a database
 
