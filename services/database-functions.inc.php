@@ -50,7 +50,7 @@ function runQuery($connection, $sql, $parameters=array()){
     return $statement;
 }
 
-//returns json array test
+//returns json array
 function jsonArray($smt){
     // declares an empty array
      $json_array = array();
