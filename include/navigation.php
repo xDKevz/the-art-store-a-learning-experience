@@ -15,7 +15,7 @@
                         session_start();
                         
                         // if logged in displays "log out" on nav bar
-                        if (isset($_SESSION["id"])) {
+                        if (isset($_SESSION["email"])) {
                             echo '<li><a href="logout.php"><i class="fa fa-sign-in"></i>Log out</a></li>';
                         }
                         // if not logged in

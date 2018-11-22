@@ -7,7 +7,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/login.css">
         <title> Login Page </title>
-    </head>    
+    </head>
+    
+    <!--This should be placed in style files later-->
+
+    <style type="text/css">
+    
+    .errorLogin{
+    			padding:15px;
+    			color:red;
+    			font-size:0.8em;
+    			text-align: center;
+    		}
+        
+    </style>
 
 <body>    
  <div class="login-container">
@@ -70,7 +83,7 @@ else
 
 <p style?? >error message <p>
 -->
-<p>
+<p class= errorLogin>
 <?php
     //from parseLogin
     if(isset($_SESSION["errormessage"]))

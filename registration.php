@@ -23,6 +23,20 @@
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <title> Registration Page </title>
 </head>
+
+<!--This should be placed in style files later -->
+
+<style type="text/css">
+
+.error{
+			padding:0px;
+			color:red;
+			font-size:0.8em;
+		}
+    
+</style>
+
+
 <body>
 
 <?php 
@@ -47,48 +61,56 @@
         <form class="reg-form" method="post" action="parseRegister.php">
             <div class="form-info">
                 <label class="reg-label"> First Name : </label>
-                <input class="reg-input" type="text" placeholder="John" name="firstName"><br>
+                <input class="reg-input" type="text" placeholder="John" name="firstName" id="fname"><br>
+                <p class="error" id="errfname"></p>
             </div>
             
             <div class="form-info">
                 <label class="reg-label"> Last Name : </label>
-                <input class="reg-input" type="text" placeholder="Doe" name="lastName"><br>
+                <input class="reg-input" type="text" placeholder="Doe" name="lastName" id="lname"><br>
+                <p class="error" id="errlname"></p>
             </div>
             
             
             <div class="form-info">
                 <label class="reg-label"> City : </label>
-                <input class="reg-input" type="text" placeholder="Calgary" name="city"><br>
+                <input class="reg-input" type="text" placeholder="Calgary" name="city" id="city"><br>
+                <p class="error" id="errcity"></p>
             </div>
             
             <div class="form-info">
                 <label class="reg-label"> Country : </label>
-                <input class="reg-input" type="text" placeholder="Canada" name="country"><br>
+                <input class="reg-input" type="text" placeholder="Canada" name="country" id="country"><br>
+                <p class="error" id="errcountry"></p>
             </div>
             
             
             <div class="form-info">
                 <label class="reg-label"> Email : </label>
-                <input class="reg-input" type="text" placeholder="email@email.com" name="email"><br>
+                <input class="reg-input" type="text" placeholder="email@email.com" name="email" id="email"><br>
+                <p class="error" id="erremail"></p>
             </div>
             
             <div class="form-info">
                 <label class="reg-label"> Password : </label>
-                <input class="reg-input" type="password" placeholder="Password" name="password"><br>
+                <input class="reg-input" type="password" placeholder="Password" name="password" id="password"><br>
+                <p class="error" id="errpassword"></p>
             </div>
             
             <div class="form-info">
                 <label class="reg-label"> Confirm Password : </label>
-                <input class="reg-input" type="password" placeholder="Confirm Password" name="passwordAgain"><br>
+                <input class="reg-input" type="password" placeholder="Confirm Password" name="passwordAgain" id="passwordAgain"><br>
+                <p class="error" id="errpasswordAgain"></p>
             </div>
             
             <div class="reg-submit">
-                <input type="submit" name="submit" value="Create Account">
+                <input type="submit" name="submit" value="Create Account" onclick="return validate(this.form)">
             </div>
             
         </form>
     </div>   
 
 </body>
+<script type="text/javascript" src="js/validate.js"></script>
 </html>
 
