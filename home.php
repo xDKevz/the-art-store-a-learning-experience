@@ -10,7 +10,7 @@
     <!--// beginning of html -->
     <?php
         $title = "Art Store Home"; // title of page
-        include "include/header.php";
+        include "include/mainstyle.php";
     ?>
     
     <body>
@@ -35,22 +35,18 @@
         <main class="home">
             <div class="gallerylist">
                 <h1>GALLERY LIST</h1>
-                <ul>
-                    <li>Monalisa</li>
-                    <li>The Night Sky</li>
-                    <li>Gazing in the night sky</li>
-                    <li>Double O 7</li>
+                <ul class="galleryNames">
                 </ul>
                 
             </div>
             
             <div class="artist">
                 <h1>ARTIST LIST</h1>
-                 <ul>
-                    <li><img src="images/temporary/square-small/001050.jpg"></li>
-                    <li><img src="images/temporary/square-small/001060.jpg"></li>
-                    <li><img src="images/temporary/square-small/001080.jpg"></li>
-                    <li><img src="images/temporary/square-small/001090.jpg"></li>
+                 <ul class="artistList">
+                    <!--<li><img src="images/temporary/square-small/001050.jpg"></li>-->
+                    <!--<li><img src="images/temporary/square-small/001060.jpg"></li>-->
+                    <!--<li><img src="images/temporary/square-small/001080.jpg"></li>-->
+                    <!--<li><img src="images/temporary/square-small/001090.jpg"></li>-->
                 </ul>
             </div>
             
@@ -69,6 +65,7 @@
         </main>
         
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/galleryList.js"></script>
     </body>
     
     

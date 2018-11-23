@@ -1,37 +1,37 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*** Home view ***/
 
-.home {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 25% auto;
-    position: relative;
-    top: 150pt;
-    z-index: 1;
-}
+/*.home {*/
+/*    display: grid;*/
+/*    grid-gap: 10px;*/
+/*    grid-template-columns: 25% auto;*/
+/*    position: relative;*/
+/*    top: 150pt;*/
+/*    z-index: 1;*/
+/*}*/
 
-.gallerylist {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 2;
-    background-color: gray;
-}
+/*.gallerylist {*/
+/*    grid-column: 1 / span 1;*/
+/*    grid-row: 1 / span 2;*/
+/*    background-color: gray;*/
+/*}*/
 
-.artist {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-    background-color: gray;
-}
+/*.artist {*/
+/*    grid-column: 2 / span 1;*/
+/*    grid-row: 1 / span 1;*/
+/*    background-color: gray;*/
+/*}*/
 
-.genres {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-    background-color: gray;
-}
+/*.genres {*/
+/*    grid-column: 2 / span 1;*/
+/*    grid-row: 2 / span 1;*/
+/*    background-color: gray;*/
+/*}*/
 
 .header {
     position: fixed;
@@ -52,36 +52,8 @@ body {
     padding: 10pt;
 }
 
-/*** ABOUT PAGE ***/
-.about {
-    z-index: 1;
-    position: relative;
-    top: 150pt;
-    background-color: #e6e6e6;
-    height: 100%;
-}
-
-.teamMembers {
-    background-color: grey;
-}
-
-.teamMembers div {
-    float: left;
-    background-color: #666666;
-    width: 300px;
-}
-.teamMembers img {
-    max-width: 200px;
-}
-
-.repo {
-    background-color: #737373;
-}
-
-
-/*** Horizontal Menu Styles ***/
-/*** Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs***/
-
+/* Horizontal Menu Styles */
+/* Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs */
 .navigation {
     width: 100%;
     background-color: rgba(0,0,0, 0.8);
@@ -94,25 +66,28 @@ body {
     width: 100%;
 }
 .menu li {
+    font-weight: 300;
     display: inline-block;
     padding: 20px;
 }
 .menu li:hover {
     background: rgb(166, 166, 166);
+    text-decoration: underline;
+    cursor: pointer;
 }
 .menu li a {
     color: white;
     text-decoration: none;
 }
-.toggle {
-    width: 100%;
-    padding: 10px 20px;
-    background: #b1b9c6;
-    text-align: right;
+/*.toggle {*/
+/*    width: 100%;*/
+/*    padding: 10px 20px;*/
+/*    background: #b1b9c6;*/
+/*    text-align: right;*/
     /*box-sizing: border-box;*/
-    font-size: 30px;
-    display: none;
-}
+/*    font-size: 30px;*/
+/*    display: none;*/
+/*}*/
 
 /* MEDIA QUERY FOR MOBILE MENU */
 @media only screen and (max-width:768px) {

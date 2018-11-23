@@ -1,13 +1,18 @@
-<?php
-    $title = "About Us"; // title of page
-    include "include/header.php";
-?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Art Store - About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php include "include/mainstyle.php"; ?>
+    <link rel="stylesheet" href="css/about.css" type="text/css"/>
+    <header>
+    <?php include "include/navigation.php"; ?>
+    </header>
     <body>
-        <header><?php include "include/navigation.php"; ?>
-        </header>
         <main class="about">
             <div class="teamMembers">
-                <h1>About</h1>
+                <h1>about</h1>
                 <h2>Team Members</h2>
                 <a href="https://github.com/xDKevz" target="_blank">
                     <div>
@@ -35,7 +40,7 @@
                 </a>
             </div>
             <div class="repo">
-                <h1>Repository</h1>
+                <h1>repository</h1>
                 <a href="https://github.com/xDKevz/comp3512-assignment2.git" target="_blank">
                     <img src="about/images/GitHub_Logo.png" alt="GitHub"/></a>
             </div>
