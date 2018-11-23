@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Review API</title>
-</head>
-<body>
 <?php // To Test, use https://comp3512-asg2-leepalisoc.c9users.io/services/review.php?painting=15
+header('Content-Type:application/json');
 require_once('database-functions.inc.php');
 
     // declares an empty array
@@ -27,6 +21,3 @@ require_once('database-functions.inc.php');
         }
     }
 ?>
-
-</body>
-</html>

@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Genre API</title>
-</head>
-<body>
 <?php
+header('Content-Type:application/json');
 //this will allow access to the function call runQuery()
 require_once('database-functions.inc.php');
 
@@ -33,5 +27,3 @@ require_once('database-functions.inc.php');
     $connection=null;
 
 ?>
-</body>
-</html>

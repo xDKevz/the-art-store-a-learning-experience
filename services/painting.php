@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Painting API</title>
-</head>
-<body>
 <?php
+header('Content-Type:application/json');
 // includes the database connection
 require_once('database-functions.inc.php');
 
@@ -63,5 +57,3 @@ require_once('database-functions.inc.php');
     }
     
 ?>
-</body>
-</html>
