@@ -1,5 +1,6 @@
-    <div class="logo">
-            <img src="images/art_store_logo.png" alt="art store logo">
+    <div class="header">
+        <div class="logo">
+            <img src="images/art_store_logo_white.png" alt="art store logo">
         </div>
         <div class="navigation">
             <div class="toggle"><i class="fa fa-bars mBars" aria-hidden="true"></i></div>
@@ -26,3 +27,5 @@
                     
                 </ul>
         </div>
+    </div>
+        

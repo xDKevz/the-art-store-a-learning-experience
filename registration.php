@@ -48,12 +48,11 @@
         
         /*<p style?? >error message <p>*/
 
-        echo "<p>'$message'</p>";
+        echo "<p class='error'>'$message'</p>";
         // unsets/removes the invalid session
         unset($_SESSION["invalid"]);
     }
-    
-    ?>
+?>
 
     <div class="registration-container"> 
         <h2> Register - New Account </h2><br>

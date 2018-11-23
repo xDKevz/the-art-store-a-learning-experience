@@ -6,9 +6,9 @@
         <header><?php include "include/navigation.php"; ?>
         </header>
         <main class="about">
-            <h1>About</h1>
-            <h2>Team Members</h2>
             <div class="teamMembers">
+                <h1>About</h1>
+                <h2>Team Members</h2>
                 <a href="https://github.com/xDKevz" target="_blank">
                     <div>
                         <img src="about/images/memoji_kevin.png" alt="Kevin"/>

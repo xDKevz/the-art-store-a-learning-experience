@@ -10,6 +10,9 @@ body {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 25% auto;
+    position: relative;
+    top: 150pt;
+    z-index: 1;
 }
 
 .gallerylist {
@@ -30,10 +33,18 @@ body {
     background-color: gray;
 }
 
+.header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+}
+
 
 /*** LOGOS AND IMAGES ***/
 .logo {
     text-align: center;
+    background-color: rgba(0,0,0, 0.9);
 }
 
 .logo img {
@@ -42,40 +53,55 @@ body {
 }
 
 /*** ABOUT PAGE ***/
+.about {
+    z-index: 1;
+    position: relative;
+    top: 150pt;
+    background-color: #e6e6e6;
+    height: 100%;
+}
+
+.teamMembers {
+    background-color: grey;
+}
+
 .teamMembers div {
     float: left;
-    width: 25%;
+    background-color: #666666;
+    width: 300px;
 }
 .teamMembers img {
     max-width: 200px;
 }
 
+.repo {
+    background-color: #737373;
+}
+
 
 /*** Horizontal Menu Styles ***/
 /*** Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs***/
-/*.navigation ul {
+
+.navigation {
+    width: 100%;
+    background-color: rgba(0,0,0, 0.8);
+    text-align: center;
+}
+.navigation ul {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
-}
-
-.navigation {
-    width: 100%;
-    background: #edf1f7;
-    border-bottom: solid #b0b3b7;
-    border-top: solid #b0b3b7;
-    text-align: center;
 }
 .menu li {
     display: inline-block;
     padding: 20px;
 }
 .menu li:hover {
-    background: #ced3db;
+    background: rgb(166, 166, 166);
 }
 .menu li a {
-    color: #000000;
+    color: white;
     text-decoration: none;
 }
 .toggle {
@@ -83,12 +109,12 @@ body {
     padding: 10px 20px;
     background: #b1b9c6;
     text-align: right;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     font-size: 30px;
     display: none;
-}*/
+}
 
-/*MEDIA QUERY FOR MOBILE MENU
+/* MEDIA QUERY FOR MOBILE MENU */
 @media only screen and (max-width:768px) {
     .toggle {
         display: block;
@@ -115,31 +141,31 @@ body {
     .home {
         display: block;
         /*grid-gap: 5px;*/
-        /*grid-template-columns: 100%;
+        /*grid-template-columns: 100%;*/
     }
 
-    /*.gallerylist {*/
-    /*    grid-column: 1 / span 1;*/
-    /*    grid-row: 1 / span 1;*/
-    /*    background-color: gray;*/
-    /*}*/
+    .gallerylist {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-color: gray;
+    }
     
-    /*.artist {*/
-    /*    grid-column: 1 / span 1;*/
-    /*    grid-row: 2 / span 1;*/
-    /*    background-color: gray;*/
-    /*}*/
+    .artist {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: gray;
+    }
     
-    /*.genres {*/
-    /*    grid-column: 1 / span 1;*/
-    /*    grid-row: 3 / span 1;*/
-    /*    background-color: gray;*/
-    /*}
+    .genres {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+        background-color: gray;
+    }
     
     .gallerylist, .artist, .genres {
         width: 100%;
     }
-} **/
+}
 
 
 
