@@ -12,7 +12,7 @@
     <body>
         <main class="about">
             <div class="teamMembers">
-                <h1>about</h1>
+                <h1>About The Team</h1>
                 <h2>Team Members</h2>
                 <a href="https://github.com/xDKevz" target="_blank">
                     <div>
@@ -40,7 +40,7 @@
                 </a>
             </div>
             <div class="repo">
-                <h1>repository</h1>
+                <h1>Repository</h1></h1>
                 <a href="https://github.com/xDKevz/comp3512-assignment2.git" target="_blank">
                     <img src="about/images/GitHub_Logo.png" alt="GitHub"/></a>
             </div>

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: "SF Pro Display";
 }
 
 /*** Home view ***/
@@ -34,12 +34,9 @@ body {
 /*}*/
 
 .header {
-    position: fixed;
     top: 0px;
     width: 100%;
-    z-index: 2;
 }
-
 
 /*** LOGOS AND IMAGES ***/
 .logo {
@@ -54,31 +51,40 @@ body {
 
 /* Horizontal Menu Styles */
 /* Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs */
-.navigation {
-    width: 100%;
+
+nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    overflow: hidden !important;
     background-color: rgba(0,0,0, 0.8);
     text-align: center;
 }
+
 .navigation ul {
     list-style: none;
     margin: 0;
     padding: 0;
     width: 100%;
 }
-.menu li {
-    font-weight: 300;
+
+nav li {
     display: inline-block;
-    padding: 20px;
+    padding: 12pt;
+    transition: 1s;
 }
-.menu li:hover {
-    background: rgb(166, 166, 166);
-    text-decoration: underline;
-    cursor: pointer;
-}
-.menu li a {
-    color: white;
+
+nav li a {
+    color: #FFFFFF;
     text-decoration: none;
 }
+
+nav li:hover {
+    background: rgb(166, 166, 166);
+    cursor: pointer;
+    transition: 1s;
+}
+
 /*.toggle {*/
 /*    width: 100%;*/
 /*    padding: 10px 20px;*/

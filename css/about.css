@@ -1,18 +1,14 @@
 /**
     CSS: About Page
 **/
-/*** ABOUT PAGE ***/
 .about {
-    z-index: 1;
-    position: relative;
-    top: 130pt;
     background-color: #e6e6e6;
     display: grid;
     padding: 20pt;
+    overflow: hidden !important;
 }
 
 .about h1 {
-    font-weight: 900;
     color: #FFFFFF;
 }
 
@@ -20,7 +16,7 @@
     background-color: grey;
     grid-column: 1 / 1;
     grid-row: 1;
-    grid-template-rows: 2fr;
+    /*grid-template-rows: 2fr;*/
     margin: auto;
 }
 
