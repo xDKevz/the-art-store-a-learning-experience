@@ -171,6 +171,16 @@ figure {
   font-size: smaller;
   text-indent: 0;
   border: thin silver solid;
-  margin: 0.5em;
+  margin: 0em;
   padding: 0.5em;
+}
+
+figure a img{
+    display: block;
+}
+
+figcaption {
+    background-color: white;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0px;
 }

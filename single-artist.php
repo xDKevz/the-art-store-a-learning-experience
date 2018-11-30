@@ -1,44 +1,47 @@
-    <!--// beginning of html -->
+<!--// beginning of html -->
+<!-- If not supplied with query string id, show a 404 page not found error message-->
 <?php
-    $title = "Single-Artist"; // title of page
-    include "include/header.php";
     
     if (isset($_GET['id'])) {
-        $url = "https://comp3512-asg2-leepalisoc.c9users.io/services/artist.php";
-        #echo file_get_contents($url);
-        #$url = "https://www.randyconnolly.com/funwebdev/services/art/artists.php";
-        $http = curl_init($url);
-        $response = curl_exec($http);
-        echo $response;
-        $data = json_decode($response, true);
-        
-        
-        
-   }
+        $title = "Single-Artist"; // title of page
+        include "include/header.php";
+        require_once('services/config.inc.php');
+        try {
+            $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "select * from Artists where ArtistID=".$_GET['id'];
+            $result = $pdo->query($sql);
+            $row = $result->fetch();
+            
+    ?>
+        <body>
+        <header>
+            <?php include "include/navigation.php"; ?>
+        </header>
+        <main class="single-artist-container">
+            <div class="artistinfo">
+                <h1>ARTIST INFO</h1>
+                <div class="image">
+                    <img src="images/artists/full/<?=$row['ArtistID']?>.jpg">
+                </div>
+                <section class="info">
+                    <span id="first-name"><?php echo $row["FirstName"]; ?></span><br>
+                    <span id="last-name"><?php echo $row["LastName"] ?></span><br>
+                    <span id="nationality"><?php echo $row["Nationality"] ?></span><br>
+                    <span id="gender"><?php echo $row["Gender"] ?></span><br>
+                    <span id="yearofbirth"><?php echo $row["YearOfBirth"] ?></span><br>
+                    <span id="yearofdeath"><?php echo $row["YearOfDeath"] ?></span><br>
+                    <span id="details"><?php echo $row["Details"] ?></span><br>
+                    <span id="link"><a href="<?=$row['ArtistLink']?>"><?php echo $row["ArtistLink"] ?></a></span><br>
+                </section>
+            <?php
+            $pdo = null;
+        }
+        catch (PDOException $e) {
+            die( $e->getMessage() );
+        }
+    }
 ?>
-
-<body>
-    <header>
-        <?php include "include/navigation.php"; ?>
-    </header>
-    <main class="single-artist-container">
-        <div class="artistinfo">
-            <h1>ARTIST INFO</h1>
-            <div class="image">
-                <img src="images/artists/full/19.jpg">
-            </div>
-            
-            <section class="info">
-                <span id="first-name"></span><br>
-                <span id="last-name">Van Gogh</span><br>
-                <span id="nationality">Netherlands</span><br>
-                <span id="gender">M</span><br>
-                <span id="yearofbirth">1853</span><br>
-                <span id="yearofdeath">1890</span><br>
-                <span id="details">Artist details</span><br>
-                <span id="link">http://link.com</span><br>
-            </section>
-            
         </div>
         
         <div class="paintings">

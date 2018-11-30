@@ -15,19 +15,19 @@
 <?php
 
 //to test "https://comp3512-asg2-leepalisoc.c9users.io/test.php?id=5 <-----id comes from query string, id from home page 
-if (isset($_GET['id'])) {
-        try {
-                $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
-                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "select * from Artists where ArtistID=".$_GET['id'];
-                $result = $pdo->query($sql);
-                $row = $result->fetch();
-                echo "<label>First Name: </label>".$row['FirstName'] . "<br/>" . $row['LastName'] . "<br/>";
-                
-        $pdo = null;
+        if (isset($_GET['id'])) {
+                try {
+                        $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+                        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        $sql = "select * from Artists where ArtistID=".$_GET['id'];
+                        $result = $pdo->query($sql);
+                        $row = $result->fetch();
+                        echo "<label>First Name: </label>".$row['FirstName'] . "<br/>" . $row['LastName'] . "<br/>";
+                        
+                $pdo = null;
+                }
+                catch (PDOException $e) {
+                        die( $e->getMessage() );
+                }
         }
-        catch (PDOException $e) {
-                die( $e->getMessage() );
-        }
-}
 ?>

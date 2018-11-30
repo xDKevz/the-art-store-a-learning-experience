@@ -20,22 +20,6 @@ window.addEventListener('load', function() {
 });
 
 /**
- * Generates the list of galleries in the api
- * 
- * @param galleries - the json galleries data
- */
-function generateGallery(galleries) {
-    let gList = document.querySelector('.galleryNames');
-    let sorted = sortGalleries(galleries)
-    for (let name of sorted) {
-        let gName = document.createElement('li');
-        let content = document.createTextNode(name.GalleryName);
-        gName.appendChild(content);
-        gList.appendChild(gName);
-    }
-}
-
-/**
  * Sorts the galleries based on their GalleryName property
  * 
  * @param sortGalleries - the json gallery data
@@ -49,6 +33,22 @@ function sortGalleries(sortGalleries) {
     return sortGalleries;
 }
 
+/**
+ * Generates the list of galleries in the api
+ * 
+ * @param galleries - the json galleries data
+ */
+function generateGallery(data) {
+    let list = document.querySelector('.galleryList');
+    let sortedlist = sortGalleries(data)
+    for (let name of sortedlist) {
+        let li = document.createElement('li');
+        let content = document.createTextNode(name.GalleryName);
+        li.appendChild(content);
+        list.appendChild(li);
+    }
+}
+
 function generateArtists(data) {
     let list = document.querySelector('.artistList');
     for (let artist of data) {
@@ -60,6 +60,10 @@ function generateArtists(data) {
         let figure = document.createElement('figure');
         
         let caption = document.createElement('figcaption');
+        if (artist.FirstName == null)
+            artist.FirstName = "";
+        else if (artist.LastName == null)
+            artist.LastName = "";
         caption.textContent = artist.FirstName + " " + artist.LastName;
         
         let img = document.createElement('img');
