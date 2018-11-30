@@ -1,15 +1,25 @@
 <?php
+header('Content-Type: image/jpeg');
 
-$img = imagecreatefromjpeg($imgname);
-// resize the image to 600 x 600
-$newimg = imagescale($img,600,600);
-// add some text to it
-$fontFile = 'font/Lato-Heavy.ttf';
-$fontSize = 16;
-$textColor = imagecolorallocate($newimg,238,238,238);
-imagettftext($newimg,$fontSize,0,250,160,$textColor,$fontFile,
- "Anyone else want a drink of this?");
-// and return it
-imagejpeg($newimg);
+// Query Strings
+// size, width, type, genre, file
+// size: square/full
+// type: paintings/artist/genre
+// width
+// file: ImageFileName/ArtistID/GenreID
+
+if (isset($_GET['size']) && isset($_GET['width']) && isset($_GET['type']) && isset($_GET['file']) ) {
+    $size = $_GET['size'];
+    $width = $_GET['width'];
+    $type = $_GET['type'];
+    $file = $_GET['file'];
+    
+    $path = "../images/" . $type . "/" . $size . "/" . $file . ".jpg";
+    $img = imagecreatefromjpeg($path);
+    $newimg = imagescale($img, $width, $width);
+    
+    imagejpeg($newimg);
+}
+
 
 ?>

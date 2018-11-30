@@ -7,7 +7,11 @@
         echo $json[0]['FirstName'];*/
         
 ?>
+
+
 <?php require_once('services/config.inc.php'); ?>
+
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -30,4 +34,58 @@
                         die( $e->getMessage() );
                 }
         }
+
+
 ?>
+
+<!--DONT DELETE-->
+<!--<!DOCTYPE HTML>-->
+<!--<HTML>-->
+    <!--HEAD-->
+<!--    <?php -->
+<!--        $title = "Single-Gallery";-->
+<!--        include "include/head.php";-->
+<!--    ?>-->
+    <!--END HEAD-->
+    
+    <!--BODY-->
+<!--    <BODY>-->
+        <!--LOGO + NAVIGATION-->
+<!--        <HEADER>-->
+<!--            <? include "include/header.php" ?>-->
+<!--        </HEADER>-->
+        
+<!--        <MAIN>-->
+<!--            <div class="info-panel">-->
+<!--                <section id="<? $row['GalleryID']; ?>">-->
+<!--                    <h2 id="galleryName"><? $row['']?></h2>-->
+<!--                    <span id="galleryNative"></span> -->
+<!--                    <span id="galleryCity"></span>  -->
+<!--                    <span id="galleryAddress"></span> -->
+<!--                    <span id="galleryCountry"></span>  -->
+<!--                    <span><a href="" target='_blank' id="galleryHome"></a></span> -->
+<!--                </section>-->
+<!--            </div>-->
+            
+<!--            <div class="map-panel">-->
+                
+<!--            </div>-->
+            
+<!--            <div class="paintings-panel">-->
+<!--                <section class="paintings-header">-->
+<!--                    <ul class="list-header">-->
+<!--                        <li></li>-->
+<!--                        <li class="artist-header">Artist</li>-->
+<!--                        <li class="title-header">Title</li>-->
+<!--                        <li class="year-header">Year</li>-->
+<!--                    </ul>-->
+                    <!--CREATE BELOW A LIST CONTAINING DATAS-->
+<!--                </section>-->
+                
+<!--            </div>-->
+<!--        </MAIN>-->
+        
+<!--    </BODY>-->
+<!--</HTML>-->
+
+    

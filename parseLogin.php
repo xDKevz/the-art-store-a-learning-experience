@@ -19,7 +19,7 @@ if (isset($_POST['submit']))
     if (empty($email) || empty($pwd)) 
 	{
 		header("Location: login.php?login=empty");
-		$_SESSION["errormessage"] = "Email or Password is empty";
+		$_SESSION["errormessage"] = "The Email or Password field is empty.";
 		exit();
 	}else 
     {   
@@ -42,7 +42,7 @@ if (isset($_POST['submit']))
                 
                     // creates sessions when logged in successfully
                     $_SESSION['email'] = $email;
-                    $_SESSION['loginsuccess'] = "login successful";
+                    $_SESSION['loginsuccess'] = "Login Successful!!";
                     header("Location: home.php?login=success");
                     exit();
             }
@@ -52,7 +52,7 @@ if (isset($_POST['submit']))
                 header("Location: login.php?login=error");
                 // creates a session when an invalid email was entered.
                 // for security, "email or password was displayed"
-                $_SESSION["errormessage"] = "invalid email or password";
+                $_SESSION["errormessage"] = "You have entered an invalid email or password.";
                 exit();
             } 
         }else
@@ -60,7 +60,7 @@ if (isset($_POST['submit']))
             
             header("Location: login.php?login=notregistered");
             // creates a session when a user tries to log in without having an account
-            $_SESSION["errormessage"] = "you are not registered";
+            $_SESSION["errormessage"] = "You have not registered an account yet.";
             exit();
         }
         //clears pdo

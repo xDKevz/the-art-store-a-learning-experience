@@ -30,14 +30,15 @@ if (isset($_POST['submit']))
         exit();
     }
     else
-    { 		///^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i
+    { 		
         // regular expression for proper email format
-        if (!preg_match("/^(\w+\.){0,2}\w+@([-a-z]+\.){1,2}[a-z]{2,6}$/i", $email)) 
+        #if (!preg_match("/^(\w+\.){0,2}\w+@([-a-z]+\.){1,2}[a-z]{2,6}$/i", $email)) 
+        if (!preg_match("^(.+)@([^\.].*)\.([a-z]{2,})$", $email))
         {
             
             //error message for invalid email
             header("Location: registration.php?registration=invalid");
-            $_SESSION["invalid"] = "Invalid Email";
+            $_SESSION["invalid"] = "You have entered an Invalid Email.";
             exit();
         }
         else
@@ -47,7 +48,7 @@ if (isset($_POST['submit']))
             {
                 // error message for password not match
                 header("Location: registration.php?registration=password");
-                $_SESSION["invalid"] = "Password must match";
+                $_SESSION["invalid"] = "The Password entered does not match";
                 exit();
             }
             else
@@ -118,7 +119,7 @@ if (isset($_POST['submit']))
                 {
                     // creates a session and displays a message if the email is already in the database
                     header("Location: registration.php?email=error");
-                    $_SESSION["invalid"] = "Email exist";
+                    $_SESSION["invalid"] = "Email entered already exist";
                     exit();
                 }
             }
@@ -129,7 +130,7 @@ else
 {
     // displays an error message if someone tries to access parseRegister.php directly without filling out the form
     header("Location: registration.php");
-    $_SESSION['invalid']="You must fill out the form first";
+    $_SESSION['invalid']="To have access, you must fill out the form and create an account first";
     exit();
 }
 

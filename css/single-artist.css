@@ -7,7 +7,8 @@
 .ulheader, .ulrow {
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: 20% 40% 20% 20%;
+    /*grid-template-columns: 20% 40% 20% 20%;*/
+    grid-template-columns: 20% 60% 20%;
     text-align: center;
     align-items: center;
 }

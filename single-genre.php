@@ -12,7 +12,10 @@
         <div class="genreinfo">
             <h1>GENRE INFO</h1>
             <div class="image"></div>
-            
+            <h2 id="genreName">TEST GENRE</h2>
+            <span id="era">Era Date</span> 
+            <span id="description">Description</span>  
+
             
         </div>
         

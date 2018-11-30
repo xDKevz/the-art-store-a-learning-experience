@@ -14,7 +14,7 @@
         <?php include "include/navigation.php"; ?>
         <div class="barTitleWrapper">
             <div class="barTitleBackground"></div>
-            <div class="barTitleContent"><h1>About The Team</h1></div>
+            <div class="barTitleContent"><span>About The Team</span></div>
         </div>
         <main class="about">
             <div class="teamMembers">

@@ -1,0 +1,23 @@
+main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+}
+
+.info-panel {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    background-color: gray;
+}
+
+.map-panel {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    background-color: gray;
+}
+
+.paintings-panel {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    background-color: gray;
+}

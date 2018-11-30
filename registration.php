@@ -10,7 +10,7 @@
 	    // if still logegd in, must log out before being able to register again
 		header("Location: login.php");
 		// creates the session for the message
-		$_SESSION["message"]="Please Logout first before registering new member";
+		$_SESSION["message"]="Please Logout before trying to register for a new account";
 	}
     
 ?>

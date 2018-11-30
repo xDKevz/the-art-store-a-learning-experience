@@ -1,10 +1,8 @@
-/**
-    CSS: About Page
-**/
+/** CSS: About Page **/
 .about {
     background-color: #e6e6e6;
     display: grid;
-    padding: 20pt;
+    height: 2000px;
 }
 
 .barTitleWrapper {
@@ -12,7 +10,6 @@
     left: 0;
     width: 100%;
     height: auto;
-    min-height: 100%;
 }
 
 .barTitleBackground {
@@ -29,9 +26,8 @@
     position: relative;
 }
 
-.barTitleContent h1 {
+.barTitleContent span {
     font-size: 24px;
-    color: red;
     line-height: 1;
     font-weight: 600;
     letter-spacing: .009em;
@@ -42,18 +38,23 @@
     height: 52px;
     white-space: nowrap;
     font-family: "SF Pro Display";
+    -webkit-font-smoothing: antialiased;
 }
 
-.barTitleBackground:after {
-    margin-left: -490px;
-    left: 50%;
+.barTitleBackground::before, .barTitleBackground::after {
+    content: ' ';
+    display: table;
+}
+
+.barTitleBackground::after {
+    /*margin-left: -490px;*/
+    /*left: 50%;*/
     content: "";
     display: block;
-    position: absolute;
+    position: inherit;
     top: 100%;
-    width: 980px;
+    width: 100%;
     height: 1px;
-    z-index: 1;
     background-color: rgba(51,51,51,0.2);
 }
 
@@ -87,4 +88,22 @@
     background-color: #737373;
     grid-row: 2;
     margin: auto;
+    float: left;
+}
+
+/* MEDIA QUERY FOR MOBILE MENU */
+@media only screen and (max-width:1024px) {
+    .about {
+        background-color: red;
+        padding: 20pt;
+        display: block;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .about {
+        background-color: red;
+        padding: 20pt;
+        display: block;
+    }
 }

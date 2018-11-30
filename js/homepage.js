@@ -40,11 +40,18 @@ function sortGalleries(sortGalleries) {
  */
 function generateGallery(data) {
     let list = document.querySelector('.galleryList');
-    let sortedlist = sortGalleries(data)
-    for (let name of sortedlist) {
+    let sorteddata = sortGalleries(data)
+    for (let gallery of sorteddata) {
         let li = document.createElement('li');
-        let content = document.createTextNode(name.GalleryName);
-        li.appendChild(content);
+        
+        let link = document.createElement('a');
+        link.setAttribute("href", "single-gallery.php?id=" + gallery.GalleryID)
+        
+        let content = document.createTextNode(gallery.GalleryName);
+        
+        
+        link.appendChild(content);
+        li.appendChild(link);
         list.appendChild(li);
     }
 }

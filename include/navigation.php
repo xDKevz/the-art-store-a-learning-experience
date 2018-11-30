@@ -12,8 +12,8 @@
         <li><a href="galleries.php">galleries</a></li>
         <li><a href="genre.php">genres</a></li>
         <li><a href="about.php">about</a></li>
-
-        <?php
+        <li id="user"><img src="/images/user_icon.png" height="15" width="15"></li>
+        <!--<?php
             // starts the session
             session_start();
             
@@ -25,6 +25,6 @@
             else {
                 echo '<li><a href="login.php">log in</a></li>';
             }
-        ?>
+        ?>-->
     
     </nav>
