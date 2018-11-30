@@ -5,11 +5,56 @@
     background-color: #e6e6e6;
     display: grid;
     padding: 20pt;
-    overflow: hidden !important;
 }
 
-.about h1 {
-    color: #FFFFFF;
+.barTitleWrapper {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}
+
+.barTitleBackground {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.barTitleContent {
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 22px;
+    position: relative;
+}
+
+.barTitleContent h1 {
+    font-size: 24px;
+    color: red;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: .009em;
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 15px 0 -15px;
+    height: 52px;
+    white-space: nowrap;
+    font-family: "SF Pro Display";
+}
+
+.barTitleBackground:after {
+    margin-left: -490px;
+    left: 50%;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 980px;
+    height: 1px;
+    z-index: 1;
+    background-color: rgba(51,51,51,0.2);
 }
 
 .teamMembers {

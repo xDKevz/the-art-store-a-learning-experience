@@ -7,12 +7,17 @@
     <?php include "include/mainstyle.php"; ?>
     <link rel="stylesheet" href="css/about.css" type="text/css"/>
     <header>
-    <?php include "include/navigation.php"; ?>
+    <?php include "include/header.php"; ?>
     </header>
+</head>
     <body>
+        <?php include "include/navigation.php"; ?>
+        <div class="barTitleWrapper">
+            <div class="barTitleBackground"></div>
+            <div class="barTitleContent"><h1>About The Team</h1></div>
+        </div>
         <main class="about">
             <div class="teamMembers">
-                <h1>About The Team</h1>
                 <h2>Team Members</h2>
                 <a href="https://github.com/xDKevz" target="_blank">
                     <div>
@@ -40,7 +45,7 @@
                 </a>
             </div>
             <div class="repo">
-                <h1>Repository</h1></h1>
+                <h1>Repository</h1>
                 <a href="https://github.com/xDKevz/comp3512-assignment2.git" target="_blank">
                     <img src="about/images/GitHub_Logo.png" alt="GitHub"/></a>
             </div>

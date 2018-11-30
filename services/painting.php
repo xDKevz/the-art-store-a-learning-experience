@@ -38,10 +38,19 @@ require_once('database-functions.inc.php');
                     Medium, Cost, MSRP, GoogleLink FROM Paintings p LEFT JOIN PaintingGenres g on p.PaintingID=g.PaintingID WHERE genreID=?';
             $parameter=array($_GET['genre']);
             $statement = runQuery($connection, $sql, $parameter);
+/*javascript
+var painting=from click
+url.......?id=painting
+url.......?painting=painting*/
 
-
-        }
-        else{
+        }/*else if(isset($_GET['painting']) && $_GET['painting'] > 0) {
+            $sql = 'SELECT JsonAnnotations FROM Paintings WHERE PaintingID=?';
+            $parameter=array($_GET['painting']);
+            $stmt = runQuery($connection, $sql, $parameter);
+            $JsonAnnotations = $stmt->fetchColumn();
+            
+            echo '['.$JsonAnnotations.']';
+        }*/else{
         
         //selects everything if no parameter is given
         $sql = "SELECT PaintingID, ArtistID, GalleryID, ImageFileName, Title, ShapeID, MuseumLink, AccessionNumber, CopyrightText, Description, Excerpt, YearOfWork, Width, Height, 
@@ -55,5 +64,5 @@ require_once('database-functions.inc.php');
         //clears pdo
         $connection=null;
     }
-    
+
 ?>

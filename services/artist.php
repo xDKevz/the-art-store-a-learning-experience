@@ -1,5 +1,5 @@
 <?php
-   header('Content-Type:application/json');
+   header('Content-Type: application/json; charset=UTF-8');
    //this will allow access to the function call runQuery()
    require_once('database-functions.inc.php');
 
@@ -24,10 +24,10 @@
         }
         //prints json array from function
         echo json_encode(jsonArray($statement));
+
         // clears the pdo
         $connection=null;
     }
     
 ?>
-
 

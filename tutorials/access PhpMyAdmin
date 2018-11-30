@@ -1,9 +1,21 @@
  ### How to access PHPMYADMIN
  ### link
-https://comp3512-asg2-leepalisoc.c9users.io/phpmyadmin 
+ https://comp3512-asg2-leepalisoc.c9users.io/phpmyadmin 
  
  user : leepalisoc
  pass : 
+ 
+ 
+ ### SAMPLE LOG IN ####
+ 
+ user : hello.world@gmail.com
+ pass : Pass123
+ 
+ 
+ ### EXISITNG USERS IN DATABASE ####
+ 
+ user : can pick any userName (email) from the database
+ pass : abcd1234
  
  
  

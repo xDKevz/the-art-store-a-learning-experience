@@ -1,8 +1,21 @@
     <!--// beginning of html -->
-    <?php
-        $title = "About Us"; // title of page
-        include "include/header.php";
-    ?>
+<?php
+    $title = "Single-Artist"; // title of page
+    include "include/header.php";
+    
+    if (isset($_GET['id'])) {
+        $url = "https://comp3512-asg2-leepalisoc.c9users.io/services/artist.php";
+        #echo file_get_contents($url);
+        #$url = "https://www.randyconnolly.com/funwebdev/services/art/artists.php";
+        $http = curl_init($url);
+        $response = curl_exec($http);
+        echo $response;
+        $data = json_decode($response, true);
+        
+        
+        
+   }
+?>
 
 <body>
     <header>
@@ -16,7 +29,7 @@
             </div>
             
             <section class="info">
-                <span id="first-name">Vincent</span><br>
+                <span id="first-name"></span><br>
                 <span id="last-name">Van Gogh</span><br>
                 <span id="nationality">Netherlands</span><br>
                 <span id="gender">M</span><br>

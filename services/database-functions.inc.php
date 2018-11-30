@@ -13,8 +13,8 @@ function setConnectionInfo( $connString=DBCONNSTRING, $user=DBUSER, $password=DB
     return $pdo;
     }catch (PDOException $e) {
         
-    //this will display an error message if one of the parameters for the database is wrong.
-    die( $e->getMessage() );
+        //this will display an error message if one of the parameters for the database is wrong.
+        die( $e->getMessage() );
     
     }
 }
@@ -51,13 +51,14 @@ function runQuery($connection, $sql, $parameters=array()){
 }
 
 //returns json array
-function jsonArray($smt){
+function jsonArray($statement){
     // declares an empty array
      $json_array = array();
     
-     while ($row =$smt->fetchObject()){
+     while ($row =$statement->fetch(PDO::FETCH_ASSOC)){
             // stores the data into the array
-            $json_array [] =$row;
+            
+            $json_array [] = $row;
         }
         // converts the array to json then echos it
     return $json_array;

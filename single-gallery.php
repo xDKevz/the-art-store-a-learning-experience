@@ -1,6 +1,6 @@
     <!--// beginning of html -->
     <?php
-        $title = "About Us"; // title of page
+        $title = "Single-Gallery"; // title of page
         include "include/header.php";
     ?>
 
