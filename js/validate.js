@@ -58,7 +58,7 @@ function validate(myform)
 		var regexp = /^(\w+\.){0,2}\w+@([-a-z]+\.){1,2}[a-z]{2,6}$/i;
 				if (!regexp.test(myform.email.value))
 				{
-					email = "Email must be valid";
+					email = "Please enter a valid email format";
 					document.getElementById("email").style.backgroundColor = "pink";
                     document.getElementById("erremail").innerHTML = email;
                     err+="yes";

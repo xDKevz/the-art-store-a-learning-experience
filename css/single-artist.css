@@ -4,6 +4,10 @@
     grid-template-columns: 50% 50%;
 }
 
+.paintingRow {
+  overflow-x: auto;
+}
+
 .ulheader, .ulrow {
     display: grid;
     grid-gap: 5px;

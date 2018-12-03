@@ -13,18 +13,32 @@
         <li><a href="genre.php">genres</a></li>
         <li><a href="about.php">about</a></li>
         <li id="user"><img src="/images/user_icon.png" height="15" width="15"></li>
-        <!--<?php
-            // starts the session
+        
+        <?php
+            // Starts the session
             session_start();
+            echo '<aside id="user-options">';
+            echo '<div class="user-options-content">';
             
-            // if logged in displays "log out" on nav bar
+            // If no user has logged in, display something to welcome the anon as well as the "Sign in" button
+            // Otherwise, say hello to the user
             if (isset($_SESSION["email"])) {
+                echo '<p>Hello, $username!</p>';
+                echo '<nav class="user-options-nav">';
+                echo '<ul class="user-options-nav-list">';
                 echo '<li><a href="favourites.php">favourites</a></li>';
-                echo '<li><a href="logout.php">log out</a></li>';
-            } // if not logged in
-            else {
-                echo '<li><a href="login.php">log in</a></li>';
+                echo '<li><a href="logout.php">sign out</a></li>';
+            } else {
+                echo '<p>Hello, stranger.</p>';
+                echo '<nav class="user-options-nav">';
+                echo '<ul class="user-options-nav-list">';
+                echo '<li><a href="favourites.php">favourites</a></li>';
+                echo '<li><a href="login.php">sign in</a></li>';
             }
-        ?>-->
-    
+            
+            echo '</ul>';
+            echo '</nav>';
+            echo '</div>';
+        echo '</aside>';
+        ?>
     </nav>

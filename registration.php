@@ -3,11 +3,11 @@
 <?php
     // starts the session
 	session_start();
-	// checks if the user is already in
-	// this session is from parseLogin.php
+	// checks if the user is already logged in
+	// this session was passed from parseLogin.php
 	if(isset($_SESSION['email']))
 	{
-	    // if still logegd in, must log out before being able to register again
+	    // if the user is still logged in, must log out before being able to register again
 		header("Location: login.php");
 		// creates the session for the message
 		$_SESSION["message"]="Please Logout before trying to register for a new account";

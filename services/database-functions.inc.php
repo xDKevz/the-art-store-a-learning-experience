@@ -64,7 +64,16 @@ function jsonArray($statement){
     return $json_array;
 } 
 
-
+// retrieveds data without encoding them to json
+// useful in single-? page
+function retrievedData($sql, $parameter) {
+    $connection = setConnectionInfo();
+    $result = runQuery($connection, $sql, $parameter);
+    $row = $result->fetch();
+    $connection = null;
+    
+    return $row;
+}
 
 /*
   This function returns a connection object to a database

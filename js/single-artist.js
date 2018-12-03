@@ -110,6 +110,7 @@ function paintingTable(sorted, block) {
         let imgLink = '../services/imagescale.php?size=square&width=100&type=paintings&file=' + p.ImageFileName;
         let thumbNailLink = '../services/imagescale.php?size=square&width=200&type=paintings&file=' + p.ImageFileName;
         img.setAttribute('src', imgLink);
+        thumbnail.setAttribute('class', 'thumbNail');
         thumbnail.setAttribute('src', thumbNailLink);
         thumbNailFunctions(img, thumbnail);
         imgLi.appendChild(img);
@@ -126,10 +127,13 @@ function paintingTable(sorted, block) {
     }
 }
 
-
+/**
+ * Generates events that will show a pop up 
+ **/
 function thumbNailFunctions(img, thumbNail) {
+    let enlarge = document.querySelector("#painting-row-enlarge");
+    enlarge.style.position = "absolute";
     img.addEventListener('mouseenter', function() {
-        let enlarge = document.querySelector("#painting-row-enlarge");
         enlarge.appendChild(thumbNail);
         enlarge.style.display = "block";
         console.log("mouse enter functions");
@@ -137,9 +141,19 @@ function thumbNailFunctions(img, thumbNail) {
     img.addEventListener('mouseleave', function() {
         let enlarge = document.querySelector("#painting-row-enlarge");
         enlarge.style.display = "none";
+        let popUp = document.getElementsByClassName("thumbNail");
+        classClearer(popUp);
     });
-    img.addEventListener('mousemove', function(){
-        
+    img.addEventListener('mousemove', function(e){
+        // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
+        // var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        // var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+        let x = e.clientX + 10;
+        let y = e.clientY + 10;
+        // let x = (window.innerWidth - e.clientX) + 10;
+        // let y = (window.innerHeight - e.clientY) + 10;
+        enlarge.style.top = y + "px";
+        enlarge.style.left = x + "px";
     });
 }
 

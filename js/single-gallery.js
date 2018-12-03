@@ -1,11 +1,11 @@
 window.addEventListener('load', function() {
-    let GalleryID = document.querySelector(".info-panel section").getAttribute("id");
-    const url = "https://comp3512-asg2-leepalisoc.c9users.io/services/gallery.php?id=" + GalleryID;
-    
+    // let GalleryID = #document.querySelector(".info-panel section").getAttribute("id");
+    const url = "https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php?gallery=11" //+ GalleryID;
     fetch(url)
         .then( response => response.json() )
         .then( data => {
-            generatePaintings(data);
+            populatePainting(data);
+            console.log(data);
         })
         .catch( error => console.log(error));
 });
@@ -20,7 +20,7 @@ function populatePainting(paintingList) {
     // remove previous painting list
     removeContentOfPaintingList();
 
-    let listContainer = document.querySelector('.d .paintingRow');
+    let listContainer = document.querySelector(".paintings-data");
 
     paintingList.forEach(piece => {
         // reference for href attribute
@@ -40,13 +40,14 @@ function populatePainting(paintingList) {
         link.setAttribute('data-painting-id', id);
         // set href so that links do not turn grey when ever one is click already
         link.setAttribute('href', href);
-
+        
         // set class attributes for column
         paintingImage.setAttribute('class', 'ulcol0');
         artist.setAttribute('class', 'ulcol1');
         title.setAttribute('class', 'ulcol2');
         year.setAttribute('class', 'ulcol3');
-        img.setAttribute('src', `images/square-small/${piece.ImageFileName}.jpg`);
+        img.setAttribute('src', `../services/imagescale.php?size=square&width=100&type=paintings&file=${piece.ImageFileName}`);
+        
 
         // append painting title to a element
         link.appendChild(document.createTextNode(piece.Title));
@@ -65,15 +66,16 @@ function populatePainting(paintingList) {
 
         // add ul to section
         listContainer.appendChild(list);
-
-        // add event listener to each title
-        link.addEventListener('click', e => {
-            // hide default view and show secondary view
-            document.querySelector('.defaultview').style.display = 'none';
-            document.querySelector('.singlepageview').style.display = 'grid';
-
-            // set up single view
-            setUpSingleView(paintingList, e.target.getAttribute('data-painting-id'));
-        });
     });
+}
+
+/**
+ * Removes previous contents of the painting list 
+ */
+function removeContentOfPaintingList() {
+    // remove previous content
+    let paintingRows = document.querySelectorAll('.list-rows');
+    if (paintingRows.length > 0) {
+        paintingRows.forEach(e => e.remove());
+    }
 }

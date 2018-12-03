@@ -4,5 +4,6 @@
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <link rel="stylesheet" href="include/fonts"/>
-            <link rel="stylesheet" href="css/single-gallery.css" type="text/css" />
+    <link rel="stylesheet" href="css/single-gallery.css" type="text/css" />
+    <link rel="stylesheet" href="css/single-artist.css" type="text/css" />
 </head>  

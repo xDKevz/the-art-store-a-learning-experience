@@ -32,8 +32,7 @@ if (isset($_POST['submit']))
     else
     { 		
         // regular expression for proper email format
-        #if (!preg_match("/^(\w+\.){0,2}\w+@([-a-z]+\.){1,2}[a-z]{2,6}$/i", $email)) 
-        if (!preg_match("^(.+)@([^\.].*)\.([a-z]{2,})$", $email))
+        if (!preg_match("/^(\w+\.){0,2}\w+@([-a-z]+\.){1,2}[a-z]{2,6}$/i", $email)) 
         {
             
             //error message for invalid email
