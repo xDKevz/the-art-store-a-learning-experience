@@ -13,7 +13,7 @@
                 $sql = "SELECT ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink FROM Artists where ArtistID=?";
                 $parameter = array($_GET['id']);
                 $row = retrievedData($sql, $parameter);
-                echo $row;
+                // echo $row;
                 // END RETRIEVED
                 
                 // START CONTENT

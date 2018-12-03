@@ -79,5 +79,5 @@
         
     </body>
     <script type="text/javascript" src="js/main.js"></script>
-    <!--<script type="text/javascript" src="js/single-artist.js"></script>-->
+    <script type="text/javascript" src="js/single-genre.js"></script>
 </html>

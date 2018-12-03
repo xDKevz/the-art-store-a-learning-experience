@@ -1,11 +1,17 @@
+html {
+  background-color: grey;
+}
+
 .single-artist-container {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 50% 50%;
 }
 
+
 .paintingRow {
-  overflow-x: auto;
+  height: 900px;
+  overflow-y: auto;
 }
 
 .ulheader, .ulrow {
@@ -23,6 +29,7 @@
 
 .artistinfo {
     background-color: red;
+    height: 950px;
 }
 
 .boxheader{

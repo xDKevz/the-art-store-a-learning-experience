@@ -27,7 +27,7 @@
                         <div class="galleryinfo">
                             <h1>GALLERY INFO</h1>
                             <section class=info>
-                                <h2 id="galleryName"><?php echo $row["GalleryName"]; ?></h2>
+                                <h2 id="galleryName" class="<?=$row["GalleryID"]?>"><?php echo $row["GalleryName"]; ?></h2>
                                 <span id="galleryNative"><?php echo $row["GalleryNativeName"]; ?></span> 
                                 <span id="galleryCity"><?php echo $row["GalleryCity"]; ?></span>  
                                 <span id="galleryAddress"><?php echo $row["GalleryAddress"]; ?></span> 
@@ -37,7 +37,7 @@
                         </div>
                         
                         <div class="map">
-                        MAP
+                        Location
                         </div>
                                 
                         <div class="paintings">
@@ -82,5 +82,5 @@
         
     </body>
     <script type="text/javascript" src="js/main.js"></script>
-    <!--<script type="text/javascript" src="js/single-artist.js"></script>-->
+    <script type="text/javascript" src="js/single-gallery.js"></script>
 </html>
