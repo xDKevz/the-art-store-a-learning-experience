@@ -1,0 +1,40 @@
+
+				Testing APIs
+				
+API links sample				
+
+Genre API
+https://comp3512-asg2-leepalisoc.c9users.io/services/genre.php
+----Returns all genres in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/genre.php?id=1
+----Returns genre with id=1 in json data
+
+Artist API
+https://comp3512-asg2-leepalisoc.c9users.io/services/artist.php
+----Returns all artists in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/artist.php?id=6
+----Returns artist with id=6 in json data
+
+Gallery API
+https://comp3512-asg2-leepalisoc.c9users.io/services/gallery.php
+----Returns all galleries in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/gallery.php?id=6
+----Returns gallery with id=6 in json data
+
+Painting API
+https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php
+----Returns all paintings in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php?id=5
+----Returns painting with id=5 in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php?artist=1
+----Returns paintings with ArtistID=1 in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php?gallery=20
+----Returns paintings with GalleryID=20 in json data
+https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php?genre=1
+----Returns paintings with GenreID=1 in json data (data came from joined tables)
+
+Review API
+https://comp3512-asg2-leepalisoc.c9users.io/services/review.php
+----Returns nothing
+https://comp3512-asg2-leepalisoc.c9users.io/services/review.php?painting=35
+----Returns reviews with PaintingID=35 in json data

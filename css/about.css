@@ -1,0 +1,109 @@
+/** CSS: About Page **/
+.about {
+    background-color: #e6e6e6;
+    display: grid;
+    height: 2000px;
+}
+
+.barTitleWrapper {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.barTitleBackground {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.barTitleContent {
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 0 22px;
+    position: relative;
+}
+
+.barTitleContent span {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: .009em;
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 15px 0 -15px;
+    height: 52px;
+    white-space: nowrap;
+    font-family: "SF Pro Display";
+    -webkit-font-smoothing: antialiased;
+}
+
+.barTitleBackground::before, .barTitleBackground::after {
+    content: ' ';
+    display: table;
+}
+
+.barTitleBackground::after {
+    /*margin-left: -490px;*/
+    /*left: 50%;*/
+    content: "";
+    display: block;
+    position: inherit;
+    top: 100%;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(51,51,51,0.2);
+}
+
+.teamMembers {
+    background-color: grey;
+    grid-column: 1 / 1;
+    grid-row: 1;
+    /*grid-template-rows: 2fr;*/
+    margin: auto;
+}
+
+.teamMembers div {
+    float: left;
+    background-color: #666666;
+    border-radius: 20pt;
+    width: 300px;
+    margin: 10px;
+}
+.teamMembers img {
+    max-width: 150pt;
+    display: block;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.teamMembers h4 {
+    text-align: center;
+}
+
+.repo {
+    background-color: #737373;
+    grid-row: 2;
+    margin: auto;
+    float: left;
+}
+
+/* MEDIA QUERY FOR MOBILE MENU */
+@media only screen and (max-width:1024px) {
+    .about {
+        background-color: red;
+        padding: 20pt;
+        display: block;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .about {
+        background-color: red;
+        padding: 20pt;
+        display: block;
+    }
+}

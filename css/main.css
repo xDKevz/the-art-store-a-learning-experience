@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    margin-bottom: 100px;
+    padding: 0;
+    font-family: "SF Pro Display";
+    background-color: white;
+    height: 100px;
+}
+
+/*** Home view ***/
+main {
+    margin-left: 80px;
+    margin-right: 80px;
+    max-height: 95%;
+}
+
+.home {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 25% auto;
+    position: relative;
+    top: 150pt;
+}
+
+.gallerylist {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    background-color: gray;
+}
+
+.artist {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    background-color: gray;
+}
+
+.genres {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    background-color: gray;
+}
+
+.header {
+    top: 0px;
+    width: 100%;
+}
+
+/* Single-?.php two column view*/
+.single-artist-container, .single-gallery-container, .single-genre-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+}
+
+/*** LOGOS AND IMAGES ***/
+.logo {
+    text-align: center;
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.logo img {
+    max-width: 125px;
+    padding: 10pt;
+}
+
+/* Horizontal Menu Styles */
+/* Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs */
+
+.navigation {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    background-color: rgba(0,0,0, 0.8);
+    text-align: center;
+    z-index: 2;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navigation li {
+    display: inline-block;
+    padding: 12pt;
+    transition: 1s;
+}
+
+.navigation #user {
+    position: absolute;
+    right: 50pt;
+}
+
+.navigation li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navigation> li:hover {
+    background: rgb(166, 166, 166);
+    cursor: pointer;
+    transition: 1s;
+}
+
+/* Nav: User Options */
+#user-options{
+    display: none;
+    font-size: 15px;
+    line-height: 1.16667;
+    font-weight: 400;
+    letter-spacing: -.014em;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    width: 200px;
+    
+    padding: 0 20px;
+    
+    position: absolute;
+    top: 40pt;
+    right: 50pt;
+    
+    box-shadow: 0px 0px 160px -40px rgba(0,0,0,0.8);
+}
+
+.user-options-nav-list > li{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #e3e3e3;
+    font-size: 1em;
+}
+
+.user-options-content > p {
+    padding: 35px;
+    margin: 0;
+    text-align: center;
+}
+
+.user-options-nav-list > li a {
+    color: #4d4d4d;
+    display: block;
+    line-height: 43px;
+    padding: 0 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.5s;
+    
+    text-align: left;
+}
+
+.user-options-nav-list > li a:hover {
+    background: #e6e6e6;
+    transition: 0.5s;
+}
+
+/* MEDIA QUERY FOR MOBILE MENU */
+@media only screen and (max-width:768px) {
+    .toggle {
+        display: block;
+    }
+    .menu {
+        width: 100%;
+        display: none;
+    }
+    .menu li {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .active {
+        display: block;
+    }
+    .teamMembers div {
+        width: 100%;
+    }
+    .repo img {
+        max-width: 100%;
+    }
+    
+    .home {
+        display: block;
+        /*grid-gap: 5px;*/
+        /*grid-template-columns: 100%;*/
+    }
+
+    .gallerylist {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+        background-color: gray;
+    }
+    
+    .artist {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        background-color: gray;
+    }
+    
+    .genres {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+        background-color: gray;
+    }
+    
+    .gallerylist, .artist, .genres {
+        width: 100%;
+    }
+}
+
+.artistList img, .genreList img {
+    height: auto; 
+    width: auto; 
+    max-width: 125px; 
+    max-height: 125px;
+}
+
+/* Horizontal Scrolling */
+
+/* GIF */
+/*.loading {*/
+/*    background: url('https://media.giphy.com/media/11ASZtb7vdJagM/giphy.gif') no-repeat center center;*/
+/*    position: absolute;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*}*/
+
+figure {
+  width: 125px;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0em;
+  padding: 0.5em;
+}
+
+figure a img{
+    display: block;
+}
+
+figcaption {
+    background-color: white;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0px;
+}

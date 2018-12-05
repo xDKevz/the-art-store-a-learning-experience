@@ -1,0 +1,9 @@
+#### Terminal
+git add *
+git commit -m "CommitterName: Changes Made"
+git push -u origin master
+
+*only currently selected/opened file will be committed to git.
+
+*Pull files from github back to c9*
+git pull origin master
