@@ -35,9 +35,7 @@ require_once('database-functions.inc.php');
         else if (isset($_GET['gallery']) && $_GET['gallery'] > 0) {
             // $sql = 'SELECT PaintingID, ArtistID, GalleryID, ImageFileName, Title, ShapeID, MuseumLink, AccessionNumber, CopyrightText, Description, Excerpt, YearOfWork, Width, Height, 
             //         Medium, Cost, MSRP, GoogleLink FROM Paintings WHERE GalleryID=?';
-            $sql = "SELECT a.FirstName, a.LastName, p.PaintingID, p.GalleryID, p.ImageFileName, p.Title, p.MuseumLink, 
-                    p.CopyrightText, p.Description, p.Excerpt, 
-                    p.YearOfWork, p.Width, p.Height, p.Medium, p.GoogleLink, p.WikiLink
+            $sql = "SELECT a.FirstName, a.LastName, p.PaintingID, p.GalleryID, p.ImageFileName, p.Title, p.MuseumLink, p.CopyrightText, p.Description, p.Excerpt, p.YearOfWork, p.Width, p.Height, p.Medium, p.GoogleLink, p.WikiLink
                     FROM Artists as a INNER JOIN Paintings as p ON a.ArtistID = p.ArtistID
                     WHERE p.GalleryID = ?";
             $parameter[] = $_GET['gallery'];

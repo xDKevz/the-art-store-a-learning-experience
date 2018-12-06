@@ -1,22 +1,27 @@
 window.addEventListener('load', function() {
-    let imgelement = document.querySelector(".image img");
-    let imageid = imgelement.getAttribute("id");
+    let type = document.querySelector("#type").getAttribute("class");
+    console.log(type);
+    let imageid = document.querySelector(".information").getAttribute("id");
     console.log(imageid);
-    let type = imgelement.getAttribute("class");
     let url = ""
     if (type == "artist") {
         url = "../services/painting.php?artist=" + imageid;
     } else if (type == "gallery") {
-        url = "../services/gallery.php?gallery=" + imageid;
+        url = "../services/painting.php?gallery=" + imageid;
+        // url = "https://comp3512-asg2-leepalisoc.c9users.io/services/painting.php?gallery=" + imageid;
     } else if (type == "genre") {
-        url = "../services/genre.php?genre=" + imageid;
+        url = "../services/painting.php?genre=" + imageid;
     }
+    
+    console.log(url);
 
     fetch(url)
         .then( response => response.json() )
         .then( data => {
+            console.log(data)
             setupSortlistener(data);
             populatePainting(data);
+            initMap();
         })
         .catch( error => console.log(error) );
 });
@@ -29,23 +34,26 @@ function populatePainting(painting) {
     painting.forEach(piece => {
         let list = document.createElement("li");
         let img = document.createElement("img");
-        let title = document.createElement("h3");
+        let title = document.createElement("p");
+        let artist = document.createElement("p");
         let year = document.createElement("p");
         let link = document.createElement("a");
         let thumbnail = document.createElement("img");
 
         link.setAttribute("href", "#" + piece.PaintingID);
-        img.setAttribute("src", "../services/imagescale.php?size=square&width=100&type=paintings&file=" + piece.ImageFileName);
-        thumbnail.setAttribute("src", "../services/imagescale.php?size=square&width=200&type=paintings&file=" + piece.ImageFileName)
+        img.setAttribute("src", "../services/imagescale.php?size=square&width=150&type=paintings&file=" + piece.ImageFileName);
+        thumbnail.setAttribute("src", "../services/imagescale.php?size=square&width=300&type=paintings&file=" + piece.ImageFileName)
         thumbnail.setAttribute("class", "thumbnail");
         
         title.textContent = piece.Title;
         year.textContent = piece.YearOfWork;
+        artist.textContent = piece.FirstName + " " + piece.LastName;
         
         // append content to li
         link.appendChild(title);
         list.appendChild(img);
         list.appendChild(link);
+        list.appendChild(artist);
         list.appendChild(year);
         
         // add li to ul
@@ -53,7 +61,6 @@ function populatePainting(painting) {
         
         createthumbnail(img, thumbnail);
     });
-    
 }
 
 function createthumbnail(img, thumbnail) {
@@ -77,14 +84,37 @@ function createthumbnail(img, thumbnail) {
         // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
         // var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         // var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        let x = e.clientX + 10;
-        let y = e.clientY + 10;
+        let x = e.clientX + 100;
+        let y = e.clientY - (e.clientY / 3);
         // let x = (window.innerWidth - e.clientX) + 10;
         // let y = (window.innerHeight - e.clientY) + 10;
         popup.style.top = y + "px";
         popup.style.left = x + "px";
     });
 }
+
+/**
+ * Sets up map using given coordinates
+ * 
+ * @param latitude galleries latitude
+ * @param longitude galleries longitude
+ */
+function initMap(latitude, longitude) {
+    let mapContainer = document.querySelector('.map');
+    if (mapContainer) {
+        let latitude = document.querySelector("#latitude").getAttribute("class");
+        let longitude = document.querySelector("#longitude").getAttribute("class");
+        console.log(latitude, longitude);
+        mapContainer.style.height = '500px';
+        map = new google.maps.Map(mapContainer, {
+            center: { lat: Number(latitude), lng: Number(longitude) },
+            mapTypeId: 'satellite',
+            zoom: 18
+        });
+    }
+
+}
+
 
 /**
  * Sets up 'painting list' artist, title, year event handlers.

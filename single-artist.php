@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php
+        <?php 
             $title = "Single Artist";
             include "include/head.php";
         ?>
-        <link rel="stylesheet" href="css/single-artist.css" type="text/css" />
-        <!--<link rel="stylesheet" href="css/single-gallery.css" type="text/css" />-->
+        <link rel="stylesheet" href="css/single-page.css" type="text/css" />
     </head>
-
-    <body>
-        <?php // START PHP
+    
+    <?php // START PHP
             if ( isset($_GET['id']) ) {
                 // RETRIEVED ARTIST DATA FROM DB
                 require_once("services/database-functions.inc.php");
                 $sql = "SELECT ArtistID, FirstName, LastName, Nationality, Gender, YearOfBirth, YearOfDeath, Details, ArtistLink FROM Artists where ArtistID=?";
                 $parameter = array($_GET['id']);
                 $row = retrievedData($sql, $parameter);
-                // echo $row;
+                extract($row);
                 // END RETRIEVED
                 
                 if (!empty($row)) {
@@ -27,53 +25,34 @@
                         <?php include "include/navigation.php"; ?>
                     </header>
                     
-                    <main class="single-artist-container">
-                        <div class="artistinfo">
-                            <h3>Artist Information</h3>
+                    <main class="container">
+                        <span id="type" class="artist"></span>
+                        <div id="<?=$ArtistID?>" class="information">
+                            <h1 class="header">Artist Information</h1>
                             <div class="image">
-                                <img class="aImage" id="<?=$row['ArtistID']?>" src="images/artists/full/<?=$row['ArtistID']?>.jpg">
-                                <!--<img class="aImage" id="<?=$row['ArtistID']?>" src="services/imagescale.php?file=<?=$row['ArtistID']?>">-->
+                                <img src="images/artists/full/<?=$ArtistID?>.jpg">
                             </div>
-                            
-                            <section class="info">
-                                <span id="first-name"><?php echo $row["FirstName"]; ?></span><br>
-                                <span id="last-name"><?php echo $row["LastName"] ?></span><br>
-                                <span id="nationality"><?php echo $row["Nationality"] ?></span><br>
-                                <span id="gender"><?php echo $row["Gender"] ?></span><br>
-                                <span id="yearofbirth"><?php echo $row["YearOfBirth"] ?></span><br>
-                                <span id="yearofdeath"><?php echo $row["YearOfDeath"] ?></span><br>
-                                <span id="details"><?php echo $row["Details"] ?></span><br>
-                                <span id="link"><a href="<?=$row['ArtistLink']?>"><?php echo $row["ArtistLink"] ?></a></span><br>
-                            </section>
+                            <div class="specifics">
+                                <h2>
+                                    <span class="name"> <?php echo $FirstName . " " . $LastName; ?> </span>,
+                                    <span class="year"> <?php echo "(" . $YearOfBirth . "-" . $YearOfDeath . ")" ?> </span>,
+                                    <span class="nation"> <?php echo $Nationality; ?> </span>
+                                </h2>
+                                <span class="link"> <a href="<?=$ArtistLink?>"> <?php echo $ArtistLink; ?> </a> </span>
+                                <span class="details"> <p> <?php echo $Details ?> </p> </span>
+                            </div>
                         </div>
         
-                        <div class="paintings">
-                            <div class='boxheader'><h3>Painting List</h3></div>
-                                <section class='paintingHeader'>
-                                    <ul class='ulheader'>
-                                        <li></li>
-                                        <!--<li class='hArtist'>Artist</li>-->
-                                        <li class='hTitle'><h3>Title</h3></li>
-                                        <li class='hYear'><h3>Year</h3></li>
-                                    </ul>
-                                </section>
-                    
-                                <section class='paintingRow'>
-                                    <!--<ul class='ulrow'>-->
-                                    <!--    <li class='pImage'><img src='images/temporary/square-small/001050.jpg'></li>-->
-                                    <!--    <li class='pTitle'>Van Gogh</li>-->
-                                    <!--    <li class='pArtist'>This is a work of art</li>-->
-                                    <!--    <li class='pYear'>2019</li>-->
-                                    <!--</ul>-->
-                                    
-                                    <!--<ul class='ulrow'>-->
-                                    <!--    <li class='ulcol0'><img src='images/temporary/square-small/001020.jpg'></li>-->
-                                     <!--    <li class='ulcol1'>Van Gogh</li>-->
-                                    <!--    <li class='ulcol2'>This is a work of art</li>-->
-                                    <!--    <li class='ulcol3'>2019</li>-->
-                                    <!--</ul>-->
-                                    <div id="painting-row-enlarge" style=""></div>
-                                </section>
+                        <div class="list">
+                            <h1 class="header">Painting List</h1>
+                            <div class="sort">  
+                                <span id="artist">Artist</span> | <span id="title">Title</span> | <span id="year">Year</span>
+                            </div>
+                            
+                            <div class="painting">
+                                <ul></ul>
+                                <div id="popup" style=""></div>
+                            </div>
                         </div>                        
                     </main>
                     <?php // END CONTENT
@@ -97,5 +76,5 @@
     
     <!--SCRIPT-->
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/single-artist.js"></script>
+    <script type="text/javascript" src="js/single-page.js"></script>
 </html>

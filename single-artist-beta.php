@@ -5,7 +5,7 @@
             $title = "Single Artist";
             include "include/head.php";
         ?>
-        <link rel="stylesheet" href="css/single-artist.beta.css" type="text/css" />
+        <link rel="stylesheet" href="css/single-page.css" type="text/css" />
     </head>
     
     <?php // START PHP
@@ -27,7 +27,7 @@
                     
                     <main class="container">
                         <div class="information">
-                            <h1>Artist Information</h1>
+                            <h1 class="header">Artist Information</h1>
                             <div class="image">
                                 <img id="<?=$ArtistID?>" class="artist" src="images/artists/full/<?=$ArtistID?>.jpg">
                             </div>
@@ -43,39 +43,13 @@
                         </div>
         
                         <div class="list">
-                            <h1>Painting List</h1>
+                            <h1 class="header">Painting List</h1>
                             <div class="sort">  
-                                <label id="artist"></label>
-                                <label id="title">Title</label> |
-                                <label id="year">Year</label>
+                                <span id="artist">Artist</span> | <span id="title">Title</span> | <span id="year">Year</span>
                             </div>
                             
                             <div class="painting">
-                                <ul>
-                                    <!--<li>-->
-                                    <!--  <img src="images/artists/square/1.jpg" >-->
-                                    <!--  <h3>The Grasslands</h3>-->
-                                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>-->
-                                    <!--</li>-->
-                                      
-                                    <!--<li>-->
-                                    <!--  <img src="images/artists/square/2.jpg" >-->
-                                    <!--  <a href="_#"><h3>Paradise Found</h3></a>-->
-                                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>-->
-                                    <!--</li>-->
-                                
-                                    <!--<li>-->
-                                    <!--  <img src="images/artists/square/5.jpg" >-->
-                                    <!--  <h3>Smoke On The Water</h3>-->
-                                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>-->
-                                    <!--</li>-->
-                                
-                                    <!--<li>-->
-                                    <!--  <img src="images/artists/square/8.jpg" >-->
-                                    <!--  <h3>Headline</h3>-->
-                                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing. Nam quis justo in augue auctor imperdiet.</p>-->
-                                    <!--</li>-->
-                                </ul>
+                                <ul></ul>
                                 <div id="popup" style=""></div>
                             </div>
                         </div>                        
@@ -100,6 +74,6 @@
     </body> 
     
     <!--SCRIPT-->
-    <script type="text/javascript" src="js/main.js"></script>
+    <!--<script type="text/javascript" src="js/main.js"></script>-->
     <script type="text/javascript" src="js/single-page.js"></script>
 </html>

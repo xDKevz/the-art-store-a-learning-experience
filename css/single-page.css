@@ -1,0 +1,138 @@
+/* <Main> grid layout */
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+}
+
+.information {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.map {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.list {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+/* <Main> grid layout end */
+
+/* <div class="information> */
+.information, .list {
+  /*background-color: rgba(141, 135, 134);*/
+  text-align: center;
+  padding: 10px;
+}
+
+.image img {
+  border-radius: 15px;
+  border-style: groove;
+}
+
+.details p {
+  text-align: justify;
+}
+
+/* <div class="information> end */
+
+/* <div class="list"> */
+
+/* Sort button */
+#artist, #title, #year {
+  background-color: white;
+  border-radius: 10px;
+  border-style: outset;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 20px;
+}
+
+/*.list {*/
+/*  background-color: rgba(24,24,24);*/
+/*  text-align: center;*/
+/*  padding: 10px;*/
+/*}*/
+
+.painting {
+  overflow-y: auto;
+  max-height: 650px;
+  margin-top: 10px;
+}
+
+.painting li {
+  /*text-align: justify;*/
+}
+
+ul {
+  list-style-type: none;
+  width: auto;
+}
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+  border-radius: 15px;
+  border-style: groove;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #DAF7A6;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.sort:hover {
+  cursor: pointer;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px black;
+}
+/* <div class="list"> end */
+
+.information .header, .list .header {
+  margin-top: 5px;
+  border-bottom: 1px solid #202020;;
+}
+
+.information .image {
+  margin-top: 50px;
+}
+
+/* map */
+.map {
+  border-radius: 20px;
+  border-style: groove;
+}
+
+@media only screen and (max-width:768px) {
+  .container {
+      display: block;
+      /*grid-template-columns: 50% 50%;*/
+      /*grid-gap: 5px;*/
+  }
+  
+  html, body, main {
+    margin: 0;
+  }
+  
+  .map {
+    margin: 10px;
+  }
+  
+  #artist, #title, #year {
+    margin: 0;
+  }
+  
+}

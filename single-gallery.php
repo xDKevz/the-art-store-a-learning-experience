@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php
+        <?php 
             $title = "Single Gallery";
             include "include/head.php";
         ?>
-        <link rel="stylesheet" href="css/single-gallery.css" type="text/css" />
+        <link rel="stylesheet" href="css/single-page.css" type="text/css" />
     </head>
     
-    <body>
-        <?php // START PHP
-
+    <?php // START PHP
             if ( isset($_GET['id']) ) {
-
-                // RETRIEVED GALLERY DATA FROM DB
+                // RETRIEVED ARTIST DATA FROM DB
                 require_once("services/database-functions.inc.php");
                 $sql = "SELECT GalleryID, GalleryName, GalleryNativeName, GalleryCity, GalleryAddress, GalleryCountry, Latitude, Longitude, GalleryWebSite FROM Galleries WHERE GalleryID=?";
                 $parameter = array($_GET['id']);
                 $row = retrievedData($sql, $parameter);
+                extract($row);
                 // END RETRIEVED
                 
-                // CHECK IF $row is not empty, otherwise inform user no data found.
                 if (!empty($row)) {
                 // START CONTENT
                     ?>
@@ -28,50 +25,38 @@
                         <?php include "include/navigation.php"; ?>
                     </header>
                     
-                    <main class="single-gallery-container">
-                        <div class="galleryinfo">
-                            <h1>GALLERY INFO</h1>
-                            <section class=info>
-                                <h2 id="galleryName" class="<?=$row["GalleryID"]?>"><?php echo $row["GalleryName"]; ?></h2></br>
-                                <span id="galleryNative"><?php echo $row["GalleryNativeName"]; ?></span></br>
-                                <span id="galleryCity"><?php echo $row["GalleryCity"]; ?></span></br>
-                                <span id="galleryAddress"><?php echo $row["GalleryAddress"]; ?></span></br> 
-                                <span id="galleryCountry"><?php echo $row["GalleryCountry"]; ?></span></br>
-                                <span><a href="" target='_blank' id="gallerySite"><?php echo $row["GalleryWebSite"]; ?></a></span></br> 
-                            </section>
+                    <main class="container type">
+                        <span id="type" class="gallery"></span>
+                        <div id="<?=$GalleryID?>" class="information">
+                            <h1 class="header">Gallery Information</h1>
+                            <div class="specifics">
+                                <h1 id="galleryNative">"<?php echo $GalleryNativeName; ?>"</h1>
+                                <h2 id="galleryName" class="<?=$GalleryID?>"><?php echo $GalleryName; ?></h2>
+                                <h3>
+                                    <span id="galleryCity"><?php echo $GalleryCity; ?></span>, 
+                                    <span id="galleryAddress"><?php echo $GalleryAddress; ?></span>, 
+                                    <span id="galleryCountry"><?php echo $GalleryCountry; ?></span>
+                                </h3>
+                                <span><a href="<?=$GalleryWebSite?>" target='_blank' id="gallerySite"><?php echo $GalleryWebSite; ?></a></span></br> 
+                                
+                            </div>
                         </div>
                         
                         <div class="map">
-                        Location
+                            <span id="latitude" class="<?=$Latitude?>"></span>
+                            <span id="longitude" class="<?=$Longitude?>"></span>
                         </div>
-                                
-                        <div class="paintings">
-                            <div class='boxheader'><h3>PAINTING LIST</h3></div>
-                                <section class='paintingHeader'>
-                                    <ul class='ulheader'>
-                                        <li></li>
-                                        <li class='hArtist'>Artist</li>
-                                        <li class='hTitle'>Title</li>
-                                        <li class='hYear'> Year</li>
-                                    </ul>
-                                </section>
-                    
-                                <section class='paintingRow'>
-                                    <!--<ul class='ulrow'>-->
-                                    <!--    <li class='pImage'><img src='images/temporary/square-small/001050.jpg'></li>-->
-                                    <!--    <li class='pTitle'>Van Gogh</li>-->
-                                    <!--    <li class='pArtist'>This is a work of art</li>-->
-                                    <!--    <li class='pYear'>2019</li>-->
-                                    <!--</ul>-->
-                                    
-                                    <!--<ul class='ulrow'>-->
-                                    <!--    <li class='ulcol0'><img src='images/temporary/square-small/001020.jpg'></li>-->
-                                     <!--    <li class='ulcol1'>Van Gogh</li>-->
-                                    <!--    <li class='ulcol2'>This is a work of art</li>-->
-                                    <!--    <li class='ulcol3'>2019</li>-->
-                                    <!--</ul>-->
-                                    <div id="painting-row-enlarge" style=""></div>
-                                </section>
+        
+                        <div class="list">
+                            <h1 class="header">Painting List</h1>
+                            <div class="sort">  
+                                <span id="artist">Artist</span> | <span id="title">Title</span> | <span id="year">Year</span>
+                            </div>
+                            
+                            <div class="painting">
+                                <ul></ul>
+                                <div id="popup" style=""></div>
+                            </div>
                         </div>                        
                     </main>
                     <?php // END CONTENT
@@ -79,7 +64,7 @@
                     ?>
                         <div class="Error">
                             <h1>Error: No Data found</h1>
-                        </div>
+                        </div>  
                     <?php
                 }
             } else {
@@ -91,8 +76,11 @@
                 <?php
             }
         // END PHP ?>
-        
-    </body>
+    </body> 
+    
+    <!--SCRIPT-->
     <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/single-gallery.js"></script>
+    <script type="text/javascript" src="js/single-page.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3de_Ch6IoSD0OPDHppLS9HiWdI2zB5i4&callback=initMap"
+    ></script>
 </html>
