@@ -14,7 +14,6 @@
         <main class="container">
             <span id="type" class="artist"></span>
             <div class="display-lists">
-                
             </div>
         </main>
         

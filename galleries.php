@@ -1,9 +1,12 @@
 <!--// beginning of html -->
-<?php
-    $title = "Gallery"; // title of page
-    include "include/header.php";
-?>
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php
+            $title = "Gallery"; // title of page
+            include "include/header.php";
+        ?>
+    </head>
 <body>
     <header>
         <?php include 'include/navigation.php'; ?>

@@ -2,8 +2,8 @@ window.addEventListener("load", function(){
     let type = document.querySelector("#type").getAttribute("class");
     console.log(type);
     let url = "";
-    if (type == "info") {
-        url = "../services/info.php";
+    if (type == "artist") {
+        url = "../services/artist.php";
     } else if (type == "gallery") {
         url = "../services/gallery.php";
     } else if (type == "genre") {
@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
     fetch(url)
         .then( response => response.json() )
         .then( data => {
-            if (type == "info") {
+            if (type == "artist") {
                 generateArtists(data);
             } else if (type == "gallery") {
                 generateGallery(data);
@@ -31,7 +31,7 @@ function generateArtists(data) {
     let list = document.querySelector(".display-lists");
     
     for(let info of data) {
-        let li = document.createElement('li');
+        // let li = document.createElement('li');
         
         let link = document.createElement('a');
         link.setAttribute("href", "single-artist.php?id=" + info.ArtistID);
@@ -47,15 +47,13 @@ function generateArtists(data) {
         
         let img = document.createElement('img');
         // img.setAttribute("src", "images/infos/square/" + info.infoID + ".jpg");
-        img.setAttribute("src", "../services/imagescale.php?size=full&width=150&type=artists&file=" + info.ArtistID);
+        img.setAttribute("src", "../services/imagescale.php?size=full&width=125&type=artists&file=" + info.ArtistID);
         
         link.appendChild(img);
         figure.appendChild(link);
         figure.appendChild(caption);
-        li.appendChild(figure);
-        list.appendChild(li);
-        
-        
+        // li.appendChild(figure);
+        list.appendChild(figure);
     }
     
 }
