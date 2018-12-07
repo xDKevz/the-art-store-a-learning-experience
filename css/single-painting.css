@@ -1,0 +1,128 @@
+/* <Main> grid layout for single-painting */
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
+}
+
+.painting {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+
+.information {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+
+ /*<Main> grid layout end */
+
+ /*<div class="information> */
+.painting, .information {
+  text-align: center;
+  padding: 10px;
+}
+
+.details {
+  text-align: justify;
+  padding: 10px;
+}
+
+.painting img {
+  border-radius: 15px;
+  border-style: groove;
+}
+
+.header {
+  margin-top: 5px;
+  border-bottom: 1px solid #202020;;
+}
+
+.color {
+  border: inset; 
+  padding-left: 55px;
+  padding-right: 55px;
+  /*text-align: center;*/
+  color: white;
+}
+
+.box {
+  /*height: 10px;*/
+  padding: 10px;
+  display: inline-block;
+}
+
+.box .name {
+  margin-left: 10px;
+}
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1 */
+.button a { 
+  color: white; 
+  text-decoration: none;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: black;
+  font-size: 15px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@media only screen and (max-width:768px) {
+  .container {
+      display: block;
+      /*grid-template-columns: 50% 50%;*/
+      /*grid-gap: 5px;*/
+  }
+  
+  html, body, main {
+    margin: 0;
+  }
+  
+  .painting img {
+    width: 325px;
+  }
+  
+  .color {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: inset; 
+  }
+  
+  .colorscheme {
+      text-align: justify;
+  }
+}

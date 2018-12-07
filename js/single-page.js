@@ -68,9 +68,12 @@ function createthumbnail(img, thumbnail) {
     popup.style.position = "absolute";
     
     img.addEventListener('mouseenter', function() {
-        popup.appendChild(thumbnail);
-        popup.style.display = "block";
-        console.log("mouse enter functions");
+        // disables popup view in mobile
+        if (!(window.matchMedia("(max-width: 768px)").matches)) {
+            popup.appendChild(thumbnail);
+            popup.style.display = "block";
+            console.log("mouse enter functions");
+        }
     });
     
     img.addEventListener('mouseleave', function() {

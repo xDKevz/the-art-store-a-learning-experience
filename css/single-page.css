@@ -1,4 +1,4 @@
-/* <Main> grid layout */
+/* <Main> grid layout for single-artist/gallery/genre */
 .container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -24,7 +24,6 @@
 
 /* <div class="information> */
 .information, .list {
-  /*background-color: rgba(141, 135, 134);*/
   text-align: center;
   padding: 10px;
 }
@@ -51,12 +50,6 @@
   padding-right: 20px;
   margin: 20px;
 }
-
-/*.list {*/
-/*  background-color: rgba(24,24,24);*/
-/*  text-align: center;*/
-/*  padding: 10px;*/
-/*}*/
 
 .painting {
   overflow-y: auto;
@@ -133,6 +126,15 @@ li:hover {
   
   #artist, #title, #year {
     margin: 0;
+  }
+  
+  .painting img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .popup {
+    display: none;
   }
   
 }
