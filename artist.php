@@ -9,10 +9,11 @@
             <?php include 'include/navigation.php'; ?>
         </header>
         
-        <main>
-            <ul>
+        <main class="container">
+            <span id="type" class="artist"></span>
+            <div class="display-lists">
                 
-            </ul>
+            </div>
         </main>
         
     </body>
@@ -20,6 +21,7 @@
     
     <footer>
         <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/generalLists.js"></script>
     </footer>
     
 </html>

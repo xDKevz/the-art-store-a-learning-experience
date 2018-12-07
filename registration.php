@@ -25,34 +25,8 @@
 </head>
 
 <!--This should be placed in style files later -->
-
-<style type="text/css">
-
-.error{
-			padding:0px;
-			color:red;
-			font-size:0.8em;
-		}
-    
-</style>
-
-
 <body>
 
-<?php 
-    // checks if the session is available for "invalid"
-    if (isset($_SESSION["invalid"])) 
-    {
-        // displays the error message from parseRegister.php
-        $message=$_SESSION['invalid'];
-        
-        /*<p style?? >error message <p>*/
-
-        echo "<p class='error'>'$message'</p>";
-        // unsets/removes the invalid session
-        unset($_SESSION["invalid"]);
-    }
-?>
 
     <div class="registration-container"> 
         <h2> Register - New Account </h2><br>
@@ -102,11 +76,28 @@
                 <p class="error" id="errpasswordAgain"></p>
             </div>
             
+            <!--DISPLAY EMAIL ERROR MESSAGE WHEN PROVIDED WITH EXISTING EMAIL -->
+            <?php 
+                // checks if the session is available for "invalid"
+                if (isset($_SESSION["invalid"])) 
+                {
+                    // displays the error message from parseRegister.php
+                    $message=$_SESSION['invalid'];
+                    
+                    /*<p style?? >error message <p>*/
+            
+                    echo "<p class='error'>'$message'</p>";
+                    // unsets/removes the invalid session
+                    unset($_SESSION["invalid"]);
+                }
+            ?>
+            
             <div class="reg-submit">
                 <input type="submit" name="submit" value="Create Account" onclick="return validate(this.form)">
             </div>
             
         </form>
+        
     </div>   
 
 </body>

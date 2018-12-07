@@ -47,7 +47,12 @@ function populatePainting(painting) {
         
         title.textContent = piece.Title;
         year.textContent = piece.YearOfWork;
-        artist.textContent = piece.FirstName + " " + piece.LastName;
+        let FirstName = "";
+        let LastName = "";
+        if (piece.FirstName != null) { FirstName=piece.FirstName; } 
+        if (piece.LastName != null) { LastName=piece.LastName; }
+
+        artist.textContent = FirstName + " " + LastName;
         
         // append content to li
         link.appendChild(title);

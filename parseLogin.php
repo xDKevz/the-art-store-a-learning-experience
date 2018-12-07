@@ -28,22 +28,27 @@ if (isset($_POST['submit']))
         
         $sql = "SELECT Salt FROM CustomerLogon WHERE UserName=?";
         $statement = runQuery($connection, $sql,array($email));
-        $salt=$statement->fetchColumn();
-        
-        if($statement->rowCount())
+        $data = $statement->fetch();
+        $salt = $data["Salt"];
+        // $salt= $statement->fetchColumn();
+        //$statement->rowCount()
+        if($data)
         {
         
-            $saltSql = "SELECT CustomerID FROM CustomerLogon WHERE UserName=? AND Pass=?";
+            $saltSql = "SELECT cl.CustomerID, c.FirstName FROM CustomerLogon as cl JOIN Customers as c ON cl.CustomerID = c.CustomerID WHERE UserName=? AND Pass=?";
             $params=array($email,md5($pwd.$salt)); 
             //execute the query 
             $smt = runQuery($connection, $saltSql, $params);
+            $customerdata = $smt->fetch();
             
-            if($smt->rowCount()){
+            if($customerdata) {
                 
                     // creates sessions when logged in successfully
                     $_SESSION['email'] = $email;
+                    $_SESSION['username'] = $customerdata["FirstName"];
                     $_SESSION['loginsuccess'] = "Login Successful!!";
-                    header("Location: home.php?login=success");
+                    $_SESSION['loginstatus'] = "login";
+                    header("Location: home.php");
                     exit();
             }
             else

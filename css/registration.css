@@ -37,6 +37,13 @@ h2 {
     padding: 5px;
 }
 
+.error{
+			padding:0px;
+			color:red;
+			font-size:0.8em;
+
+}
+
 @media only screen and (max-width:760px) {
     .registration-container {
         width: 80%;

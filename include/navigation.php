@@ -22,8 +22,9 @@
             
             // If no user has logged in, display something to welcome the anon as well as the "Sign in" button
             // Otherwise, say hello to the user
-            if (isset($_SESSION["email"])) {
-                echo '<p>Hello, $username!</p>';
+            if (isset($_SESSION["loginstatus"])) {
+                $username = $_SESSION['username'];
+                echo "<p>Hello, $username!</p>";
                 echo '<nav class="user-options-nav">';
                 echo '<ul class="user-options-nav-list">';
                 echo '<li><a href="favourites.php">favourites</a></li>';
@@ -32,7 +33,7 @@
                 echo '<p>Hello, stranger.</p>';
                 echo '<nav class="user-options-nav">';
                 echo '<ul class="user-options-nav-list">';
-                echo '<li><a href="favourites.php">favourites</a></li>';
+                // echo '<li><a href="favourites.php">favourites</a></li>';
                 echo '<li><a href="login.php">sign in</a></li>';
             }
             

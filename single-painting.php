@@ -81,7 +81,7 @@
                             </div>
                             
                             <div class="favorites">
-                                <button class="button"><span><a href="">Add to Favorites </a></span></button>
+                                <button class="button"><span><a href="addtofavorites.php?id=<?=$PaintingID?>">Add to Favorites </a></span></button>
                                 <button class="button"><span><a href="">View Favorites</a></span></button>
                             </div>
                         </div>

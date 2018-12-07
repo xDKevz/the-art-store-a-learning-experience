@@ -9,18 +9,6 @@
         <title> Login Page </title>
     </head>
     
-    <!--This should be placed in style files later-->
-
-    <style type="text/css">
-    
-    .errorLogin{
-    			padding:15px;
-    			color:red;
-    			font-size:0.8em;
-    			text-align: center;
-    		}
-        
-    </style>
 
 <body>    
  <div class="login-container">
@@ -29,7 +17,7 @@
         <img class="login-logo" src="images/art_store_logo.png" alt="art_store_logo" height="" width="">
     </div>
     <div class="login-details">
-      <h1>Log-in</h1><br>
+    <h1>Log-in</h1><br>
       
 <?php
 
