@@ -26,13 +26,13 @@
     } else {
         // if not logged in, displays the log in page
         echo '<form method="post" action="parseLogin.php">
-              <input type="text" name="email" placeholder="Username"><br>
-              <input type="password" name="password" placeholder="Password"><br>
-              <input type="submit" name="submit" class="btn-login" value="Login">
+              <input type="text" name="email" placeholder="email address"><br>
+              <input type="password" name="password" placeholder="password"><br>
+              <input type="submit" name="submit" class="btn-login" value="Log in">
               </form>
               
               <div class="login-signup">
-              <p> No Account? <a class="link" href="registration.php">Create a new one.</a>
+              <p>Need an account? <a class="link" href="registration.php">Create a new one.</a>
               </div>';
     } ?>
         <?php

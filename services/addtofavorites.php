@@ -4,11 +4,11 @@
     if (isset($_GET['id'])) {
         //Checks if the session favorites exists
         if (isset($_SESSION['favorites'])) {
-            // $favorites = $_SESSION['favorites'];
-                        //echo "AddFavorites";
+            $favorites = $_SESSION['favorites'];
         } else {
-            //$favorites = array(); 
+            $favorites = array(); 
             // $_SESSION['favorites'] = $favorites
+            echo "AddFavorites";
         }
         
         // add item to favourites
@@ -36,7 +36,6 @@
     foreach($favorites as $f) {
         echo $f . " ";
     }
-    
     //redirects to the php page that called this addtofavorites php script
-    // header("Location: {$_SERVER['HTTP_REFERER']}");
+    header("Location: {$_SERVER['HTTP_REFERER']}");
 ?>

@@ -249,3 +249,26 @@ figcaption {
     border-radius: 0px 0px 12px 12px;
     margin: 0px;
 }
+
+.display-lists {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 5px;
+    margin-top: 8%;
+}
+
+a.display-gallery {
+    padding: 10px;
+    background-color: #DAF7A6;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+}
+
+display-gallery:hover {
+    background-color: #DAF7A6;
+}
+
+.display-content {
+}

@@ -67,6 +67,8 @@ function generateGenre(data) {
         let img = document.createElement('img');
         img.setAttribute("src", "../services/imagescale.php?width=125&file=" + genre.GenreID);
         
+        figure.setAttribute("class", "display-content");
+        
         link.appendChild(img);
         figure.appendChild(link);
         figure.appendChild(caption);
@@ -84,8 +86,7 @@ function generateGallery(data) {
         let link = document.createElement('a');
         link.setAttribute("href", "single-gallery.php?id=" + gallery.GalleryID)
         
-        // let content = document.createTextNode(gallery.GalleryName);
-        // link.appendChild(content);
+        link.setAttribute("class", "display-gallery");
         
         link.appendChild(hfour);
         

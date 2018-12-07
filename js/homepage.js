@@ -74,7 +74,7 @@ function generateArtists(data) {
         caption.textContent = artist.FirstName + " " + artist.LastName;
         
         let img = document.createElement('img');
-        img.setAttribute("src", "images/artists/full/" + artist.ArtistID + ".jpg");
+        img.setAttribute("src", "../services/imagescale.php?size=full&width=125&type=artists&file=" + artist.ArtistID);
         
         link.appendChild(img);
         figure.appendChild(link);

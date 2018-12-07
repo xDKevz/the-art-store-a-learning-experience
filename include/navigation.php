@@ -5,7 +5,6 @@
             <img src="images/logo/art_store_logo_white.png" alt="art store logo">
         </div>
     </div>
-    
     <nav class="navigation">
         <li><a href="home.php">home</a></li>
         <li><a href="artist.php">artists</a></li>
