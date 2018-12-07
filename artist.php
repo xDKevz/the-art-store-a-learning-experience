@@ -1,9 +1,11 @@
-    <!--// beginning of html -->
+<!DOCTYPE html>
+<html>
+    <head>
     <?php
         $title = "Artist Page"; // title of page
-        include "include/header.php";
+        include "include/head.php";
     ?>
-    
+    </head>
     <body>
         <header>
             <?php include 'include/navigation.php'; ?>
@@ -18,10 +20,7 @@
         
     </body>
     
-    
-    <footer>
-        <script type="text/javascript" src="js/main.js"></script>
-        <script type="text/javascript" src="js/generalLists.js"></script>
-    </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/generalLists.js"></script>
     
 </html>

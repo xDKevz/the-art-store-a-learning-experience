@@ -16,7 +16,7 @@ window.addEventListener("load", function(){
         .then( response => response.json() )
         .then( data => {
             if (type == "info") {
-                generateinfo(data);
+                generateArtists(data);
             } else if (type == "gallery") {
                 generateGallery(data);
             } else if (type == "genre") {
@@ -27,14 +27,14 @@ window.addEventListener("load", function(){
 });
 
 
-function generateinfo(data) {
+function generateArtists(data) {
     let list = document.querySelector(".display-lists");
     
-    for(info of data) {
+    for(let info of data) {
         let li = document.createElement('li');
         
         let link = document.createElement('a');
-        link.setAttribute("href", "single-info.php?id=" + info.infoID);
+        link.setAttribute("href", "single-artist.php?id=" + info.ArtistID);
         
         let figure = document.createElement('figure');
         
@@ -47,7 +47,7 @@ function generateinfo(data) {
         
         let img = document.createElement('img');
         // img.setAttribute("src", "images/infos/square/" + info.infoID + ".jpg");
-        img.setAttribute("src", "../services/imagescale.php?size=square&width=150&type=infos&file=" + info.infoID);
+        img.setAttribute("src", "../services/imagescale.php?size=full&width=150&type=artists&file=" + info.ArtistID);
         
         link.appendChild(img);
         figure.appendChild(link);

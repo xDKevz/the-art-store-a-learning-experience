@@ -32,7 +32,7 @@
                     <main class="container">
                         <div class="painting"> 
                             <h1 class="header">Painting</h1>
-                            <img src="../services/imagescale.php?size=square&width=650&type=paintings&file=<?=$ImageFileName?>"> 
+                            <img src="../services/imagescale.php?size=full&width=500&type=paintings&file=<?=$ImageFileName?>"> 
                         </div>  
                         
                         <div class="information">

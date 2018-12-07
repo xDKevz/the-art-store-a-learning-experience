@@ -40,9 +40,9 @@ function populatePainting(painting) {
         let link = document.createElement("a");
         let thumbnail = document.createElement("img");
 
-        link.setAttribute("href", "#" + piece.PaintingID);
-        img.setAttribute("src", "../services/imagescale.php?size=square&width=150&type=paintings&file=" + piece.ImageFileName);
-        thumbnail.setAttribute("src", "../services/imagescale.php?size=square&width=300&type=paintings&file=" + piece.ImageFileName)
+        link.setAttribute("href", "single-painting.php?id=" + piece.PaintingID);
+        img.setAttribute("src", "../services/imagescale.php?size=full&width=150&type=paintings&file=" + piece.ImageFileName);
+        thumbnail.setAttribute("src", "../services/imagescale.php?size=full&width=300&type=paintings&file=" + piece.ImageFileName)
         thumbnail.setAttribute("class", "thumbnail");
         
         title.textContent = piece.Title;
