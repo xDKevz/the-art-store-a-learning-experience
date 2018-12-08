@@ -40,11 +40,11 @@
                                     
                                     echo "<li class='favorite'>";
                                         echo "<img class=\"image\" src=\"../services/imagescale.php?size=full&width=100&type=paintings&file=$ImageFileName\">";
-                                        echo "<a href=\"single-artist.php?id=$ArtistID\">";
+                                        echo "<a class='afav' href=\"single-artist.php?id=$ArtistID\">";
                                             echo "<span class=\"title\"> $FirstName $LastName </span>";
                                         echo "</a>";
                                         
-                                        echo "<a href=\"single-painting.php?id=$PaintingID\">";
+                                        echo "<a class='afav' href=\"single-painting.php?id=$PaintingID\">";
                                             echo "<span class=\"artist\"> $Title </span>";
                                          echo "</a>";
                                         echo "<span class=\"year\"> $YearOfWork </span>";
@@ -53,7 +53,7 @@
                                 }
                             ?> 
                                 </ul> 
-                                <button class="button"><span><a target="" href="services/removefavorites.php?remove=all">Remove All</a></span></button>
+                                <p id="removeall"><button class="button"><span><a target="" href="services/removefavorites.php?remove=all">Remove All</a></span></button></p>
                             <?php
                             }
                         } else {

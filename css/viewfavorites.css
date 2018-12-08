@@ -1,25 +1,37 @@
-/*.ul-favorite {*/
-/*    margin: 5px;*/
-/*}*/
-
-
 /*GENERAL*/
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
 .favorite {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     list-style-type: none;
-    background-color: #DAF7A6;
+    padding: 5px;
     margin: 15px;
-    border: 2px solid #8BB85E;
-    border-radius: 12px;
     align-items: center;
+    justify-items: center;
 }
 
-a {
+.favorite:hover {
+    background-color: #DAF7A6;
+    border-radius: 12px;
+}
+
+a.afav {
     text-decoration: none;
-    color: #000000;
+    /*color: #000000;*/
+    margin: 20px;
 }
 
+a, span {
+    text-align: center;
+}
+
+.image {
+    border-radius: 12px;
+}
 
 .image, .button {
     margin: 5px;
@@ -27,6 +39,52 @@ a {
 
 
 /*BUTTON STYLES*/
-.button {
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1 */
+.button a { 
+  color: white; 
+  text-decoration: none;
 }
 
+.button {
+  border-radius: 4px;
+  background-color: black;
+  font-size: 15px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 15px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+#removeall {
+    text-align: center;
+}

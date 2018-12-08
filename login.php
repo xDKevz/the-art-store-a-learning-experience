@@ -27,10 +27,25 @@
     } else {
         // if not logged in, displays the log in page
         echo '<form method="post" action="parseLogin.php">
-              <input class="text" type="text" name="email" placeholder="email address"><br>
+              <input class="text" type="text" name="email" placeholder="your@email.com"><br>
+              <span>Email Address</span>
+              <br>
               <input class="text" type="password" name="password" placeholder="password"><br>
+              <span>Password</span>
+              <br>
               <input class="button" type="submit" name="submit" value="Log in">
               </form>
+              
+              <p class= errorLogin>
+                <?php
+                    //from parseLogin
+                    if(isset($_SESSION["errormessage"])) {
+                    	print($_SESSION["errormessage"]);
+                        // destroys the session to avoid errors showing up non stop.
+                    	unset($_SESSION["errormessage"]);
+                    }
+                ?>
+            <p>
               
               <div class="login-signup">
               <p>Need an account? <a class="link" href="registration.php">Create a new one.</a>
@@ -50,16 +65,6 @@
     
     <p style?? >error message <p>
     -->
-    <p class= errorLogin>
-    <?php
-        //from parseLogin
-        if(isset($_SESSION["errormessage"])) {
-        	print($_SESSION["errormessage"]);
-            // destroys the session to avoid errors showing up non stop.
-        	unset($_SESSION["errormessage"]);
-        }
-    ?>
-    <p>
     </div>
  </div>
 </body>

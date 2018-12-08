@@ -224,6 +224,25 @@ a.display-gallery:hover {
     
 }
 
+/* CAROUSEL - SLIDER */
+.one, .two {
+    /*display: grid;*/
+
+    
+}
+
+.one li, .two li {
+    /*float: left;*/
+    list-style-type: none;
+    display: flex;
+}
+
+.artistlist ul:after, .genrelist ul:after {
+    clear: both;
+    display: table;
+}
+
+
 /* MEDIA QUERY FOR MOBILE MENU */
 @media only screen and (max-width:1000px) {
     .display-lists {

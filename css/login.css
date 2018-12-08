@@ -48,11 +48,12 @@ body {
 
 .login-signup a {
     text-decoration: none;
+    color: rgb(0, 122, 204);
 }
 
 .login-signup a:hover {
     cursor: pointer;
-    
+    color: rgb(255, 219, 77);
 }
 
 .login-details p {
@@ -61,12 +62,24 @@ body {
 
 form {
     padding-bottom: 50px;
-    padding-top: 20px;
+    padding-top: 40px;
+}
+
+span {
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0.4;
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    top: -85px;
+    width: 60%;
+    text-align: left;
 }
 
 .text {
-    text-align: center;
-    font-weight: 100;
+    text-align: left;
+    color: rgb(217, 217, 217);
     margin: 0 auto;
     width: 60%;
     padding: 10px 20px;
@@ -77,6 +90,13 @@ form {
     border: 2px solid rgba(255, 255, 255, 0);
     overflow: hidden;
     transition: all 0.5s ease-in-out;
+}
+
+.text:focus {
+    outline: 0;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0);
 }
 
 .button {
@@ -108,7 +128,10 @@ input {
   font-size: 14px;
 }
 
-
+input[type="text"], input[type="password"] {
+    font-weight: 600;
+    color: rgb(64, 64, 64);
+}
 
 /* MEDIA QUERY */
 @media only screen and (max-width:1024px) {

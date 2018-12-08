@@ -61,9 +61,15 @@ function generateArtists(data) {
     let half = data.length / 2;
     let index = 0;
     
-    let list = document.querySelector('.artistList');
+    let list = document.querySelector('.artistlist .one');
+    let list2 = document.querySelector('.artistlist .two');
     
     for (let artist of data) {
+        // if index is equal to half switch selected list
+        if (index == half) {
+            list = list2;
+        }
+        
         let li = document.createElement('li');
         
         let link = document.createElement('a');
