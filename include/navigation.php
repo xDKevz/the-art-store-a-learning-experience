@@ -6,6 +6,7 @@
         </div>
     </div>
     <nav class="navigation">
+        <label id="toggle">&#9776;</label>
         <li><a href="home.php">home</a></li>
         <li><a href="artist.php">artists</a></li>
         <li><a href="galleries.php">galleries</a></li>

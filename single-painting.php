@@ -85,11 +85,16 @@
                                     }
                                 ?>
                             </div>
-                            
-                            <div class="favorites">
-                                <button class="button"><span><a href="services/addtofavorites.php?id=<?=$PaintingID?>">Add to Favorites </a></span></button>
-                                <button class="button"><span><a target="_blank" href="viewfavorites.php">View Favorites</a></span></button>
-                            </div>
+                            <?php
+                                if ($_SESSION['loginstatus']) {
+                                    ?> 
+                                        <div class="favorites">
+                                            <button class="button"><span><a href="services/addtofavorites.php?id=<?=$PaintingID?>">Add to Favorites </a></span></button>
+                                            <button class="button"><span><a target="_blank" href="viewfavorites.php">View Favorites</a></span></button>
+                                        </div>
+                                    <?php
+                                }
+                            ?>
                         </div>
                     </main>
                     <?php // END CONTENT

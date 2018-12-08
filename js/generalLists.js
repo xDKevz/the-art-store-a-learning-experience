@@ -81,7 +81,8 @@ function generateGenre(data) {
 
 function generateGallery(data) {
     let list = document.querySelector('.display-lists');
-    for (let gallery of data) {
+    let sortedData = sortGalleries(data);
+    for (let gallery of sortedData) {
         let hfour = document.createElement('h4');
         hfour.textContent = gallery.GalleryName;
         
@@ -94,4 +95,18 @@ function generateGallery(data) {
         
         list.appendChild(link);
     }
+}
+
+/**
+ * Sorts the galleries based on their GalleryName property
+ * 
+ * @param sortGalleries - the json gallery data
+ */
+function sortGalleries(sortGalleries) {
+    sortGalleries.sort(function(a,b) {
+        if (a.GalleryName < b.GalleryName){return -1;}
+        else if (a.GalleryName > b.GalleryName){return 1;}
+        else {return 0;}
+    });
+    return sortGalleries;
 }

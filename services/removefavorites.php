@@ -2,7 +2,8 @@
     session_start();
     //Checks if the id exists
     if (isset($_GET['remove'])) {
-        $_SESSION['favorites'] = [];
+        // remove favorites session
+        unset($_SESSION['favorites']);
     } else if (isset($_GET['id'])) {
         //Checks if the session favorites exists
         //Checks if the session favorites exists
@@ -23,4 +24,5 @@
 
     //redirects to the php page that called this addtofavorites php script
     header("Location: {$_SERVER['HTTP_REFERER']}");
+    exit();
 ?>

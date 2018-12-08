@@ -39,7 +39,7 @@ function sortGalleries(sortGalleries) {
  * @param galleries - the json galleries data
  */
 function generateGallery(data) {
-    let list = document.querySelector('.galleryList');
+    let list = document.querySelector('.gallerylist');
     let sorteddata = sortGalleries(data)
     for (let gallery of sorteddata) {
         let li = document.createElement('li');
@@ -49,6 +49,7 @@ function generateGallery(data) {
         
         let content = document.createTextNode(gallery.GalleryName);
         
+        li.setAttribute("class", "home-gallery");
         
         link.appendChild(content);
         li.appendChild(link);
@@ -57,7 +58,11 @@ function generateGallery(data) {
 }
 
 function generateArtists(data) {
+    let half = data.length / 2;
+    let index = 0;
+    
     let list = document.querySelector('.artistList');
+    
     for (let artist of data) {
         let li = document.createElement('li');
         
@@ -81,6 +86,9 @@ function generateArtists(data) {
         figure.appendChild(caption);
         li.appendChild(figure);
         list.appendChild(li);
+        
+        // increase index to switch were to append data
+        index++;
     }
 }
 

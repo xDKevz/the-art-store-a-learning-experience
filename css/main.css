@@ -28,6 +28,13 @@ main {
     /*background-color: gray;*/
 }
 
+.home-gallery {
+    list-style-type: none;
+    margin: 5px;
+    background-color: #F7F77B;
+}
+
+
 .artist {
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
@@ -82,10 +89,14 @@ main {
     width: 100%;
 }
 
+#toggle {
+    display: none;
+}
+
 .navigation li {
     display: inline-block;
     padding: 12pt;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .navigation #user {
@@ -101,7 +112,7 @@ main {
 .navigation> li:hover {
     background: rgb(166, 166, 166);
     cursor: pointer;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 /* Nav: User Options */
@@ -190,7 +201,7 @@ figcaption {
     margin-top: 5vh;
     align-items: center;
 }
-/*GALLERY*/
+
 a.display-gallery {
     padding: 10px;
     background-color: #DAF7A6;
@@ -214,6 +225,13 @@ a.display-gallery:hover {
 }
 
 /* MEDIA QUERY FOR MOBILE MENU */
+@media only screen and (max-width:1000px) {
+    .display-lists {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
 @media only screen and (max-width:768px) {
     .toggle {
         display: block;
@@ -271,13 +289,6 @@ a.display-gallery:hover {
     }
 }
 
-/*.artistList img, .genreList img {*/
-/*    height: auto; */
-/*    width: auto; */
-/*    max-width: 125px; */
-/*    max-height: 125px;*/
-/*}*/
-
 /* Horizontal Scrolling */
 
 /* GIF */
@@ -287,6 +298,3 @@ a.display-gallery:hover {
 /*    height: 100%;*/
 /*    width: 100%;*/
 /*}*/
-
-
-

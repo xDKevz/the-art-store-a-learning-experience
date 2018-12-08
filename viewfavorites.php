@@ -8,6 +8,7 @@
             $title = "View Favorites";
             include "include/head.php";
         ?>
+        <link rel="stylesheet" href="css/viewfavorites.css"/>
     </head>
     
     <body>
@@ -23,7 +24,7 @@
                         if ($_SESSION['favorites']) {
                             $favorites = $_SESSION['favorites'];
                             if (count($favorites) > 0) {
-                            ?> <ul> <?php
+                            ?> <ul class="ul-favorite"> <?php
                                 foreach($favorites as $f) {
                                     require_once("services/database-functions.inc.php");
                                     $sql = "SELECT a.FirstName, a.LastName, p.ArtistID, p.PaintingID, p.ImageFileName, p.Title, p.YearOfWork
@@ -37,7 +38,7 @@
                                     if ($FirstName == null) { $FirstName = ""; }
                                     if ($LastName == null) { $LastName == ""; }
                                     
-                                    echo "<li>";
+                                    echo "<li class='favorite'>";
                                         echo "<img class=\"image\" src=\"../services/imagescale.php?size=full&width=100&type=paintings&file=$ImageFileName\">";
                                         echo "<a href=\"single-artist.php?id=$ArtistID\">";
                                             echo "<span class=\"title\"> $FirstName $LastName </span>";
@@ -52,7 +53,7 @@
                                 }
                             ?> 
                                 </ul> 
-                                <button class="button"><span><a target="_blank" href="services/removefavorites.php?remove=all">Remove All</a></span></button>
+                                <button class="button"><span><a target="" href="services/removefavorites.php?remove=all">Remove All</a></span></button>
                             <?php
                             }
                         } else {

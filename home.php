@@ -16,19 +16,19 @@
             
             <div class="gallerylist">
                 <h1>GALLERY LIST</h1>
-                <ul class="galleryList"></ul>
+                <ul class="gallerylist"></ul>
             </div>
             
-            <div class="artist">
+            <div class="artistlist">
                 <h1>ARTIST LIST</h1>
-                 <ul class="artistList">
-                </ul>
+                <ul class="one"></ul>
+                <ul class="two"></ul>
             </div>
             
-            <div class="genreList">
+            <div class="genrelist">
                 <h1>GENRE LIST</h1>
-                <ul>
-                </ul>
+                <ul class="one"></ul>
+                <ul class="two"></ul>
             </div>
         </main>
         

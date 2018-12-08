@@ -46,7 +46,7 @@ if (isset($_POST['submit']))
                     // creates sessions when logged in successfully
                     $_SESSION['email'] = $email;
                     $_SESSION['username'] = $customerdata["FirstName"];
-                    $_SESSION['loginsuccess'] = "Login Successful!!";
+                    //$_SESSION['loginsuccess'] = "Login Successful!!";
                     $_SESSION['loginstatus'] = "login";
                     header("Location: home.php");
                     exit();
