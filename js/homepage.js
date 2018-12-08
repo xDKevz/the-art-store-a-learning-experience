@@ -39,7 +39,7 @@ function sortGalleries(sortGalleries) {
  * @param galleries - the json galleries data
  */
 function generateGallery(data) {
-    let list = document.querySelector('.gallerylist');
+    let list = document.querySelector('.gallerylist-ul');
     let sorteddata = sortGalleries(data)
     for (let gallery of sorteddata) {
         let li = document.createElement('li');

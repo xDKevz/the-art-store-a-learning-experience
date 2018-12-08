@@ -1,77 +1,52 @@
-<!-- not done yet implenting session, still testing -->
-
 <?php
     // starts the session
 	session_start();
 	// checks if the user is already logged in
 	// this session was passed from parseLogin.php
-	if(isset($_SESSION['email']))
-	{
+	if(isset($_SESSION['email'])) {
 	    // if the user is still logged in, must log out before being able to register again
 		header("Location: login.php");
-		// creates the session for the message
-		$_SESSION["message"]="Please Logout before trying to register for a new account";
 	}
-    
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/registration.css">
-    <title> Registration Page </title>
-</head>
-
-<!--This should be placed in style files later -->
+        <?php
+            $title = "Art Store - Register";
+            include "include/head.php";
+        ?>
+    </head>
+    <link rel="stylesheet" href="css/registration.css" type="text/css" />
+    <header><?php include "include/navigation.php"; ?></header>
 <body>
-
-
+    <div class="background-image"></div>
     <div class="registration-container"> 
-        <h2> Register - New Account </h2><br>
-        
+        <h2>Create Your Account</h2>
         <form class="reg-form" method="post" action="parseRegister.php">
             <div class="form-info">
-                <label class="reg-label"> First Name : </label>
+                <label class="reg-label">First Name</label>
                 <input class="reg-input" type="text" placeholder="John" name="firstName" id="fname"><br>
                 <p class="error" id="errfname"></p>
-            </div>
-            
-            <div class="form-info">
-                <label class="reg-label"> Last Name : </label>
+                <label class="reg-label">Last Name</label>
                 <input class="reg-input" type="text" placeholder="Doe" name="lastName" id="lname"><br>
+                <label class="reg-label">Choose Location</label>
+                <select name="country" class="countries order-alpha" id="countryId">
+                <option value="">Select Country</option>
+                </select>
+                <select name="state" class="states order-alpha" id="stateId">
+                    <option value="">Select State</option>
+                </select>
+                <select name="city" class="cities order-alpha" id="cityId">
+                    <option value="">Select City</option>
+                </select>
                 <p class="error" id="errlname"></p>
-            </div>
-            
-            
-            <div class="form-info">
-                <label class="reg-label"> City : </label>
-                <input class="reg-input" type="text" placeholder="Calgary" name="city" id="city"><br>
-                <p class="error" id="errcity"></p>
-            </div>
-            
-            <div class="form-info">
-                <label class="reg-label"> Country : </label>
-                <input class="reg-input" type="text" placeholder="Canada" name="country" id="country"><br>
-                <p class="error" id="errcountry"></p>
-            </div>
-            
-            
-            <div class="form-info">
-                <label class="reg-label"> Email : </label>
+                <label class="reg-label">Email</label>
                 <input class="reg-input" type="text" placeholder="email@email.com" name="email" id="email"><br>
                 <p class="error" id="erremail"></p>
-            </div>
-            
-            <div class="form-info">
-                <label class="reg-label"> Password : </label>
+                <label class="reg-label">Password</label>
                 <input class="reg-input" type="password" placeholder="Password" name="password" id="password"><br>
                 <p class="error" id="errpassword"></p>
-            </div>
-            
-            <div class="form-info">
-                <label class="reg-label"> Confirm Password : </label>
+                <label class="reg-label">Confirm Password</label>
                 <input class="reg-input" type="password" placeholder="Confirm Password" name="passwordAgain" id="passwordAgain"><br>
                 <p class="error" id="errpasswordAgain"></p>
             </div>
@@ -103,5 +78,8 @@
 </body>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/validate.js"></script>
+<!-- Script for generating the country, province, and city -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
 </html>
 

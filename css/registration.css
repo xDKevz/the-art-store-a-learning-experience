@@ -1,56 +1,30 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    z-index: 1;
 }
 
-.registration-container{
-    margin: auto;
-    margin-top: 15%;
-    width: 40%;
-    border: 5px solid #b0b3b7;
+.background-image {
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/images/register/register_background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: brightness(50%) blur(10px);
 }
 
-h2 {
+.registration-container {
+    position: relative;
+    height: auto;
+    width: 500px;
+    margin: 0 auto;
+    padding: 60px 60px;
     text-align: center;
+    top: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 10px 69px -17px rgba(0,0,0,1);
+    border-radius: 12px;
 }
-
-.form-info {
-    padding: 10px;
-    display: grid;
-    grid-gap: 2px;
-    grid-template-columns: 50% 50%;
-}
-
-.reg-label {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-}
-
-.reg-input {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 1;
-}
-
-.reg-submit {
-    text-align: center;
-    padding: 5px;
-}
-
-.error{
-			padding:0px;
-			color:red;
-			font-size:0.8em;
-
-}
-
-@media only screen and (max-width:760px) {
-    .registration-container {
-        width: 80%;
-    }
-    
-    .reg-label, .reg-input {
-        display: block;
-    }
-}
-

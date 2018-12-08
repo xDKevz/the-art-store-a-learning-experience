@@ -21,16 +21,10 @@ main {
     position: relative;
 }
 
-.gallerylist {
+.gallerylist  {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
 }
-
-.home-gallery {
-    list-style-type: none;
-    margin: 5px;
-}
-
 
 .artistlist {
     grid-column: 2 / span 2;
@@ -42,17 +36,13 @@ main {
     grid-row: 2 / span 1;
 }
 
-/*.header {*/
-/*    top: 0px;*/
-/*    width: 100%;*/
-/*}*/
-
-/* Single-?.php two column view*/
-/*.single-artist-container, .single-gallery-container, .single-genre-container {*/
-/*    display: grid;*/
-/*    grid-template-columns: 50% 50%;*/
-/*    grid-gap: 5px;*/
-/*}*/
+.gallerylist h1 {
+    text-align: center;
+    /*border-bottom: 1px solid #202020;*/
+}
+.home-gallery {
+    text-decoration: none;
+}
 
 /*** LOGOS AND IMAGES ***/
 .logo {
@@ -135,6 +125,7 @@ main {
 }
 
 .user-options-nav-list > li{
+    /*text-align: center;*/
     display: block;
     list-style: none;
     margin: 0;
@@ -219,7 +210,6 @@ a.display-gallery:hover {
     border-radius: 10px;
     margin: auto;
     margin-bottom: 10px;
-    
 }
 
 
@@ -236,29 +226,8 @@ a.display-gallery:hover {
     overflow: auto;
     white-space: nowrap;
     margin-bottom: 0;
+    margin-top: 25px;
 }
-
-
-/*.surroundContainer {*/
-/*    height: 70%;*/
-/*    width: auto;*/
-/*    overflow: auto;*/
-/*    white-space: nowrap;*/
-/*    margin-bottom: 0;*/
-    /*height: 100%;*/
-    /*width: auto;*/
-    /*overflow: auto;*/
-    /*white-space: nowrap;*/
-    /*background-color: red;*/
-    
-    /*display: grid;*/
-    /*grid-template-columns: auto;*/
-/*}*/
-
-/*h1.surroundContainer {*/
-/*    grid-column: 1 / span 1;*/
-/*    grid-row: 1 / span 1;*/
-/*}*/
 
 .box1 {
     grid-column: 1 / span 1;
@@ -276,6 +245,7 @@ a.display-gallery:hover {
     /*height: 200px;*/
     width: auto;
     margin: 5px;
+    
 }
 
 /* MEDIA QUERY FOR MOBILE MENU */
@@ -374,11 +344,11 @@ a.display-gallery:hover {
         /*grid-template-columns: 100%;*/
     }
 
-    .gallerylist {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-        /*background-color: gray;*/
-    }
+    /*.gallerylist {*/
+    /*    grid-column: 1 / span 1;*/
+    /*    grid-row: 1 / span 1;*/
+        
+    /*}*/
     
     .artist {
         grid-column: 1 / span 1;
@@ -392,9 +362,9 @@ a.display-gallery:hover {
         /*background-color: gray;*/
     }
     
-    .gallerylist, .artist, .genres {
-        width: 100%;
-    }
+    /*.gallerylist, .artist, .genres {*/
+    /*    width: 100%;*/
+    /*}*/
     
     .display-lists {
         display: grid;
@@ -406,12 +376,3 @@ a.display-gallery:hover {
     
 }
 
-/* Horizontal Scrolling */
-
-/* GIF */
-/*.loading {*/
-/*    background: url('https://media.giphy.com/media/11ASZtb7vdJagM/giphy.gif') no-repeat center center;*/
-/*    position: absolute;*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*}*/
