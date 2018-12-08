@@ -20,6 +20,10 @@
                 $row = retrievedData($sql, $parameter);
                 extract($row);
                 
+                // set names such that there is no null printed in html
+                if ($FirstName == null) { $FirstName = ""; }
+                if ($LastName == null) { $LastName == ""; }
+                
                 // END RETRIEVED
                 
                 if (!empty($row)) {
@@ -39,6 +43,8 @@
                             <h1 class="header">Information</h1>
                             <div class="specifics">
                                 <h2 class="title"> <?php echo "\"$Title\""; ?> </h2>
+            
+                                
                                 <h3> <?php echo $FirstName . " " . $LastName; ?> </h3>
                                 <p> <?php echo $YearOfWork . ", ". $Medium . ", " . $Width . "\" x " . $Height . "\" , " . $CopyrightText; ?></p>
                                 
@@ -82,7 +88,7 @@
                             
                             <div class="favorites">
                                 <button class="button"><span><a href="services/addtofavorites.php?id=<?=$PaintingID?>">Add to Favorites </a></span></button>
-                                <button class="button"><span><a target="_blank" href="">View Favorites</a></span></button>
+                                <button class="button"><span><a target="_blank" href="viewfavorites.php">View Favorites</a></span></button>
                             </div>
                         </div>
                     </main>

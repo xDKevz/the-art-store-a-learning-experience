@@ -98,7 +98,7 @@ function generateGenre(data) {
         caption.textContent = genre.GenreName;
         
         let img = document.createElement('img');
-        img.setAttribute("src", "images/genres/" + genre.GenreID + ".jpg");
+        img.setAttribute("src", "../services/imagescale.php?width=125&file=" + genre.GenreID);
         
         link.appendChild(img);
         figure.appendChild(link);

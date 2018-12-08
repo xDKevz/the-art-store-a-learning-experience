@@ -159,6 +159,60 @@ main {
     transition: 0.5s;
 }
 
+figure {
+  width: 125px;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0em;
+  padding: 0.5em;
+}
+
+figure a img{
+    display: block;
+}
+
+figcaption {
+    background-color: white;
+    border-radius: 0px 0px 12px 12px;
+    margin: 0px;
+}
+
+
+/*INDIVIDUAL MENU PAGE STYLES*/
+
+.display-lists {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    align-items: center;
+}
+/*GALLERY*/
+a.display-gallery {
+    padding: 10px;
+    background-color: #DAF7A6;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    margin: 5px;
+}
+
+a.display-gallery:hover {
+    background-color: #AFE256;
+}
+
+.display-content {
+    background-color: #F7F77B;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 10px;
+    
+}
+
 /* MEDIA QUERY FOR MOBILE MENU */
 @media only screen and (max-width:768px) {
     .toggle {
@@ -210,14 +264,19 @@ main {
     .gallerylist, .artist, .genres {
         width: 100%;
     }
+    
+    .display-lists {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
 }
 
-.artistList img, .genreList img {
-    height: auto; 
-    width: auto; 
-    max-width: 125px; 
-    max-height: 125px;
-}
+/*.artistList img, .genreList img {*/
+/*    height: auto; */
+/*    width: auto; */
+/*    max-width: 125px; */
+/*    max-height: 125px;*/
+/*}*/
 
 /* Horizontal Scrolling */
 
@@ -229,46 +288,5 @@ main {
 /*    width: 100%;*/
 /*}*/
 
-figure {
-  width: 125px;
-  text-align: center;
-  font-style: italic;
-  font-size: smaller;
-  text-indent: 0;
-  border: thin silver solid;
-  margin: 0em;
-  padding: 0.5em;
-}
 
-figure a img{
-    display: block;
-}
 
-figcaption {
-    background-color: white;
-    border-radius: 0px 0px 12px 12px;
-    margin: 0px;
-}
-
-.display-lists {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap: 5px;
-    margin-top: 8%;
-}
-
-a.display-gallery {
-    padding: 10px;
-    background-color: #DAF7A6;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: #000000;
-}
-
-display-gallery:hover {
-    background-color: #DAF7A6;
-}
-
-.display-content {
-}

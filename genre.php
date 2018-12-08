@@ -10,7 +10,7 @@
         <header>
             <?php include 'include/navigation.php'; ?>
         </header>
-        <main class="container">
+        <main id="genre-display" class="container">
             <span id="type" class="genre"></span>
             <div class="display-lists">
             </div>

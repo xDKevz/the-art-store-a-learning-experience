@@ -46,6 +46,8 @@ function generateArtists(data) {
         let img = document.createElement('img');
         img.setAttribute("src", "../services/imagescale.php?size=full&width=125&type=artists&file=" + info.ArtistID);
         
+        figure.setAttribute("class", "display-content");
+        
         link.appendChild(img);
         figure.appendChild(link);
         figure.appendChild(caption);

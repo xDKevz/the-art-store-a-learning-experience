@@ -8,7 +8,8 @@
     </head>
     <link rel="stylesheet" href="css/login.css" type="text/css" />
     <header><?php include "include/navigation.php"; ?></header>
-<body>    
+<body>
+    <div class="background-image"></div>
  <div class="login-container">
     <div class="login-brand">
         <img class="login-logo" src="/images/logo/art_store_icon.png" alt="art_store_logo" width="80" height="80">
@@ -26,9 +27,9 @@
     } else {
         // if not logged in, displays the log in page
         echo '<form method="post" action="parseLogin.php">
-              <input type="text" name="email" placeholder="email address"><br>
-              <input type="password" name="password" placeholder="password"><br>
-              <input type="submit" name="submit" class="btn-login" value="Log in">
+              <input class="text" type="text" name="email" placeholder="email address"><br>
+              <input class="text" type="password" name="password" placeholder="password"><br>
+              <input class="button" type="submit" name="submit" value="Log in">
               </form>
               
               <div class="login-signup">

@@ -30,7 +30,7 @@
                         <div id="<?=$ArtistID?>" class="information">
                             <h1 class="header">Artist Information</h1>
                             <div class="image">
-                                <img src="images/artists/full/<?=$ArtistID?>.jpg">
+                                <img src="../services/imagescale.php?size=full&width=300&type=artists&file=<?=$ArtistID?>">
                             </div>
                             <div class="specifics">
                                 <h2>
