@@ -109,7 +109,7 @@ li:hover {
   border-style: groove;
 }
 
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:800px) {
   .container {
       display: block;
       /*grid-template-columns: 50% 50%;*/
@@ -135,6 +135,11 @@ li:hover {
   
   .popup {
     display: none;
+  }
+  
+  .image img{
+    width: 300px;
+    height: 300px;
   }
   
 }

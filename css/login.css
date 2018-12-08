@@ -134,6 +134,35 @@ input[type="text"], input[type="password"] {
 }
 
 /* MEDIA QUERY */
-@media only screen and (max-width:1024px) {
-    
+@media (max-width:1024px) {
+    .login-container {
+        padding: 30px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 400px;
+        margin: 0 auto;
+        padding: 30px 30px;
+        top: 50px;
+    }
+}
+
+@media (max-width:425px) {
+    .login-container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 30px 30px;
+        top: 50px;
+    }
+}
+
+@media (max-width:320px) {
+    .login-container {
+        width: 200px;
+        margin: 0 auto;
+        padding: 30px 30px;
+        top: 50px;
+    }
 }

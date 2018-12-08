@@ -20,15 +20,35 @@
             </div>
             
             <div class="artistlist">
-                <h1>ARTIST LIST</h1>
-                <ul class="one"></ul>
-                <ul class="two"></ul>
+                <h1 class="artistheader">ARTIST LIST</h1>
+                <!--this is the wrapper for entire page-->
+                <!--<div class="wrapper">-->
+                    <!--home view portion-->
+                    <!--div containing hscroll items-->
+                    <!--<div class="surroundContainer"></div>-->
+                    <div class="box1">
+                        <!--<div class="hpage">view1</div>-->
+                        <!--<div class="hpage">view2</div>-->
+                    </div>
+                    <div class="box2">
+                        <!--<div class="hpage">view1</div>-->
+                        <!--<div class="hpage">view2</div>-->
+                    </div>
+                <!--</div>-->
+                <!--<ul class="one"></ul>-->
+                <!--<ul class="two"></ul>-->
             </div>
             
             <div class="genrelist">
                 <h1>GENRE LIST</h1>
-                <ul class="one"></ul>
-                <ul class="two"></ul>
+                <div class="surroundContainer">
+                    <div class="box1">
+                        <!--<div class="hpage">view1</div>-->
+                        <!--<div class="hpage">view2</div>-->
+                    </div>
+                    <div class="box2">
+                    </div>
+                </div>
             </div>
         </main>
         

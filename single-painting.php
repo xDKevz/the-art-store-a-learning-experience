@@ -6,6 +6,8 @@
             include "include/head.php";
         ?>
         <link rel="stylesheet" href="css/single-painting.css" type="text/css" />
+        <!-- Add icon library https://www.w3schools.com/howto/howto_css_star_rating.asp --> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     
     <?php // START PHP
@@ -90,7 +92,13 @@
                                     ?> 
                                         <div class="favorites">
                                             <button class="button"><span><a href="services/addtofavorites.php?id=<?=$PaintingID?>">Add to Favorites </a></span></button>
-                                            <button class="button"><span><a target="_blank" href="viewfavorites.php">View Favorites</a></span></button>
+                                            <button class="button"><span><a href="viewfavorites.php">View Favorites</a></span></button><br/>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span>
+                                            <span class="fa fa-star checked"></span><br>
+                                            <button class="button"><span><a href="">Vote</a></span></button>
                                         </div>
                                     <?php
                                 }

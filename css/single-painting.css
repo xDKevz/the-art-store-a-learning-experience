@@ -57,6 +57,7 @@
 }
 
 /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1 */
+
 .button a { 
   color: white; 
   text-decoration: none;
@@ -101,13 +102,21 @@
   right: 0;
 }
 
-@media only screen and (max-width:768px) {
-  .container {
+.checked {
+  color: orange;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
       display: block;
       /*grid-template-columns: 50% 50%;*/
       /*grid-gap: 5px;*/
   }
-  
+}
+
+
+@media only screen and (max-width:768px) {
+
   html, body, main {
     margin: 0;
   }
@@ -124,5 +133,11 @@
   
   .colorscheme {
       text-align: justify;
+  }
+  
+  .button {
+    padding: 15px;
+    width: 100px;
+    margin: 5px;
   }
 }

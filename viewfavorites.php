@@ -60,7 +60,6 @@
                             ?> 
                                 <div class="nofavorites"> 
                                     <h1>No favorites found.</h1>
-                                    <p>You have no favorite items yet.</p>
                                 </div>
                             <?php
                         }
@@ -70,6 +69,6 @@
         
         
     </body>
-    
+    <script type="text/javascript" src="js/main.js"></script>
     
 </html>

@@ -7,12 +7,14 @@
     </div>
     <nav class="navigation">
         <label id="toggle">&#9776;</label>
+        <div class="menu">
         <li><a href="home.php">home</a></li>
         <li><a href="artist.php">artists</a></li>
         <li><a href="galleries.php">galleries</a></li>
         <li><a href="genre.php">genres</a></li>
         <li><a href="about.php">about</a></li>
-        <li id="user"><img src="/images/logo/user_icon.png" height="15" width="15"></li>
+        </div>
+        <li id="user"><img src="/images/logo/user_icon.png"></li>
         
         <?php
             // Starts the session
@@ -27,13 +29,12 @@
                 echo "<p>Hello, $username!</p>";
                 echo '<nav class="user-options-nav">';
                 echo '<ul class="user-options-nav-list">';
-                echo '<li><a href="favourites.php">favourites</a></li>';
+                echo '<li><a href="viewfavorites.php">favourites</a></li>';
                 echo '<li><a href="logout.php">sign out</a></li>';
             } else {
                 echo '<p>Hello, stranger.</p>';
                 echo '<nav class="user-options-nav">';
                 echo '<ul class="user-options-nav-list">';
-                // echo '<li><a href="favourites.php">favourites</a></li>';
                 echo '<li><a href="login.php">sign in</a></li>';
             }
             

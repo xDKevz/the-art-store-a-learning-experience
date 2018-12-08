@@ -36,17 +36,6 @@
               <input class="button" type="submit" name="submit" value="Log in">
               </form>
               
-              <p class= errorLogin>
-                <?php
-                    //from parseLogin
-                    if(isset($_SESSION["errormessage"])) {
-                    	print($_SESSION["errormessage"]);
-                        // destroys the session to avoid errors showing up non stop.
-                    	unset($_SESSION["errormessage"]);
-                    }
-                ?>
-            <p>
-              
               <div class="login-signup">
               <p>Need an account? <a class="link" href="registration.php">Create a new one.</a>
               </div>';
@@ -65,9 +54,20 @@
     
     <p style?? >error message <p>
     -->
+    <p class= errorLogin>
+    <?php
+        //from parseLogin
+        if(isset($_SESSION["errormessage"])) {
+        	print($_SESSION["errormessage"]);
+            // destroys the session to avoid errors showing up non stop.
+        	unset($_SESSION["errormessage"]);
+        }
+    ?>
+    <p>
     </div>
  </div>
 </body>
+    <script type="text/javascript" src="js/main.js"></script>
 </html>
 
 

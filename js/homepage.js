@@ -61,16 +61,15 @@ function generateArtists(data) {
     let half = data.length / 2;
     let index = 0;
     
-    let list = document.querySelector('.artistlist .one');
-    let list2 = document.querySelector('.artistlist .two');
-    
+    let list = document.querySelector('.artistlist .box1');
+    let list2 = document.querySelector('.artistlist .box2');
     for (let artist of data) {
         // if index is equal to half switch selected list
         if (index == half) {
             list = list2;
         }
         
-        let li = document.createElement('li');
+        let div = document.createElement('div');
         
         let link = document.createElement('a');
         link.setAttribute("href", "single-artist.php?id=" + artist.ArtistID);
@@ -90,8 +89,10 @@ function generateArtists(data) {
         link.appendChild(img);
         figure.appendChild(link);
         figure.appendChild(caption);
-        li.appendChild(figure);
-        list.appendChild(li);
+        div.appendChild(figure);
+
+        div.setAttribute("class", "hpage");
+        list.appendChild(div);
         
         // increase index to switch were to append data
         index++;
@@ -99,9 +100,20 @@ function generateArtists(data) {
 }
 
 function generateGenre(data) {
-    let list = document.querySelector('.genreList');
+    
+    
+    let half = data.length / 2;
+    let index = 0;
+    
+    let list = document.querySelector('.genrelist .box1');
+    let list2 = document.querySelector('.genrelist .box2');
     for (let genre of data) {
-        let li = document.createElement('li');
+        // if index is equal to half switch selected list
+        if (index == half) {
+            list = list2;
+        }
+        
+        let div = document.createElement('div');
         
         let link = document.createElement('a');
         link.setAttribute("href", "single-genre.php?id=" + genre.GenreID);
@@ -117,7 +129,35 @@ function generateGenre(data) {
         link.appendChild(img);
         figure.appendChild(link);
         figure.appendChild(caption);
-        li.appendChild(figure);
-        list.appendChild(li);
+        div.appendChild(figure);
+
+        div.setAttribute("class", "hpage");
+        list.appendChild(div);
+        
+        // increase index to switch were to append data
+        index++;
     }
+    
+    
+    // let list = document.querySelector('.genreList');
+    // for (let genre of data) {
+    //     let li = document.createElement('li');
+        
+    //     let link = document.createElement('a');
+    //     link.setAttribute("href", "single-genre.php?id=" + genre.GenreID);
+        
+    //     let figure = document.createElement('figure');
+        
+    //     let caption = document.createElement('figcaption');
+    //     caption.textContent = genre.GenreName;
+        
+    //     let img = document.createElement('img');
+    //     img.setAttribute("src", "../services/imagescale.php?width=125&file=" + genre.GenreID);
+        
+    //     link.appendChild(img);
+    //     figure.appendChild(link);
+    //     figure.appendChild(caption);
+    //     li.appendChild(figure);
+    //     list.appendChild(li);
+    // }
 }

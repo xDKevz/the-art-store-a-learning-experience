@@ -1,10 +1,10 @@
 body {
     margin: 0;
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
     padding: 0;
     font-family: "SF Pro Display";
     background-color: white;
-    height: 100px;
+    /*height: 100px;*/
 }
 
 /*** Home view ***/
@@ -16,48 +16,43 @@ main {
 
 .home {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-columns: 25% auto;
     position: relative;
-    top: 150pt;
 }
 
 .gallerylist {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
-    /*background-color: gray;*/
 }
 
 .home-gallery {
     list-style-type: none;
     margin: 5px;
-    background-color: #F7F77B;
 }
 
 
-.artist {
-    grid-column: 2 / span 1;
+.artistlist {
+    grid-column: 2 / span 2;
     grid-row: 1 / span 1;
-    /*background-color: gray;*/
 }
 
-.genres {
-    grid-column: 2 / span 1;
+.genrelist {
+    grid-column: 2 / span 2;
     grid-row: 2 / span 1;
-    /*background-color: gray;*/
 }
 
-.header {
-    top: 0px;
-    width: 100%;
-}
+/*.header {*/
+/*    top: 0px;*/
+/*    width: 100%;*/
+/*}*/
 
 /* Single-?.php two column view*/
-.single-artist-container, .single-gallery-container, .single-genre-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 5px;
-}
+/*.single-artist-container, .single-gallery-container, .single-genre-container {*/
+/*    display: grid;*/
+/*    grid-template-columns: 50% 50%;*/
+/*    grid-gap: 5px;*/
+/*}*/
 
 /*** LOGOS AND IMAGES ***/
 .logo {
@@ -82,7 +77,7 @@ main {
     z-index: 2;
 }
 
-.navigation ul {
+.navigation {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -101,7 +96,13 @@ main {
 
 .navigation #user {
     position: absolute;
+    top: 0pt;
     right: 50pt;
+}
+
+#user img {
+    height: 15px;
+    width: 15px;
 }
 
 .navigation li a {
@@ -126,13 +127,10 @@ main {
     border: 1px solid #d6d6d6;
     border-radius: 10px;
     width: 200px;
-    
     padding: 0 20px;
-    
     position: absolute;
     top: 40pt;
     right: 50pt;
-    
     box-shadow: 0px 0px 160px -40px rgba(0,0,0,0.8);
 }
 
@@ -169,7 +167,7 @@ main {
     background: #e6e6e6;
     transition: 0.5s;
 }
-
+/* HOME PAGE artists, genres, galleries CSS*/
 figure {
   width: 125px;
   text-align: center;
@@ -192,8 +190,8 @@ figcaption {
 }
 
 
-/*INDIVIDUAL MENU PAGE STYLES*/
-
+/*INDIVIDUAL MENU PAGE STYLES */
+/*COVERS ARTISTS.PHP, GALLERIES.PHP, AND GENRES.PHP*/
 .display-lists {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
@@ -224,49 +222,145 @@ a.display-gallery:hover {
     
 }
 
-/* CAROUSEL - SLIDER */
-.one, .two {
-    /*display: grid;*/
 
+.loading {
+    display: none;
+}
+
+/* Horizontal Scroll*/
+
+
+.artistlist, .genrelist {
+    height: 100%;
+    width: auto;
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+
+/*.surroundContainer {*/
+/*    height: 70%;*/
+/*    width: auto;*/
+/*    overflow: auto;*/
+/*    white-space: nowrap;*/
+/*    margin-bottom: 0;*/
+    /*height: 100%;*/
+    /*width: auto;*/
+    /*overflow: auto;*/
+    /*white-space: nowrap;*/
+    /*background-color: red;*/
     
+    /*display: grid;*/
+    /*grid-template-columns: auto;*/
+/*}*/
+
+/*h1.surroundContainer {*/
+/*    grid-column: 1 / span 1;*/
+/*    grid-row: 1 / span 1;*/
+/*}*/
+
+.box1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
 }
 
-.one li, .two li {
-    /*float: left;*/
-    list-style-type: none;
-    display: flex;
+.box2 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    /*height: 250px;*/
 }
 
-.artistlist ul:after, .genrelist ul:after {
-    clear: both;
-    display: table;
+.hpage {
+    display: inline-block;
+    /*height: 200px;*/
+    width: auto;
+    margin: 5px;
 }
-
 
 /* MEDIA QUERY FOR MOBILE MENU */
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:1024px) {
     .display-lists {
         display: grid;
         grid-template-columns: auto auto auto;
     }
+    
+    /* Navigation and header */
+    #toggle {
+        display: none;
+    }
+    
+    #user img {
+        height: 15px;
+        width: 15px;
+    }
+    
+    .navigation {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        background-color: rgba(0,0,0, 0.8);
+        text-align: center;
+        z-index: 2;
+    }
+    
+    .navigation li {
+        padding: 12pt;
+        transition: 0.5s;
+    }
+    
+    .user-options-nav-list > li{
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #e3e3e3;
+        font-size: 1em;
+        line-height: 23px;
+    }
 }
 
 @media only screen and (max-width:768px) {
-    .toggle {
+    #toggle {
         display: block;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 15px;
+        text-align: left;
+        font-size: 16px;
+        margin-left: 15px;
     }
-    .menu {
-        width: 100%;
+    
+    .navigation #user {
+        position: absolute;
+        top: 0pt;
+        right: 10pt;
+    }
+    
+    .logo {
         display: none;
     }
-    .menu li {
-        width: 100%;
-        display: block;
-        text-align: center;
+    
+    .menu {
+        display: none;
     }
-    .active {
-        display: block;
+    
+    #user-options{
+        display: none;
+        font-size: 15px;
+        line-height: 0.5;
+        padding: 0 10px;
+        position: absolute;
+        top: 40pt;
+        right: 10pt;
     }
+    
+    .user-options-nav-list > li{
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #e3e3e3;
+        font-size: 1em;
+        line-height: 20px;
+    }
+    
     .teamMembers div {
         width: 100%;
     }
@@ -306,6 +400,10 @@ a.display-gallery:hover {
         display: grid;
         grid-template-columns: auto auto;
     }
+}
+
+@media (max-width:425px) {
+    
 }
 
 /* Horizontal Scrolling */
