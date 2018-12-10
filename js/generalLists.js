@@ -26,7 +26,11 @@ window.addEventListener("load", function(){
         .catch( error => console.log(error));
 });
 
-
+/**
+ * Populates all the artists requested from the artist API
+ * 
+ * @param data - the json artist data
+ */
 function generateArtists(data) {
     let list = document.querySelector(".display-lists");
     
@@ -56,6 +60,11 @@ function generateArtists(data) {
     
 }
 
+/**
+ * Populates all the Genres requested from the genre API
+ * 
+ * @param data - the json genre data
+ */
 function generateGenre(data) {
     let list = document.querySelector('.display-lists');
     for (let genre of data) {
@@ -78,7 +87,11 @@ function generateGenre(data) {
     }
 }
 
-
+/**
+ * Populates all the galleries requested from the gallery API
+ * 
+ * @param data - the json gallery data
+ */
 function generateGallery(data) {
     let list = document.querySelector('.display-lists');
     let sortedData = sortGalleries(data);

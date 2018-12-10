@@ -11,8 +11,10 @@
         <header>
             <?php include "include/navigation.php"; ?>
         </header>
+        
+        <img src="images/logo/animacia3.gif" class="loading">
+        
         <main class="home">
-            
             
             <div class="gallerylist">
                 <h1>GALLERY LIST</h1>
@@ -20,15 +22,10 @@
             </div>
             
             <div class="artistlist">
-                <div class="loading"></div>
-                <!--<h1 class="artistheader">ARTIST LIST</h1>-->
-                <!--this is the wrapper for entire page-->
-                <!--<div class="wrapper">-->
-                    <!--home view portion-->
-                    <!--div containing hscroll items-->
-                    <!--<div class="surroundContainer"></div>-->
+                <!--<div class="loading"></div>-->
+                <!--This is where both rows of artists are generated-->
+                <!--Sample elements shown below of how each artist is generated-->
                     <div class="box1">
-                        
                         <!--<div class="hpage">view1</div>-->
                         <!--<div class="hpage">view2</div>-->
                     </div>
@@ -36,20 +33,21 @@
                         <!--<div class="hpage">view1</div>-->
                         <!--<div class="hpage">view2</div>-->
                     </div>
-                <!--</div>-->
-                <!--<ul class="one"></ul>-->
-                <!--<ul class="two"></ul>-->
             </div>
             
             <div class="genrelist">
-                <div class="loading"></div>
+                <!--<div class="loading"></div>-->
                 <!--<h1>GENRE LIST</h1>-->
                 <div class="surroundContainer">
+                    <!--This is where both rows of genres are generated-->
+                    <!--Sample elements shown below of how each genre is generated-->
                     <div class="box1">
-                        <!--<div class="hpage">view1</div>-->
-                        <!--<div class="hpage">view2</div>-->
+                        <!--<div class="hpage">genre1</div>-->
+                        <!--<div class="hpage">genre2</div>-->
                     </div>
                     <div class="box2">
+                        <!--<div class="hpage">genre1</div>-->
+                        <!--<div class="hpage">genre2</div>-->
                     </div>
                 </div>
             </div>

@@ -1,0 +1,151 @@
+/* Horizontal Menu Styles */
+/* Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs */
+.navigation {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    background-color: rgba(0,0,0, 0.8);
+    text-align: center;
+    z-index: 2;
+}
+
+.navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#toggle {
+    display: none;
+}
+
+.navigation li {
+    display: inline-block;
+    padding: 12pt;
+    transition: 0.5s;
+}
+
+.navigation #user {
+    position: absolute;
+    top: 0pt;
+    right: 50pt;
+}
+
+#user img {
+    height: 15px;
+    width: 15px;
+}
+
+.navigation li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navigation li:hover {
+    background: rgb(166, 166, 166);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Nav: User Options */
+#user-options{
+    display: none;
+    font-size: 15px;
+    line-height: 1.16667;
+    font-weight: 400;
+    letter-spacing: -.014em;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    width: 200px;
+    padding: 0 20px;
+    position: absolute;
+    top: 40pt;
+    right: 50pt;
+    box-shadow: 0px 0px 160px -40px rgba(0,0,0,0.8);
+}
+
+.user-options-nav-list {
+    padding-left: 0;
+}
+
+.user-options-content > p {
+    padding: 35px;
+    margin: 0;
+    text-align: center;
+}
+
+.user-options-nav-list li {
+    text-align: left;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #e3e3e3;
+    font-size: 1em;
+}
+
+.user-options-nav-list > li a {
+    color: #4d4d4d;
+    display: block;
+    line-height: 43px;
+    padding: 0 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.5s;
+    text-align: left;
+}
+
+.user-options-nav-list > li a:hover {
+    background: #e6e6e6;
+    transition: 0.5s;
+}
+
+/** RESPONSIVE RULES **/
+@media (max-width:1024px) {
+    /* Navigation and header */
+    #toggle {
+        display: none;
+    }
+    
+    #user img {
+        height: 15px;
+        width: 15px;
+    }
+    
+    .navigation {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        background-color: rgba(0,0,0, 0.8);
+        text-align: center;
+        z-index: 2;
+    }
+    
+    .navigation li {
+        padding: 12pt;
+        transition: 0.5s;
+    }
+    
+    .user-options-nav-list > li{
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #e3e3e3;
+        font-size: 1em;
+        line-height: 23px;
+    }
+}
+
+@media (max-wdith:768px) {
+    .menu {
+        display: none;
+    }
+    
+    #toggle {
+        display: block;
+    }
+}
+

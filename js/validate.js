@@ -1,3 +1,9 @@
+/**
+ * Confirms that new user trying to register an account has filled in the 
+ * right information on registration page.
+ * 
+ * @param myform - the form element containing the elements with user-entered information
+ */
 function validate(myform)
 {
     var err="";

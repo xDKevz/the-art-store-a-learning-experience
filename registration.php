@@ -17,40 +17,25 @@
         ?>
     </head>
     <link rel="stylesheet" href="css/registration.css" type="text/css" />
-    <header><?php include "include/navigation.php"; ?></header>
 <body>
+    <header><?php include "include/navigation.php"; ?></header>
     <div class="background-image"></div>
     <div class="registration-container"> 
+    <div class="signup-logo">
+        <img src="/images/logo/art_store_icon.png" alt="art_store_logo" width="80" height="80">
         <h2>Create Your Account</h2>
+    </div>
         <form class="reg-form" method="post" action="parseRegister.php">
             <div class="form-info">
-                <label class="reg-label">First Name</label>
-                <input class="reg-input" type="text" placeholder="John" name="firstName" id="fname"><br>
-                <p class="error" id="errfname"></p>
-                <label class="reg-label">Last Name</label>
-                <input class="reg-input" type="text" placeholder="Doe" name="lastName" id="lname"><br>
-                <label class="reg-label">Choose Location</label>
+                <input class="reg-input" type="text" placeholder="first name" name="firstName" id="fname"><br>
+                <input class="reg-input" type="text" placeholder="last name" name="lastName" id="lname"><br>
                 <select name="country" class="countries order-alpha" id="countryId">
-                <option value="">Select Country</option>
-                </select>
-                <select name="state" class="states order-alpha" id="stateId">
-                    <option value="">Select State</option>
-                </select>
-                <select name="city" class="cities order-alpha" id="cityId">
-                    <option value="">Select City</option>
-                </select>
-                <p class="error" id="errlname"></p>
-                <label class="reg-label">Email</label>
-                <input class="reg-input" type="text" placeholder="email@email.com" name="email" id="email"><br>
-                <p class="error" id="erremail"></p>
-                <label class="reg-label">Password</label>
-                <input class="reg-input" type="password" placeholder="Password" name="password" id="password"><br>
-                <p class="error" id="errpassword"></p>
-                <label class="reg-label">Confirm Password</label>
-                <input class="reg-input" type="password" placeholder="Confirm Password" name="passwordAgain" id="passwordAgain"><br>
-                <p class="error" id="errpasswordAgain"></p>
+                    <option value="">select country or region</option>
+                </select><br>
+                <input class="reg-input" type="text" placeholder="your@email.com" name="email" id="email"><br>
+                <input class="reg-input" type="password" placeholder="password" name="password" id="password"><br>
+                <input class="reg-input" type="password" placeholder="confirm password" name="passwordAgain" id="passwordAgain"><br>
             </div>
-            
             <!--DISPLAY EMAIL ERROR MESSAGE WHEN PROVIDED WITH EXISTING EMAIL -->
             <?php 
                 // checks if the session is available for "invalid"
@@ -58,21 +43,19 @@
                 {
                     // displays the error message from parseRegister.php
                     $message=$_SESSION['invalid'];
-                    
-                    /*<p style?? >error message <p>*/
             
                     echo "<p class='error'>'$message'</p>";
                     // unsets/removes the invalid session
                     unset($_SESSION["invalid"]);
                 }
             ?>
-            
             <div class="reg-submit">
-                <input type="submit" name="submit" value="Create Account" onclick="return validate(this.form)">
+                <input type="submit" class="button" name="submit" value="Create Account" onclick="return validate(this.form)">
             </div>
-            
         </form>
-        
+        <div class="login">
+            <p>Already have an account? <a href="login.php">Sign in instead.</a></p>
+        </div>
     </div>   
 
 </body>

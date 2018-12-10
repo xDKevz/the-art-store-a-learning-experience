@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,7 +14,7 @@
         </header>
         
         <main class="container">
-            <h1>Favorites</h1>
+            <h1 class="favheader">Favorites</h1>
             
             <div class="content">
                     <?php
@@ -59,7 +56,7 @@
                         } else {
                             ?> 
                                 <div class="nofavorites"> 
-                                    <h1>No favorites found.</h1>
+                                    <p>No favorites found.</p>
                                 </div>
                             <?php
                         }

@@ -1,10 +1,3 @@
-<!-- 
-parseRegister.php - provides database functionality for registration.php 
-
-Not done yet. might still need to add more validation 
-
---> 
-
 <?php
 session_start();
 //this will allow access to the function call runQuery()
@@ -21,12 +14,11 @@ if (isset($_POST['submit']))
    $password = $_POST['password'];
    $passwordAgain = $_POST['passwordAgain'];
 
-    if (empty($firstName) || empty($lastName) || empty($city) || empty($country) || empty($email)|| empty($password)|| empty($passwordAgain))
-    {
+    if (empty($firstName) || empty($lastName) || empty($city) || empty($country) || empty($email)|| empty($password)|| empty($passwordAgain)) {
         
         // error message for any empty fields
         header("Location: registration.php?registration=empty");
-        $_SESSION["invalid"] = "Please fill out empty field(s)";
+        $_SESSION["invalid"] = "Please fill out required fields.";
         exit();
     }
     else
@@ -37,17 +29,16 @@ if (isset($_POST['submit']))
             
             //error message for invalid email
             header("Location: registration.php?registration=invalid");
-            $_SESSION["invalid"] = "You have entered an Invalid Email.";
+            $_SESSION["invalid"] = "The email you entered was invalid. Try again.";
             exit();
         }
         else
         {
 
-            if($password!=$passwordAgain)
-            {
+            if($password!=$passwordAgain) {
                 // error message for password not match
                 header("Location: registration.php?registration=password");
-                $_SESSION["invalid"] = "The Password entered does not match";
+                $_SESSION["invalid"] = "The passwords you entered don't match. Try again.";
                 exit();
             }
             else
@@ -102,14 +93,14 @@ if (isset($_POST['submit']))
                     {
                         header("Location: login.php");
                         // creates a session if the registration is successful and redirects to the login page
-                        $_SESSION["registersuccess"] = "Registration Successful";
+                        $_SESSION["registersuccess"] = "Registration has been successful.";
                         exit();
                     }
                     else
                     {
                         // creates a session if there is a problem in the database
                         header("Location: registration.php?registration=failed");
-                        $_SESSION["invalid"] = "Registration Failed";
+                        $_SESSION["invalid"] = "Something went wrong with the registration. Try again.";
                     }
                     //clears pdo
                     $connection=null;
@@ -118,7 +109,7 @@ if (isset($_POST['submit']))
                 {
                     // creates a session and displays a message if the email is already in the database
                     header("Location: registration.php?email=error");
-                    $_SESSION["invalid"] = "Email entered already exist";
+                    $_SESSION["invalid"] = "The email you entered is already in use. Please try another one.";
                     exit();
                 }
             }
@@ -129,7 +120,7 @@ else
 {
     // displays an error message if someone tries to access parseRegister.php directly without filling out the form
     header("Location: registration.php");
-    $_SESSION['invalid']="To have access, you must fill out the form and create an account first";
+    $_SESSION['invalid']="To have access, you must fill out the form and create an account first.";
     exit();
 }
 

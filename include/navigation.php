@@ -1,5 +1,4 @@
-    <!--<div class="toggle"><i class="fa fa-bars mBars" aria-hidden="true"></i></div>-->
-    <!-- LOGO -->
+<!-- LOGO -->
     <div class="header">
         <div class="logo">
             <img src="images/logo/art_store_logo_white.png" alt="art store logo">
@@ -15,7 +14,6 @@
         <li><a href="about.php">about</a></li>
         </div>
         <li id="user"><img src="/images/logo/user_icon.png"></li>
-        
         <?php
             // Starts the session
             session_start();

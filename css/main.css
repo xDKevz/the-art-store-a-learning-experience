@@ -15,7 +15,7 @@ main {
 }
 
 .home {
-    display: grid;
+    display: none;
     grid-gap: 5px;
     grid-template-columns: 25% auto;
     position: relative;
@@ -38,11 +38,25 @@ main {
 
 .gallerylist h1 {
     text-align: center;
-    /*border-bottom: 1px solid #202020;*/
+    border-bottom: 1px solid #202020;
 }
-.home-gallery {
-    text-decoration: none;
+
+/* list styles */
+
+.gallerylist {
+    margin: auto;
+    width: 80%;
+    /*border: 3px solid green;*/
+    /*padding: 10px;*/
 }
+
+.gallerylist-ul {
+    list-style-type: none;
+    text-align: justify;
+}
+/*.home-gallery {*/
+/*    text-decoration: none;*/
+/*}*/
 
 /*** LOGOS AND IMAGES ***/
 .logo {
@@ -55,109 +69,15 @@ main {
     padding: 10pt;
 }
 
-/* Horizontal Menu Styles */
-/* Responsive Menu Bar Referenced from https://www.youtube.com/watch?v=XZsuI5wyRzs */
-
-.navigation {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    background-color: rgba(0,0,0, 0.8);
-    text-align: center;
-    z-index: 2;
+ /*ANIMATED GIF */
+.loading {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
-.navigation {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
 
-#toggle {
-    display: none;
-}
-
-.navigation li {
-    display: inline-block;
-    padding: 12pt;
-    transition: 0.5s;
-}
-
-.navigation #user {
-    position: absolute;
-    top: 0pt;
-    right: 50pt;
-}
-
-#user img {
-    height: 15px;
-    width: 15px;
-}
-
-.navigation li a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.navigation> li:hover {
-    background: rgb(166, 166, 166);
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-/* Nav: User Options */
-#user-options{
-    display: none;
-    font-size: 15px;
-    line-height: 1.16667;
-    font-weight: 400;
-    letter-spacing: -.014em;
-    background: #fff;
-    border: 1px solid #d6d6d6;
-    border-radius: 10px;
-    width: 200px;
-    padding: 0 20px;
-    position: absolute;
-    top: 40pt;
-    right: 50pt;
-    box-shadow: 0px 0px 160px -40px rgba(0,0,0,0.8);
-}
-
-.user-options-nav-list > li{
-    /*text-align: center;*/
-    display: block;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid #e3e3e3;
-    font-size: 1em;
-}
-
-.user-options-content > p {
-    padding: 35px;
-    margin: 0;
-    text-align: center;
-}
-
-.user-options-nav-list > li a {
-    color: #4d4d4d;
-    display: block;
-    line-height: 43px;
-    padding: 0 30px;
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: 0.5s;
-    
-    text-align: left;
-}
-
-.user-options-nav-list > li a:hover {
-    background: #e6e6e6;
-    transition: 0.5s;
-}
 /* HOME PAGE artists, genres, galleries CSS*/
 figure {
   width: 125px;
@@ -168,16 +88,23 @@ figure {
   border: thin silver solid;
   margin: 0em;
   padding: 0.5em;
+  border-radius: 10px;
 }
 
 figure a img{
     display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 figcaption {
     background-color: white;
     border-radius: 0px 0px 12px 12px;
     margin: 0px;
+    /*padding: 5px;*/
+    /*word-wrap: break-word;*/
+    text-overflow: ellipsis; 
+
 }
 
 
@@ -212,13 +139,7 @@ a.display-gallery:hover {
     margin-bottom: 10px;
 }
 
-
-.loading {
-    display: none;
-}
-
 /* Horizontal Scroll*/
-
 
 .artistlist, .genrelist {
     height: 100%;
@@ -245,6 +166,7 @@ a.display-gallery:hover {
     /*height: 200px;*/
     width: auto;
     margin: 5px;
+
     
 }
 
@@ -253,89 +175,6 @@ a.display-gallery:hover {
     .display-lists {
         display: grid;
         grid-template-columns: auto auto auto;
-    }
-    
-    /* Navigation and header */
-    #toggle {
-        display: none;
-    }
-    
-    #user img {
-        height: 15px;
-        width: 15px;
-    }
-    
-    .navigation {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0px;
-        background-color: rgba(0,0,0, 0.8);
-        text-align: center;
-        z-index: 2;
-    }
-    
-    .navigation li {
-        padding: 12pt;
-        transition: 0.5s;
-    }
-    
-    .user-options-nav-list > li{
-        margin: 0;
-        padding: 0;
-        border-top: 1px solid #e3e3e3;
-        font-size: 1em;
-        line-height: 23px;
-    }
-}
-
-@media only screen and (max-width:768px) {
-    #toggle {
-        display: block;
-        color: #FFFFFF;
-        text-decoration: none;
-        padding: 15px;
-        text-align: left;
-        font-size: 16px;
-        margin-left: 15px;
-    }
-    
-    .navigation #user {
-        position: absolute;
-        top: 0pt;
-        right: 10pt;
-    }
-    
-    .logo {
-        display: none;
-    }
-    
-    .menu {
-        display: none;
-    }
-    
-    #user-options{
-        display: none;
-        font-size: 15px;
-        line-height: 0.5;
-        padding: 0 10px;
-        position: absolute;
-        top: 40pt;
-        right: 10pt;
-    }
-    
-    .user-options-nav-list > li{
-        margin: 0;
-        padding: 0;
-        border-top: 1px solid #e3e3e3;
-        font-size: 1em;
-        line-height: 20px;
-    }
-    
-    .teamMembers div {
-        width: 100%;
-    }
-    .repo img {
-        max-width: 100%;
     }
     
     .home {
@@ -372,7 +211,44 @@ a.display-gallery:hover {
     }
 }
 
-@media (max-width:425px) {
+@media (max-width:768px) {
+    .home {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+    }
+    
+    .hpage {
+        /*display: block;*/
+        height: 150px;
+        width: 150px;
+    }
+    
+    .gallerylist, .artistlist, .genrelist {
+        text-align: center;
+        height: 400px;
+        width: auto;
+        overflow: auto;
+        /*white-space: nowrap;*/
+        /*margin-bottom: 0;*/
+        /*margin-top: 25px;*/
+    }
+    
+    .gallerylist  {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+    
+    .artistlist {
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+    }
+    
+    .genrelist {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+
     
 }
 

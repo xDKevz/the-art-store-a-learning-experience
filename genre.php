@@ -2,7 +2,7 @@
 <html>
     <head>
     <?php
-        $title = "Genre Page"; // title of page
+        $title = "Genres - Art Store"; // title of page
         include "include/head.php";
     ?>
     </head>

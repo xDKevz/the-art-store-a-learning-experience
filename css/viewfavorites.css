@@ -1,7 +1,13 @@
 /*GENERAL*/
-.container h1 {
+.favheader {
     text-align: center;
     border-bottom: 1px solid #202020;
+}
+
+.nofavorites p {
+    text-align: center;
+    font-style: italic;
+    font-size: 15px;
 }
 
 .favorite {

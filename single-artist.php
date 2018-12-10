@@ -58,17 +58,17 @@
                     <?php // END CONTENT
                 } else {
                     ?>
-                        <div class="Error">
-                            <h1>Error: No Data found</h1>
-                        </div>  
+                        <div class="error">
+                            <img src="images/logo/Page-not-found.png" > 
+                        </div>    
                     <?php
                 }
             } else {
                 // CREATE HTML TO SHOW 404 ERROR MESSAGE: PAGE NOT FOUND
                 ?>
-                    <div class="404ErrorMessage">
-                        <h1>Error 404: PAGE NOT FOUND</h1>
-                    </div>
+                    <div class="error">
+                            <img src="images/logo/Page-not-found.png" > 
+                    </div>   
                 <?php
             }
         // END PHP ?>

@@ -7,6 +7,7 @@
         ?>
     </head>
     <link rel="stylesheet" href="css/login.css" type="text/css" />
+    <link rel="stylesheet" href="css/navigation.css" type="text/css" />
     <header><?php include "include/navigation.php"; ?></header>
 <body>
     <div class="background-image"></div>

@@ -1,5 +1,13 @@
 window.addEventListener('load', function() {
     
+    // document.querySelector(".loading").style.display = "block";
+    // document.querySelector(".home").style.display = "none";
+    getReady();
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".home").style.display = "grid";
+});
+
+function getReady() {
     fetch('../services/gallery.php')
         .then( response=>response.json() )
         .then( data => {
@@ -17,7 +25,7 @@ window.addEventListener('load', function() {
         .then( data => {
             generateGenre(data);
         }).catch( error => console.log(error) );
-});
+}
 
 /**
  * Sorts the galleries based on their GalleryName property
@@ -57,6 +65,11 @@ function generateGallery(data) {
     }
 }
 
+/**
+ * Populates all the artists requested from the artist API
+ * 
+ * @param data - the json artist data
+ */
 function generateArtists(data) {
     let half = data.length / 2;
     let index = 0;
@@ -99,9 +112,12 @@ function generateArtists(data) {
     }
 }
 
+/**
+ * Populates all the genres requested from the genres API
+ * 
+ * @param data - the json genres data
+ */
 function generateGenre(data) {
-    
-    
     let half = data.length / 2;
     let index = 0;
     
@@ -137,27 +153,4 @@ function generateGenre(data) {
         // increase index to switch were to append data
         index++;
     }
-    
-    
-    // let list = document.querySelector('.genreList');
-    // for (let genre of data) {
-    //     let li = document.createElement('li');
-        
-    //     let link = document.createElement('a');
-    //     link.setAttribute("href", "single-genre.php?id=" + genre.GenreID);
-        
-    //     let figure = document.createElement('figure');
-        
-    //     let caption = document.createElement('figcaption');
-    //     caption.textContent = genre.GenreName;
-        
-    //     let img = document.createElement('img');
-    //     img.setAttribute("src", "../services/imagescale.php?width=125&file=" + genre.GenreID);
-        
-    //     link.appendChild(img);
-    //     figure.appendChild(link);
-    //     figure.appendChild(caption);
-    //     li.appendChild(figure);
-    //     list.appendChild(li);
-    // }
 }

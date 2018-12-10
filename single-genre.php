@@ -2,12 +2,14 @@
 <html>
     <head>
         <?php 
-            $title = "Single Genre";
+            $title = "Art Store";
             include "include/head.php";
         ?>
         <link rel="stylesheet" href="css/single-page.css" type="text/css" />
     </head>
-    
+    <header>
+        <?php include "include/navigation.php"; ?>
+    </header>
     <?php // START PHP
             if ( isset($_GET['id']) ) {
                 // RETRIEVED ARTIST DATA FROM DB
@@ -21,10 +23,6 @@
                 if (!empty($row)) {
                 // START CONTENT
                     ?>
-                    <header>
-                        <?php include "include/navigation.php"; ?>
-                    </header>
-                    
                     <main class="container">
                         <span id="type" class="genre"></span>
                         <div id="<?=$GenreID?>" class="information">
@@ -54,17 +52,17 @@
                     <?php // END CONTENT
                 } else {
                     ?>
-                        <div class="Error">
-                            <h1>Error: No Data found</h1>
-                        </div>  
+                    <div class="error">
+                            <img src="images/logo/Page-not-found.png" > 
+                    </div>   
                     <?php
                 }
             } else {
                 // CREATE HTML TO SHOW 404 ERROR MESSAGE: PAGE NOT FOUND
                 ?>
-                    <div class="404ErrorMessage">
-                        <h1>Error 404: PAGE NOT FOUND</h1>
-                    </div>
+                    <div class="error">
+                            <img src="images/logo/Page-not-found.png" > 
+                    </div>   
                 <?php
             }
         // END PHP ?>

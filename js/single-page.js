@@ -26,6 +26,11 @@ window.addEventListener('load', function() {
         .catch( error => console.log(error) );
 });
 
+/**
+ * Populates all the paintings requested from the painting API
+ * 
+ * @param painting - the json painting data
+ */
 function populatePainting(painting) {
     let container = document.querySelector(".painting ul");
     // remove previous painting list
@@ -68,6 +73,12 @@ function populatePainting(painting) {
     });
 }
 
+/**
+ * Creates the pop-up thumbnail when the user hovers over a painting image
+ * 
+ * @param img - the img element of the selected painting
+ * @param thumbnail - the img element of the larger pop-up image
+ */
 function createthumbnail(img, thumbnail) {
     let popup = document.querySelector("#popup");
     popup.style.position = "absolute";
@@ -89,13 +100,8 @@ function createthumbnail(img, thumbnail) {
     });
     
     img.addEventListener('mousemove', function(e){
-        // https://stackoverflow.com/questions/1248081/get-the-browser-viewport-dimensions-with-javascript
-        // var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        // var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         let x = e.clientX + 100;
         let y = e.clientY - (e.clientY / 3);
-        // let x = (window.innerWidth - e.clientX) + 10;
-        // let y = (window.innerHeight - e.clientY) + 10;
         popup.style.top = y + "px";
         popup.style.left = x + "px";
     });
@@ -122,7 +128,6 @@ function initMap(latitude, longitude) {
     }
 
 }
-
 
 /**
  * Sets up 'painting list' artist, title, year event handlers.
