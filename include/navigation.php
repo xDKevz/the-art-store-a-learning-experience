@@ -5,14 +5,12 @@
         </div>
     </div>
     <nav class="navigation">
-        <label id="toggle">&#9776;</label>
-        <div class="menu">
-        <li><a href="home.php">home</a></li>
-        <li><a href="artist.php">artists</a></li>
-        <li><a href="galleries.php">galleries</a></li>
-        <li><a href="genre.php">genres</a></li>
-        <li><a href="about.php">about</a></li>
-        </div>
+        <li id="toggle">&#9776;</li>
+        <li id="menu"><a href="home.php">home</a></li>
+        <li id="menu"><a href="artist.php">artists</a></li>
+        <li id="menu"><a href="galleries.php">galleries</a></li>
+        <li id="menu"><a href="genre.php">genres</a></li>
+        <li id="menu"><a href="about.php">about</a></li>
         <li id="user"><img src="/images/logo/user_icon.png"></li>
         <?php
             // Starts the session

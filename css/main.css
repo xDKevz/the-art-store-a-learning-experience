@@ -251,7 +251,7 @@ a.display-gallery:hover {
     
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .display-lists {
         grid-template-columns: auto;
         height: 800px;

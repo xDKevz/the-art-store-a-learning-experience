@@ -105,7 +105,7 @@
 }
 
 /** RESPONSIVE RULES **/
-@media (max-width:1024px) {
+@media screen and (max-width:1024px) {
     /* Navigation and header */
     #toggle {
         display: none;
@@ -139,13 +139,42 @@
     }
 }
 
-@media (max-wdith:768px) {
-    .menu {
+@media screen and (max-width:768px) {
+    #menu {
         display: none;
     }
     
     #toggle {
         display: block;
+        font-size: 19px;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 10pt;
+        transition: 0.5s;
+        text-align: left;
+        padding-left: 25pt;
+        top: 0pt;
+    }
+    
+    #toggle li:hover {
+        background: rgb(166, 166, 166);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    
+    .navigation #user {
+        position: absolute;
+        top: 1px;
+        right: 25pt;
+    }
+    
+    #user-options {
+        right: 25pt;
+        width: 400px;
+    }
+    
+    .header {
+        display: none;
     }
 }
 
