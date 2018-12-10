@@ -140,7 +140,7 @@
 }
 
 @media screen and (max-width:768px) {
-    .menu {
+    #menu {
         display: none;
         text-align: left;
         padding-left: 50pt;

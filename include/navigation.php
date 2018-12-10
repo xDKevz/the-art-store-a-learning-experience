@@ -6,11 +6,13 @@
     </div>
     <nav class="navigation">
         <li id="toggle"><a href="#" id="burger">&#9776;</a></li>
-        <li clas="menu"><a href="home.php">home</a></li>
-        <li class="menu"><a href="artist.php">artists</a></li>
-        <li class="menu"><a href="galleries.php">galleries</a></li>
-        <li class="menu"><a href="genre.php">genres</a></li>
-        <li class="menu"><a href="about.php">about</a></li>
+        <div id="menu">
+            <li><a href="home.php">home</a></li>
+            <li><a href="artist.php">artists</a></li>
+            <li><a href="galleries.php">galleries</a></li>
+            <li><a href="genre.php">genres</a></li>
+            <li><a href="about.php">about</a></li>
+        </div>
         <li id="user"><img src="/images/logo/user_icon.png"></li>
         <?php
             // Starts the session
