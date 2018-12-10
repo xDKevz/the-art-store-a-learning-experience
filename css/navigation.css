@@ -20,7 +20,7 @@
     display: none;
 }
 
-.navigation li {
+.navigation li:not(:first-child)  {
     display: inline-block;
     padding: 12pt;
     transition: 0.5s;
@@ -42,7 +42,7 @@
     text-decoration: none;
 }
 
-.navigation li:hover {
+.navigation li:not(:first-child):hover {
     background: rgb(166, 166, 166);
     cursor: pointer;
     transition: 0.5s;
@@ -140,8 +140,10 @@
 }
 
 @media screen and (max-width:768px) {
-    #menu {
+    .menu {
         display: none;
+        text-align: left;
+        padding-left: 50pt;
     }
     
     #toggle {
@@ -154,9 +156,10 @@
         text-align: left;
         padding-left: 25pt;
         top: 0pt;
+        width: 5%;
     }
     
-    #toggle li:hover {
+    #toggle:first-child:hover {
         background: rgb(166, 166, 166);
         cursor: pointer;
         transition: 0.5s;
@@ -169,8 +172,14 @@
     }
     
     #user-options {
-        right: 25pt;
-        width: 400px;
+        width: 100%;
+        border-radius: 0;
+        right: 0;
+        border: 0;
+    }
+    
+    .user-options-nav-list {
+        padding-left: 30pt;
     }
     
     .header {

@@ -101,11 +101,13 @@ a, span {
   }
 }
 
-@media only screen and (max-width:670px) {
+@media only screen and (max-width:700px) {
   .favorite {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
   }
-  
+  .ul-favorite {
+    padding: 0;
+  }
   
 }
