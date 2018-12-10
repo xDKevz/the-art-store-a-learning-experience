@@ -211,7 +211,7 @@ a.display-gallery:hover {
     }
 }
 
-@media (max-width:768px) {
+@media only screen and (max-width:768px) {
     .home {
         display: grid;
         grid-template-columns: auto;
@@ -248,7 +248,13 @@ a.display-gallery:hover {
         grid-column: 1 / span 1;
         grid-row: 3 / span 1;
     }
-
     
 }
 
+@media only screen and (max-width: 400px) {
+    .display-lists {
+        grid-template-columns: auto;
+        height: 800px;
+        overflow: auto;
+    }
+}
