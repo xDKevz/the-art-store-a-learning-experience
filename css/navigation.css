@@ -3,13 +3,10 @@
 .navigation {
     position: -webkit-sticky;
     position: sticky;
-    top: 0px;
+    top: 0;
     background-color: rgba(0,0,0, 0.8);
     text-align: center;
     z-index: 2;
-}
-
-.navigation {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -20,7 +17,7 @@
     display: none;
 }
 
-.navigation li:not(:first-child)  {
+.navigation li {
     display: inline-block;
     padding: 12pt;
     transition: 0.5s;
@@ -42,7 +39,7 @@
     text-decoration: none;
 }
 
-.navigation li:not(:first-child):hover {
+.navigation li:hover {
     background: rgb(166, 166, 166);
     cursor: pointer;
     transition: 0.5s;
@@ -142,8 +139,16 @@
 @media screen and (max-width:768px) {
     #menu {
         display: none;
+    }
+    
+    .navigation li {
+        display: block;
         text-align: left;
         padding-left: 50pt;
+    }
+    
+    #user {
+        padding: 12pt;
     }
     
     #toggle {

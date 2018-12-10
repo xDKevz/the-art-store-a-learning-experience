@@ -6,10 +6,8 @@
         include "include/head.php";
     ?>
     </head>
+    <?php include "include/navigation.php"; ?>
     <body>
-        <header>
-            <?php include 'include/navigation.php'; ?>
-        </header>
         
         <main class="container">
             <span id="type" class="artist"></span>

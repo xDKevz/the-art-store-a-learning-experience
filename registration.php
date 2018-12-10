@@ -17,8 +17,8 @@
         ?>
     </head>
     <link rel="stylesheet" href="css/registration.css" type="text/css" />
+    <?php include "include/navigation.php"; ?>
 <body>
-    <header><?php include "include/navigation.php"; ?></header>
     <div class="background-image"></div>
     <div class="registration-container"> 
     <div class="signup-logo">

@@ -9,7 +9,7 @@
         <!-- Add icon library https://www.w3schools.com/howto/howto_css_star_rating.asp --> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-    
+    <?php include "include/navigation.php"; ?>
     <?php // START PHP
             if ( isset($_GET['id']) ) {
                 // RETRIEVED ARTIST DATA FROM DB
@@ -31,9 +31,6 @@
                 if (!empty($row)) {
                 // START CONTENT
                     ?>
-                    <header>
-                        <?php include "include/navigation.php"; ?>
-                    </header>
                     
                     <main class="container">
                         <div class="painting"> 

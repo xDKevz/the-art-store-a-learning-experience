@@ -7,9 +7,7 @@
         ?>
         <link rel="stylesheet" href="css/about.css" type="text/css"/>
     </head>
-    <header>
-        <?php include "include/navigation.php"; ?>
-    </header>
+    <?php include "include/navigation.php"; ?>
     <body>
         <div class="barTitleWrapper">
             <div class="barTitleBackground"></div>

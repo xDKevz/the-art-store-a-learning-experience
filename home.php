@@ -6,16 +6,10 @@
             include "include/head.php";
         ?>
     </head>
-
+    <?php include "include/navigation.php"; ?>
     <body>
-        <header>
-            <?php include "include/navigation.php"; ?>
-        </header>
-        
         <img src="images/logo/animacia3.gif" class="loading">
-        
         <main class="home">
-            
             <div class="gallerylist">
                 <h1>GALLERY LIST</h1>
                 <ul class="gallerylist-ul"></ul>

@@ -6,10 +6,8 @@
         include "include/head.php";
     ?>
     </head>
+    <?php include "include/navigation.php"; ?>
     <body>
-        <header>
-            <?php include 'include/navigation.php'; ?>
-        </header>
         <main id="genre-display" class="container">
             <span id="type" class="genre"></span>
             <div class="display-lists">

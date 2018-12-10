@@ -7,9 +7,7 @@
         ?>
         <link rel="stylesheet" href="css/single-page.css" type="text/css" />
     </head>
-    <header>
-        <?php include "include/navigation.php"; ?>
-    </header>
+    <?php include "include/navigation.php"; ?>
     <?php // START PHP
             if ( isset($_GET['id']) ) {
                 // RETRIEVED ARTIST DATA FROM DB

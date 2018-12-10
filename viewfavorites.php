@@ -7,11 +7,8 @@
         ?>
         <link rel="stylesheet" href="css/viewfavorites.css"/>
     </head>
-    
+    <?php include "include/navigation.php"; ?>
     <body>
-        <header>
-            <?php include "include/navigation.php"; ?>
-        </header>
         
         <main class="container">
             <h1 class="favheader">Favorites</h1>

@@ -7,7 +7,7 @@
         ?>
         <link rel="stylesheet" href="css/single-page.css" type="text/css" />
     </head>
-    
+    <?php include "include/navigation.php"; ?>
     <?php // START PHP
             if ( isset($_GET['id']) ) {
                 // RETRIEVED ARTIST DATA FROM DB
@@ -21,9 +21,6 @@
                 if (!empty($row)) {
                 // START CONTENT
                     ?>
-                    <header>
-                        <?php include "include/navigation.php"; ?>
-                    </header>
                     
                     <main class="container type">
                         <span id="type" class="gallery"></span>
