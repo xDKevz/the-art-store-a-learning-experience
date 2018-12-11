@@ -27,16 +27,23 @@
     </div>
         <form class="reg-form" method="post" action="parseRegister.php">
             <div class="form-info">
-                <input class="reg-input" type="text" placeholder="first name" name="firstName" id="fname"><br>
-                <input class="reg-input" type="text" placeholder="last name" name="lastName" id="lname"><br>
+                <input class="reg-input" type="text" placeholder="first name" name="firstName" id="fname">
+                <p class="error" id="errfname"></p>
+                <input class="reg-input" type="text" placeholder="last name" name="lastName" id="lname">
+                <p class="error" id="errlname"></p>
                 <select name="country" class="countries order-alpha" id="countryId">
                     <option value="">select country or region</option>
-                </select><br>
-                <input class="reg-input" type="text" placeholder="your@email.com" name="email" id="email"><br>
-                <input class="reg-input" type="password" placeholder="password" name="password" id="password"><br>
-                <input class="reg-input" type="password" placeholder="confirm password" name="passwordAgain" id="passwordAgain"><br>
+                </select>
+                <p class="error" id="errcountry"></p>
+                <input class="reg-input" type="text" placeholder="your@email.com" name="email" id="email">
+                <p class="error" id="erremail"></p>
+                <input class="reg-input" type="password" placeholder="password" name="password" id="password">
+                <p class="error" id="errpassword"></p>
+                <input class="reg-input" type="password" placeholder="confirm password" name="passwordAgain" id="passwordAgain">
+                <p class="error" id="errpasswordAgain"></p>
             </div>
-            <!--DISPLAY EMAIL ERROR MESSAGE WHEN PROVIDED WITH EXISTING EMAIL -->
+            <!--DISPLAY EMAIL ERROR MESSAGE WHEN PROVIDED WITH EXISTING EMAIL
+            PHP BACK UP ERROR CHECK, INCASE JS DOES NOT WORK-->
             <?php 
                 // checks if the session is available for "invalid"
                 if (isset($_SESSION["invalid"])) 
@@ -44,7 +51,7 @@
                     // displays the error message from parseRegister.php
                     $message=$_SESSION['invalid'];
             
-                    echo "<p class='error'>'$message'</p>";
+                    echo "<p class='error'>$message</p>";
                     // unsets/removes the invalid session
                     unset($_SESSION["invalid"]);
                 }
@@ -59,8 +66,8 @@
     </div>   
 
 </body>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/validate.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/validate.js"></script>
 <!-- Script for generating the country, province, and city -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 <script src="//geodata.solutions/includes/countrystatecity.js"></script>

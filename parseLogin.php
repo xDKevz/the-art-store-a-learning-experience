@@ -1,4 +1,3 @@
-<!-- Not done yet -->
 <?php
 
 // starts the session
@@ -19,7 +18,7 @@ if (isset($_POST['submit']))
     if (empty($email) || empty($pwd)) 
 	{
 		header("Location: login.php?login=empty");
-		$_SESSION["errormessage"] = "The Email or Password field is empty.";
+		$_SESSION["errormessage"] = "You need to enter your credentials to log in.";
 		exit();
 	}else 
     {   
@@ -49,6 +48,7 @@ if (isset($_POST['submit']))
                     //$_SESSION['loginsuccess'] = "Login Successful!!";
                     $_SESSION['loginstatus'] = "login";
                     header("Location: home.php");
+                    // header("Location: {$_SERVER['HTTP_REFERER']}");
                     exit();
             }
             else

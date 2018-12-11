@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php
-            $title = "View Favorites";
+            $title = "Art Store - View Favorites";
             include "include/head.php";
         ?>
         <link rel="stylesheet" href="css/viewfavorites.css"/>
