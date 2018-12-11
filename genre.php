@@ -8,6 +8,10 @@
     </head>
     <?php include "include/navigation.php"; ?>
     <body>
+        <div class="barTitleWrapper">
+            <div class="barTitleBackground"></div>
+            <div class="barTitleContent"><span>Genres</span></div>
+        </div>
         <main id="genre-display" class="container">
             <span id="type" class="genre"></span>
             <div class="display-lists">

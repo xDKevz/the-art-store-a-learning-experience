@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php 
-            $title = "About Us";
+            $title = "About Us - Art Store";
             include "include/head.php"; 
         ?>
         <link rel="stylesheet" href="css/about.css" type="text/css"/>

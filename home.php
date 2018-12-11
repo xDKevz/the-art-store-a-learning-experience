@@ -2,16 +2,20 @@
 <html>
     <head>
         <?php
-            $title = "Art Store Home"; // title of page
+            $title = "Home - Art Store"; // title of page
             include "include/head.php";
         ?>
     </head>
     <?php include "include/navigation.php"; ?>
     <body>
+        <div class="barTitleWrapper">
+            <div class="barTitleBackground"></div>
+            <div class="barTitleContent"><span>Home</span></div>
+        </div>
         <img src="images/logo/animacia3.gif" class="loading">
         <main class="home">
             <div class="gallerylist">
-                <h1>GALLERY LIST</h1>
+                <h1>galleries</h1>
                 <ul class="gallerylist-ul"></ul>
             </div>
             
