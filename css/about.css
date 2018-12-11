@@ -1,8 +1,8 @@
 /** CSS: About Page **/
 .about {
-    background-color: #e6e6e6;
     display: grid;
-    height: 2000px;
+    height: 100%;
+    padding: 100px;
 }
 
 .barTitleWrapper {
@@ -47,8 +47,6 @@
 }
 
 .barTitleBackground::after {
-    /*margin-left: -490px;*/
-    /*left: 50%;*/
     content: "";
     display: block;
     position: inherit;
@@ -58,26 +56,53 @@
     background-color: rgba(51,51,51,0.2);
 }
 
-.teamMembers {
-    background-color: grey;
-    grid-column: 1 / 1;
-    grid-row: 1;
-    /*grid-template-rows: 2fr;*/
-    margin: auto;
+.teamMembers, .repo {
+    margin: auto 0;
 }
 
-.teamMembers div {
+.memojis {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    width: auto;
+    margin: 0;
+}
+
+#kevin {
+    grid-column: 1 / 1;
+    grid-row: 1;
+}
+
+#lee {
+    grid-column: 2 / 1;
+    grid-row: 1;
+}
+
+#jeremiah {
+    grid-column: 3 / 1;
+    grid-row: 1;
+}
+
+#rafael {
+    grid-column: 4 / 1;
+    grid-row: 1;
+}
+
+.memojis div {
     float: left;
-    background-color: #666666;
-    border-radius: 20pt;
-    width: 300px;
-    margin: 10px;
+    box-shadow: 0px 14px 59px -13px rgba(0,0,0,0.75);
+    border-radius: 20px;
 }
 .teamMembers img {
     max-width: 150pt;
     display: block;
     margin: 0 auto;
-    padding: 50px;
+    filter: grayscale(90%);
+}
+
+.memojis img:hover {
+    filter: grayscale(0%);
 }
 
 .teamMembers h4 {
@@ -85,25 +110,63 @@
 }
 
 .repo {
-    background-color: #737373;
-    grid-row: 2;
-    margin: auto;
+    padding-top: 30px;
     float: left;
 }
 
+.repo img {
+    max-width: 200px;
+}
+
+.repo h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.about a {
+    color: rgb(0, 122, 204);
+    text-decoration: none;
+}
+
+.about a:hover {
+    color: rgb(200, 153, 124);
+    text-decoration: none;
+}
+
 /* MEDIA QUERY FOR MOBILE MENU */
-@media only screen and (max-width:1024px) {
-    .about {
-        background-color: red;
-        padding: 20pt;
-        display: block;
+
+@media screen and (max-width:1190px) {
+    .memojis {
+        grid-template-columns: auto auto auto;
     }
 }
 
-@media only screen and (max-width:768px) {
+@media screen and (max-width:1024px) {
     .about {
-        background-color: red;
         padding: 20pt;
         display: block;
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .memojis {
+        grid-template-columns: auto auto;
+    }
+    
+    .about {
+        padding: 20pt;
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .memojis {
+        grid-template-columns: auto;
+    }
+    
+    .about {
+        padding: 10pt;
+        padding-top: 50px;
     }
 }
