@@ -41,7 +41,11 @@ body {
     top: 100%;
     width: 100%;
 }
-
+.error{
+	padding:0px !important;
+	color:red !important;
+	font-size:0.8em !important;
+}
 form {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -81,8 +85,10 @@ form {
     font-size: 14px;
     width: 68%;
     border-radius: 25px;
+    
+    
+    
 }
-
 .reg-input:focus {
     outline: 0;
     border: 2px solid rgba(255, 255, 255, 0.5);

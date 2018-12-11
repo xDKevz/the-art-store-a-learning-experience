@@ -31,9 +31,12 @@
                 <p class="error" id="errfname"></p>
                 <input class="reg-input" type="text" placeholder="last name" name="lastName" id="lname">
                 <p class="error" id="errlname"></p>
-                <select name="country" class="countries order-alpha" id="countryId">
+                <!--<select name="country" class="countries order-alpha" id="countryId">
                     <option value="">select country or region</option>
-                </select>
+                </select>-->
+                <input class="reg-input" type="text" placeholder="city" name="city" id="city">
+                <p class="error" id="errcity"></p>
+                <input class="reg-input" type="text" placeholder="country" name="country" id="country">
                 <p class="error" id="errcountry"></p>
                 <input class="reg-input" type="text" placeholder="your@email.com" name="email" id="email">
                 <p class="error" id="erremail"></p>
@@ -67,7 +70,7 @@
 
 </body>
 <script type="text/javascript" src="/js/main.js"></script>
-<script type="text/javascript" src="/js/validate.js"></script>
+<script type="text/javascript" src="js/validate.js"></script>
 <!-- Script for generating the country, province, and city -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 <script src="//geodata.solutions/includes/countrystatecity.js"></script>

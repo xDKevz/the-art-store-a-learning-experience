@@ -8,12 +8,13 @@ if (isset($_POST['submit']))
 
    $firstName = $_POST['firstName'];
    $lastName = $_POST['lastName'];
+   $city = $_POST['city'];
    $country = $_POST['country'];
    $email = $_POST['email'];
    $password = $_POST['password'];
    $passwordAgain = $_POST['passwordAgain'];
 
-    if (empty($firstName) || empty($lastName) || empty($country) || empty($email)|| empty($password)|| empty($passwordAgain)) {
+    if (empty($firstName) || empty($lastName) || empty($country) ||empty($city)|| empty($email)|| empty($password)|| empty($passwordAgain)) {
         
         // error message for any empty fields
         header("Location: registration.php?registration=empty");

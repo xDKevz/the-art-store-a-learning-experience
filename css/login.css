@@ -76,6 +76,12 @@ span {
     width: 60%;
     text-align: left;
 }
+.errorLogin{
+			padding:0px;
+			color:red;
+			font-size:0.8em;
+
+}
 
 .text {
     text-align: left;
