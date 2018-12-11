@@ -31,13 +31,20 @@
                 <p class="error" id="errfname"></p>
                 <input class="reg-input" type="text" placeholder="last name" name="lastName" id="lname">
                 <p class="error" id="errlname"></p>
-                <!--<select name="country" class="countries order-alpha" id="countryId">
+                <select name="country" class="countries order-alpha" id="countryId">
                     <option value="">select country or region</option>
-                </select>-->
-                <input class="reg-input" type="text" placeholder="city" name="city" id="city">
-                <p class="error" id="errcity"></p>
-                <input class="reg-input" type="text" placeholder="country" name="country" id="country">
+                </select>
                 <p class="error" id="errcountry"></p>
+                <select name="state" class="states" id="stateId">
+                    <option value="">select state or region</option>
+                </select>
+                <p class="error" id="errregion"></p>
+                <select name="city" class="cities" id="cityId">
+                    <option value="">select city</option>
+                </select>
+                <!--<input class="reg-input" type="text" placeholder="city" name="city" id="city">-->
+                <p class="error" id="errcity"></p>
+                <!--<input class="reg-input" type="text" placeholder="country" name="country" id="country">-->
                 <input class="reg-input" type="text" placeholder="your@email.com" name="email" id="email">
                 <p class="error" id="erremail"></p>
                 <input class="reg-input" type="password" placeholder="password" name="password" id="password">

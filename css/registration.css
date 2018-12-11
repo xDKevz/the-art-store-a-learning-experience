@@ -44,7 +44,7 @@ body {
 .error{
 	padding:0px !important;
 	color:red !important;
-	font-size:0.8em !important;
+	font-size: 14px !important;
 }
 form {
     padding-top: 40px;
@@ -65,7 +65,7 @@ form {
     color: rgb(255, 219, 77);
 }
 
-.reg-input, .countries {
+.reg-input, .countries, .cities, .states {
     text-align: left;
     color: rgb(217, 217, 217);
     margin: 0 auto;
@@ -80,15 +80,13 @@ form {
     transition: all 0.5s ease-in-out;
 }
 
-.countries {
+.countries, .cities, .states {
     height: 50px;
     font-size: 14px;
     width: 68%;
     border-radius: 25px;
-    
-    
-    
 }
+
 .reg-input:focus {
     outline: 0;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -102,7 +100,7 @@ input {
   font-size: 14px;
 }
 
-input[type="text"], input[type="password"], .countries {
+input[type="text"], input[type="password"], .countries, .cities, .states {
     font-weight: 600;
     color: rgb(64, 64, 64);
 }
@@ -163,7 +161,7 @@ input[type="text"], input[type="password"], .countries {
         top: 50px;
     }
     
-    .reg-input, .countries {
+    .reg-input, .countries, .cities, .states {
         width: 80%;
     }
 }

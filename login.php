@@ -35,9 +35,14 @@
               <span>Password</span>
               <br>
               <input class="button" type="submit" name="submit" value="Log in">
-              </form>
+              </form><p class= errorLogin>';
+                if(isset($_SESSION["errormessage"])) {
+                	print($_SESSION["errormessage"]);
+                    // destroys the session to avoid errors showing up non stop.
+                	unset($_SESSION["errormessage"]);
+                }
               
-              <div class="login-signup">
+        echo    '<p><div class="login-signup">
               <p>Need an account? <a class="link" href="registration.php">Create a new one.</a>
               </div>';
     } ?>
@@ -51,20 +56,6 @@
         	// destroys the session
         	unset($_SESSION["registersuccess"]);
         } ?>
-    <!--this is used if there are any message errors
-    
-    <p style?? >error message <p>
-    -->
-    <p class= errorLogin>
-    <?php
-        //from parseLogin
-        if(isset($_SESSION["errormessage"])) {
-        	print($_SESSION["errormessage"]);
-            // destroys the session to avoid errors showing up non stop.
-        	unset($_SESSION["errormessage"]);
-        }
-    ?>
-    <p>
     </div>
  </div>
 </body>

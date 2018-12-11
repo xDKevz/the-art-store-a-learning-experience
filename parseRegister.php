@@ -10,11 +10,12 @@ if (isset($_POST['submit']))
    $lastName = $_POST['lastName'];
    $city = $_POST['city'];
    $country = $_POST['country'];
+   $region = $_POST['state'];
    $email = $_POST['email'];
    $password = $_POST['password'];
    $passwordAgain = $_POST['passwordAgain'];
 
-    if (empty($firstName) || empty($lastName) || empty($country) ||empty($city)|| empty($email)|| empty($password)|| empty($passwordAgain)) {
+    if (empty($firstName) || empty($lastName) || empty($country) || empty($region) || empty($city) || empty($email) || empty($password) || empty($passwordAgain)) {
         
         // error message for any empty fields
         header("Location: registration.php?registration=empty");
@@ -61,12 +62,12 @@ if (isset($_POST['submit']))
                     $joinDate=date("Y-m-d",time());
                     
                     // inserts customers log in info into the customers table
-                    $sqlInsert = "INSERT INTO Customers (FirstName, LastName, City, Country, Email ) VALUES (?, ?, ?, ?, ?)";
+                    $sqlInsert = "INSERT INTO Customers (FirstName, LastName, City, Region, Country, Email) VALUES (?, ?, ?, ?, ?, ?)";
                     
                     // inserts customers log in info into the customerLogon table
                     $sqlInsertLogin = "INSERT INTO CustomerLogon (UserName, Pass, Salt, DateJoined) VALUES (?, ?, ?, ?)";
                     
-                    $parameters1=array($firstName,$lastName,$city,$country,$email);
+                    $parameters1=array($firstName,$lastName,$city,$region,$country,$email);
                     $parameters2=array($email,$hashedPassword,$salt,$joinDate);    
                     /*$smt1=$pdo->prepare($sqlInsert);
                     $smt1 ->bindValue(1,$firstName);

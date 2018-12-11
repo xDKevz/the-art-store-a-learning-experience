@@ -6,12 +6,13 @@
  */
 function validate(myform)
 {
-    err="";
+    var err = "";
     
 	document.getElementById("fname").style.backgroundColor = "white";
 	document.getElementById("lname").style.backgroundColor = "white";
-	document.getElementById("city").style.backgroundColor = "white";
-	document.getElementById("country").style.backgroundColor = "white";
+	document.getElementById("cityId").style.backgroundColor = "white";
+	document.getElementById("countryId").style.backgroundColor = "white";
+	document.getElementById("stateId").style.backgroundColor = "white";
     document.getElementById("email").style.backgroundColor = "white";
 	document.getElementById("passwordAgain").style.backgroundColor = "white";
     document.getElementById("password").style.backgroundColor = "white";
@@ -23,45 +24,57 @@ function validate(myform)
     document.getElementById("erremail").innerHTML = "";
     document.getElementById("errpassword").innerHTML = "";
     document.getElementById("errpasswordAgain").innerHTML = "";
+    
+    var co = document.getElementById("countryId");
+    var ci = document.getElementById("cityId");
+    var st = document.getElementById("stateId");
 
 	if (myform.fname.value == "")
 	{
-		fname = "First Name cannot be empty";
+		var fname = "This field is required.";
 		document.getElementById("fname").style.backgroundColor = "pink";
         document.getElementById("errfname").innerHTML = fname;
         err+="yes";
 	}
 	if (myform.lname.value == "")
 	{
-		lname = "Last Name cannot be empty";
+		var lname = "This field is required.";
 		document.getElementById("lname").style.backgroundColor = "pink";
         document.getElementById("errlname").innerHTML = lname;
         err+="yes";
 	}
-    if (myform.city.value == "")
+    if (ci.options[ci.selectedIndex].text == "select city")
 	{
-		city = "City cannot be empty";
-		document.getElementById("city").style.backgroundColor = "pink";
+		var city = "Please select your city.";
+		document.getElementById("cityId").style.backgroundColor = "pink";
         document.getElementById("errcity").innerHTML = city;
         err+="yes";
 	}
-	if (myform.country.value == "")
+	if (st.options[st.selectedIndex].text == "select state or region")
 	{
-		country = "Country cannot be empty";
-		document.getElementById("country").style.backgroundColor = "pink";
-        document.getElementById("errcountry").innerHTML = country;
+		var state = "Please select your state or region.";
+		document.getElementById("stateId").style.backgroundColor = "pink";
+        document.getElementById("errregion").innerHTML = state;
         err+="yes";
 	}
-	/*if (c.options[c.selectedIndex].text == "Select Country")
+	
+	// if (myform.country.value == "")
+	// {
+	// 	country = "Country cannot be empty";
+	// 	document.getElementById("country").style.backgroundColor = "pink";
+ //       document.getElementById("errcountry").innerHTML = country;
+ //       err+="yes";
+	// }
+	if (co.options[co.selectedIndex].text == "Select Country")
 	{
 		var country = "Please select your country.";
 		document.getElementById("countryId").style.backgroundColor = "pink";
         document.getElementById("errcountry").innerHTML = country;
         err+="yes";
-	}*/    
+	}   
 	if (myform.email.value == "")
 	{
-		var email = "Email address cannot be empty";
+		var email = "Your email address is required for registration.";
 		document.getElementById("email").style.backgroundColor = "pink";
         document.getElementById("erremail").innerHTML = email;
         err+="yes";
@@ -79,14 +92,14 @@ function validate(myform)
 	}
 	if (myform.password.value == "")
 	{
-		var password = "Password cannot be empty.";
+		var password = "This field is required.";
 		document.getElementById("password").style.backgroundColor = "pink";
         document.getElementById("errpassword").innerHTML = password;
         err+="yes";
     }
     else if(myform.password.value.length<=5)
     {
-		password = "Password length must be greater than or equal to six";
+		password = "Passwords need to be at least 6 characters.";
 		document.getElementById("password").style.backgroundColor = "pink";
         document.getElementById("errpassword").innerHTML = password;
         err+="yes";	
@@ -101,7 +114,7 @@ function validate(myform)
     
     if (myform.passwordAgain.value == "")
 	{
-		var passwordAgain = "Confirm your password";
+		var passwordAgain = "Please confirm your password.";
 		document.getElementById("passwordAgain").style.backgroundColor = "pink";
         document.getElementById("errpasswordAgain").innerHTML = passwordAgain;
         err+="yes";
