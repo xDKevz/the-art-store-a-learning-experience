@@ -78,6 +78,6 @@
     <!--SCRIPT-->
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/single-page.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3de_Ch6IoSD0OPDHppLS9HiWdI2zB5i4&callback=initMap"
+    <script src=""
     ></script>
 </html>
